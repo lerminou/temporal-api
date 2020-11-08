@@ -12,6 +12,7 @@
   "autoload": {
     "psr-4": {
       "GPBMetadata\\Temporal\\": "src/GPBMetadata/Temporal/",
+      "GPBMetadata\\Dependencies\\": "src/GPBMetadata/Dependencies/",
       "Temporal\\": "src/Temporal/"
     }
   }

@@ -15,7 +15,7 @@ class Message
           return;
         }
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
-        //\GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
+        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\Workflow::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\CommandType::initOnce();
         \GPBMetadata\Temporal\Api\Common\V1\Message::initOnce();

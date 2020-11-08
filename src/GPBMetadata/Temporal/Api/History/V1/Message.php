@@ -16,7 +16,7 @@ class Message
         }
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        //\GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
+        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\EventType::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\FailedCause::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\Workflow::initOnce();
