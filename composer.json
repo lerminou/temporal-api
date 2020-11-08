@@ -3,7 +3,7 @@
   "require": {
     "ext-grpc": "*",
     "grpc/grpc": "^1.30",
-    "google/protobuf ": "^3.13"
+    "google/protobuf": "^3.13"
   },
   "autoload": {
     "psr-4": {
