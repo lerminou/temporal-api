@@ -1,0 +1,12 @@
+{
+  "name": "lerminou/temporal-api",
+  "require": {
+    "grpc/grpc": "^1.30"
+  },
+  "autoload": {
+    "psr-4": {
+      "GPBMetadata\\Temporal\\": "src/GPBMetadata/Temporal/",
+      "Temporal\\": "src/Temporal/"
+    }
+  }
+}
