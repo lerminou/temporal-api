@@ -33,6 +33,10 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string binary_checksum = 5;</code>
      */
     protected $binary_checksum = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 6;</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *     @type string $identity
      *     @type string $binary_checksum
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->binary_checksum = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 6;</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
 
         return $this;
     }

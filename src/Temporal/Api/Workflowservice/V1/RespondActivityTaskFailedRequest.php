@@ -25,6 +25,10 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 4;</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type string $task_token
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *     @type string $identity
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 4;</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
 
         return $this;
     }

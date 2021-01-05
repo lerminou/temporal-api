@@ -45,6 +45,10 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>map<string, .temporal.api.query.v1.WorkflowQueryResult> query_results = 8;</code>
      */
     private $query_results;
+    /**
+     * Generated from protobuf field <code>string namespace = 9;</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -60,6 +64,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *     @type bool $force_create_new_workflow_task
      *     @type string $binary_checksum
      *     @type array|\Google\Protobuf\Internal\MapField $query_results
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
@@ -239,6 +244,28 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Query\V1\WorkflowQueryResult::class);
         $this->query_results = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 9;</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
 
         return $this;
     }

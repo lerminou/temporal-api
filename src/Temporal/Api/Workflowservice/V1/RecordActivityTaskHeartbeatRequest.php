@@ -25,6 +25,10 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 4;</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $task_token
      *     @type \Temporal\Api\Common\V1\Payloads $details
      *     @type string $identity
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkString($var, True);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 4;</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
 
         return $this;
     }

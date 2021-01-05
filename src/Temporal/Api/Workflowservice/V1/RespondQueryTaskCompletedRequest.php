@@ -31,6 +31,10 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string error_message = 4;</code>
      */
     protected $error_message = '';
+    /**
+     * Generated from protobuf field <code>string namespace = 6;</code>
+     */
+    protected $namespace = '';
 
     /**
      * Constructor.
@@ -42,6 +46,7 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      *     @type int $completed_type
      *     @type \Temporal\Api\Common\V1\Payloads $query_result
      *     @type string $error_message
+     *     @type string $namespace
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +138,28 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->error_message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 6;</code>
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string namespace = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNamespace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->namespace = $var;
 
         return $this;
     }
