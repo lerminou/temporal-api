@@ -33,6 +33,10 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string request_id = 5;</code>
      */
     protected $request_id = '';
+    /**
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
+     */
+    protected $reset_reapply_type = 0;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $reason
      *     @type int|string $workflow_task_finish_event_id
      *     @type string $request_id
+     *     @type int $reset_reapply_type
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->request_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
+     * @return int
+     */
+    public function getResetReapplyType()
+    {
+        return $this->reset_reapply_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResetReapplyType($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
+        $this->reset_reapply_type = $var;
 
         return $this;
     }

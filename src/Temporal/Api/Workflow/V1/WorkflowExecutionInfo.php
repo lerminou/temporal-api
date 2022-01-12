@@ -65,6 +65,10 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string task_queue = 13;</code>
      */
     protected $task_queue = '';
+    /**
+     * Generated from protobuf field <code>int64 state_transition_count = 14;</code>
+     */
+    protected $state_transition_count = 0;
 
     /**
      * Constructor.
@@ -85,6 +89,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
      *     @type \Temporal\Api\Workflow\V1\ResetPoints $auto_reset_points
      *     @type string $task_queue
+     *     @type int|string $state_transition_count
      * }
      */
     public function __construct($data = NULL) {
@@ -374,6 +379,28 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->task_queue = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 state_transition_count = 14;</code>
+     * @return int|string
+     */
+    public function getStateTransitionCount()
+    {
+        return $this->state_transition_count;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 state_transition_count = 14;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setStateTransitionCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->state_transition_count = $var;
 
         return $this;
     }

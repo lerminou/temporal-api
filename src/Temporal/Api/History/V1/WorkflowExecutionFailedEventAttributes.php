@@ -25,6 +25,12 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      */
     protected $workflow_task_completed_event_id = 0;
+    /**
+     * If another run is started by cron or retry, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 4;</code>
+     */
+    protected $new_execution_run_id = '';
 
     /**
      * Constructor.
@@ -35,6 +41,8 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *     @type int $retry_state
      *     @type int|string $workflow_task_completed_event_id
+     *     @type string $new_execution_run_id
+     *           If another run is started by cron or retry, this contains the new run id.
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +112,32 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If another run is started by cron or retry, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 4;</code>
+     * @return string
+     */
+    public function getNewExecutionRunId()
+    {
+        return $this->new_execution_run_id;
+    }
+
+    /**
+     * If another run is started by cron or retry, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNewExecutionRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->new_execution_run_id = $var;
 
         return $this;
     }

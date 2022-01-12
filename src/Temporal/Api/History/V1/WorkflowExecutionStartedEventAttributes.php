@@ -56,6 +56,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      */
     protected $workflow_task_timeout = null;
     /**
+     * Run id of previous ContinueAsNew or retry or cron execution.
+     *
      * Generated from protobuf field <code>string continued_execution_run_id = 10;</code>
      */
     protected $continued_execution_run_id = '';
@@ -146,6 +148,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *     @type \Google\Protobuf\Duration $workflow_task_timeout
      *           Timeout of a single workflow task.
      *     @type string $continued_execution_run_id
+     *           Run id of previous ContinueAsNew or retry or cron execution.
      *     @type int $initiator
      *     @type \Temporal\Api\Failure\V1\Failure $continued_failure
      *     @type \Temporal\Api\Common\V1\Payloads $last_completion_result
@@ -383,6 +386,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Run id of previous ContinueAsNew or retry or cron execution.
+     *
      * Generated from protobuf field <code>string continued_execution_run_id = 10;</code>
      * @return string
      */
@@ -392,6 +397,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Run id of previous ContinueAsNew or retry or cron execution.
+     *
      * Generated from protobuf field <code>string continued_execution_run_id = 10;</code>
      * @param string $var
      * @return $this

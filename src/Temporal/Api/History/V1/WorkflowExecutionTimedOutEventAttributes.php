@@ -17,6 +17,12 @@ class WorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 1;</code>
      */
     protected $retry_state = 0;
+    /**
+     * If another run is started by cron or retry, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 2;</code>
+     */
+    protected $new_execution_run_id = '';
 
     /**
      * Constructor.
@@ -25,6 +31,8 @@ class WorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Internal
      *     Optional. Data for populating the Message object.
      *
      *     @type int $retry_state
+     *     @type string $new_execution_run_id
+     *           If another run is started by cron or retry, this contains the new run id.
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +58,32 @@ class WorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Internal
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RetryState::class);
         $this->retry_state = $var;
+
+        return $this;
+    }
+
+    /**
+     * If another run is started by cron or retry, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 2;</code>
+     * @return string
+     */
+    public function getNewExecutionRunId()
+    {
+        return $this->new_execution_run_id;
+    }
+
+    /**
+     * If another run is started by cron or retry, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNewExecutionRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->new_execution_run_id = $var;
 
         return $this;
     }

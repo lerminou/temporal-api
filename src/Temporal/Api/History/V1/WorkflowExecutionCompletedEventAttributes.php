@@ -21,6 +21,12 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      */
     protected $workflow_task_completed_event_id = 0;
+    /**
+     * If another run is started by cron, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 3;</code>
+     */
+    protected $new_execution_run_id = '';
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
      *
      *     @type \Temporal\Api\Common\V1\Payloads $result
      *     @type int|string $workflow_task_completed_event_id
+     *     @type string $new_execution_run_id
+     *           If another run is started by cron, this contains the new run id.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +85,32 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If another run is started by cron, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 3;</code>
+     * @return string
+     */
+    public function getNewExecutionRunId()
+    {
+        return $this->new_execution_run_id;
+    }
+
+    /**
+     * If another run is started by cron, this contains the new run id.
+     *
+     * Generated from protobuf field <code>string new_execution_run_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNewExecutionRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->new_execution_run_id = $var;
 
         return $this;
     }
