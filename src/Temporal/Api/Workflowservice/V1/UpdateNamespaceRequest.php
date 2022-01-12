@@ -42,6 +42,12 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string delete_bad_binary = 6;</code>
      */
     protected $delete_bad_binary = '';
+    /**
+     * promote local namespace to global namespace. Ignored if namespace is already global namespace.
+     *
+     * Generated from protobuf field <code>bool promote_namespace = 7;</code>
+     */
+    protected $promote_namespace = false;
 
     /**
      * Constructor.
@@ -55,6 +61,8 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Replication\V1\NamespaceReplicationConfig $replication_config
      *     @type string $security_token
      *     @type string $delete_bad_binary
+     *     @type bool $promote_namespace
+     *           promote local namespace to global namespace. Ignored if namespace is already global namespace.
      * }
      */
     public function __construct($data = NULL) {
@@ -190,6 +198,32 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->delete_bad_binary = $var;
+
+        return $this;
+    }
+
+    /**
+     * promote local namespace to global namespace. Ignored if namespace is already global namespace.
+     *
+     * Generated from protobuf field <code>bool promote_namespace = 7;</code>
+     * @return bool
+     */
+    public function getPromoteNamespace()
+    {
+        return $this->promote_namespace;
+    }
+
+    /**
+     * promote local namespace to global namespace. Ignored if namespace is already global namespace.
+     *
+     * Generated from protobuf field <code>bool promote_namespace = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPromoteNamespace($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->promote_namespace = $var;
 
         return $this;
     }

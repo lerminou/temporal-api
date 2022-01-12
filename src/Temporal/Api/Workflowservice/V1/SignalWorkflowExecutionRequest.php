@@ -41,6 +41,13 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string control = 7;</code>
      */
     protected $control = '';
+    /**
+     * Headers that are passed with the signal to the processing workflow.
+     * These can include things like auth or tracing tokens.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 8;</code>
+     */
+    protected $header = null;
 
     /**
      * Constructor.
@@ -55,6 +62,9 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $identity
      *     @type string $request_id
      *     @type string $control
+     *     @type \Temporal\Api\Common\V1\Header $header
+     *           Headers that are passed with the signal to the processing workflow.
+     *           These can include things like auth or tracing tokens.
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +222,34 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->control = $var;
+
+        return $this;
+    }
+
+    /**
+     * Headers that are passed with the signal to the processing workflow.
+     * These can include things like auth or tracing tokens.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 8;</code>
+     * @return \Temporal\Api\Common\V1\Header
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * Headers that are passed with the signal to the processing workflow.
+     * These can include things like auth or tracing tokens.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 8;</code>
+     * @param \Temporal\Api\Common\V1\Header $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
+        $this->header = $var;
 
         return $this;
     }

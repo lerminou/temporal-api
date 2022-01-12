@@ -21,6 +21,13 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads query_args = 2;</code>
      */
     protected $query_args = null;
+    /**
+     * Headers that were passed by the caller of the query and copied by temporal 
+     * server into the workflow task.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 3;</code>
+     */
+    protected $header = null;
 
     /**
      * Constructor.
@@ -30,6 +37,9 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
      *
      *     @type string $query_type
      *     @type \Temporal\Api\Common\V1\Payloads $query_args
+     *     @type \Temporal\Api\Common\V1\Header $header
+     *           Headers that were passed by the caller of the query and copied by temporal 
+     *           server into the workflow task.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +87,34 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->query_args = $var;
+
+        return $this;
+    }
+
+    /**
+     * Headers that were passed by the caller of the query and copied by temporal 
+     * server into the workflow task.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 3;</code>
+     * @return \Temporal\Api\Common\V1\Header
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * Headers that were passed by the caller of the query and copied by temporal 
+     * server into the workflow task.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 3;</code>
+     * @param \Temporal\Api\Common\V1\Header $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
+        $this->header = $var;
 
         return $this;
     }

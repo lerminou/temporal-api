@@ -42,6 +42,14 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 history_shard_count = 6;</code>
      */
     protected $history_shard_count = 0;
+    /**
+     * Generated from protobuf field <code>string persistence_store = 7;</code>
+     */
+    protected $persistence_store = '';
+    /**
+     * Generated from protobuf field <code>string visibility_store = 8;</code>
+     */
+    protected $visibility_store = '';
 
     /**
      * Constructor.
@@ -57,6 +65,8 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Version\V1\VersionInfo $version_info
      *     @type string $cluster_name
      *     @type int $history_shard_count
+     *     @type string $persistence_store
+     *     @type string $visibility_store
      * }
      */
     public function __construct($data = NULL) {
@@ -198,6 +208,50 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->history_shard_count = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string persistence_store = 7;</code>
+     * @return string
+     */
+    public function getPersistenceStore()
+    {
+        return $this->persistence_store;
+    }
+
+    /**
+     * Generated from protobuf field <code>string persistence_store = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPersistenceStore($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->persistence_store = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string visibility_store = 8;</code>
+     * @return string
+     */
+    public function getVisibilityStore()
+    {
+        return $this->visibility_store;
+    }
+
+    /**
+     * Generated from protobuf field <code>string visibility_store = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVisibilityStore($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->visibility_store = $var;
 
         return $this;
     }

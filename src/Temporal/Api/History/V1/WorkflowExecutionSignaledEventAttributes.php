@@ -25,6 +25,13 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
+    /**
+     * Headers that were passed by the sender of the signal and copied by temporal 
+     * server into the workflow task.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 4;</code>
+     */
+    protected $header = null;
 
     /**
      * Constructor.
@@ -35,6 +42,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      *     @type string $signal_name
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *     @type string $identity
+     *     @type \Temporal\Api\Common\V1\Header $header
+     *           Headers that were passed by the sender of the signal and copied by temporal 
+     *           server into the workflow task.
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +114,34 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     {
         GPBUtil::checkString($var, True);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Headers that were passed by the sender of the signal and copied by temporal 
+     * server into the workflow task.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 4;</code>
+     * @return \Temporal\Api\Common\V1\Header
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * Headers that were passed by the sender of the signal and copied by temporal 
+     * server into the workflow task.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 4;</code>
+     * @param \Temporal\Api\Common\V1\Header $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
+        $this->header = $var;
 
         return $this;
     }

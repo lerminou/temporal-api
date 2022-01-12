@@ -16,9 +16,9 @@ class IndexedValueType
      */
     const INDEXED_VALUE_TYPE_UNSPECIFIED = 0;
     /**
-     * Generated from protobuf enum <code>INDEXED_VALUE_TYPE_STRING = 1;</code>
+     * Generated from protobuf enum <code>INDEXED_VALUE_TYPE_TEXT = 1;</code>
      */
-    const INDEXED_VALUE_TYPE_STRING = 1;
+    const INDEXED_VALUE_TYPE_TEXT = 1;
     /**
      * Generated from protobuf enum <code>INDEXED_VALUE_TYPE_KEYWORD = 2;</code>
      */
@@ -42,7 +42,7 @@ class IndexedValueType
 
     private static $valueToName = [
         self::INDEXED_VALUE_TYPE_UNSPECIFIED => 'INDEXED_VALUE_TYPE_UNSPECIFIED',
-        self::INDEXED_VALUE_TYPE_STRING => 'INDEXED_VALUE_TYPE_STRING',
+        self::INDEXED_VALUE_TYPE_TEXT => 'INDEXED_VALUE_TYPE_TEXT',
         self::INDEXED_VALUE_TYPE_KEYWORD => 'INDEXED_VALUE_TYPE_KEYWORD',
         self::INDEXED_VALUE_TYPE_INT => 'INDEXED_VALUE_TYPE_INT',
         self::INDEXED_VALUE_TYPE_DOUBLE => 'INDEXED_VALUE_TYPE_DOUBLE',

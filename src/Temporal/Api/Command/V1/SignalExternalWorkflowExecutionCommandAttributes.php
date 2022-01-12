@@ -37,6 +37,13 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      * Generated from protobuf field <code>bool child_workflow_only = 6;</code>
      */
     protected $child_workflow_only = false;
+    /**
+     * Headers that are passed by the workflow that is sending a signal to the external 
+     * workflow that is receiving this signal.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 7;</code>
+     */
+    protected $header = null;
 
     /**
      * Constructor.
@@ -50,6 +57,9 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *     @type string $control
      *     @type bool $child_workflow_only
+     *     @type \Temporal\Api\Common\V1\Header $header
+     *           Headers that are passed by the workflow that is sending a signal to the external 
+     *           workflow that is receiving this signal.
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +195,34 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     {
         GPBUtil::checkBool($var);
         $this->child_workflow_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * Headers that are passed by the workflow that is sending a signal to the external 
+     * workflow that is receiving this signal.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 7;</code>
+     * @return \Temporal\Api\Common\V1\Header
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * Headers that are passed by the workflow that is sending a signal to the external 
+     * workflow that is receiving this signal.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 7;</code>
+     * @param \Temporal\Api\Common\V1\Header $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
+        $this->header = $var;
 
         return $this;
     }
