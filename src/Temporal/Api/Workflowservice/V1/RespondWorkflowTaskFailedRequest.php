@@ -14,22 +14,33 @@ use Google\Protobuf\Internal\GPBUtil;
 class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The task token as received in `PollWorkflowTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      */
     protected $task_token = '';
     /**
+     * Why did the task fail? It's important to note that many of the variants in this enum cannot
+     * apply to worker responses. See the type's doc for more.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 2;</code>
      */
     protected $cause = 0;
     /**
+     * Failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 3;</code>
      */
     protected $failure = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      */
     protected $identity = '';
     /**
+     * Worker process' unique binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 5;</code>
      */
     protected $binary_checksum = '';
@@ -45,10 +56,16 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $task_token
+     *           The task token as received in `PollWorkflowTaskQueueResponse`
      *     @type int $cause
+     *           Why did the task fail? It's important to note that many of the variants in this enum cannot
+     *           apply to worker responses. See the type's doc for more.
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           Failure details
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type string $binary_checksum
+     *           Worker process' unique binary id
      *     @type string $namespace
      * }
      */
@@ -58,6 +75,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The task token as received in `PollWorkflowTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @return string
      */
@@ -67,6 +86,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The task token as received in `PollWorkflowTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @param string $var
      * @return $this
@@ -80,6 +101,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Why did the task fail? It's important to note that many of the variants in this enum cannot
+     * apply to worker responses. See the type's doc for more.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 2;</code>
      * @return int
      */
@@ -89,6 +113,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Why did the task fail? It's important to note that many of the variants in this enum cannot
+     * apply to worker responses. See the type's doc for more.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 2;</code>
      * @param int $var
      * @return $this
@@ -102,6 +129,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 3;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -111,6 +140,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 3;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -124,6 +155,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @return string
      */
@@ -133,6 +166,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @param string $var
      * @return $this
@@ -146,6 +181,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Worker process' unique binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 5;</code>
      * @return string
      */
@@ -155,6 +192,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Worker process' unique binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 5;</code>
      * @param string $var
      * @return $this

@@ -38,44 +38,45 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      */
     protected $input = null;
     /**
+     * Indicates how long the caller is willing to wait for activity completion. Limits how long
+     * retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
+     * not specified, defaults to the workflow execution timeout.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Indicates how long the caller is willing to wait for an activity completion.
-     * Limits for how long retries are happening. Either this or start_to_close_timeout_seconds must be specified.
-     * When not specified defaults to the workflow execution timeout.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7 [(.gogoproto.stdduration) = true];</code>
      */
     protected $schedule_to_close_timeout = null;
     /**
+     * Limits the time an activity task can stay in a task queue before a worker picks it up. This
+     * timeout is always non retryable, as all a retry would achieve is to put it back into the same
+     * queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     * specified.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Limits time an activity task can stay in a task queue before a worker picks it up.
-     * This timeout is always non retryable as all a retry would achieve is to put it back into the same queue.
-     * Defaults to schedule_to_close_timeout_seconds or workflow execution timeout if not specified.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8 [(.gogoproto.stdduration) = true];</code>
      */
     protected $schedule_to_start_timeout = null;
     /**
+     * Maximum time an activity is allowed to execute after being picked up by a worker. This
+     * timeout is always retryable. Either this or `schedule_to_close_timeout` must be specified.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Maximum time an activity is allowed to execute after a pick up by a worker.
-     * This timeout is always retryable. Either this or schedule_to_close_timeout_seconds must be specified.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9 [(.gogoproto.stdduration) = true];</code>
      */
     protected $start_to_close_timeout = null;
     /**
-     * Maximum time between successful worker heartbeats.
+     * Maximum permitted time between successful worker heartbeats.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10 [(.gogoproto.stdduration) = true];</code>
      */
     protected $heartbeat_timeout = null;
     /**
-     * Activities are provided by a default retry policy controlled through the service dynamic configuration.
-     * Retries are happening up to schedule_to_close_timeout.
-     * To disable retries set retry_policy.maximum_attempts to 1.
+     * Activities are provided by a default retry policy which is controlled through the service's
+     * dynamic configuration. Retries will be attempted until `schedule_to_close_timeout` has
+     * elapsed. To disable retries set retry_policy.maximum_attempts to 1.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 11;</code>
      */
@@ -94,28 +95,29 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *     @type \Google\Protobuf\Duration $schedule_to_close_timeout
+     *           Indicates how long the caller is willing to wait for activity completion. Limits how long
+     *           retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
+     *           not specified, defaults to the workflow execution timeout.
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
-     *           Indicates how long the caller is willing to wait for an activity completion.
-     *           Limits for how long retries are happening. Either this or start_to_close_timeout_seconds must be specified.
-     *           When not specified defaults to the workflow execution timeout.
      *     @type \Google\Protobuf\Duration $schedule_to_start_timeout
+     *           Limits the time an activity task can stay in a task queue before a worker picks it up. This
+     *           timeout is always non retryable, as all a retry would achieve is to put it back into the same
+     *           queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     *           specified.
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
-     *           Limits time an activity task can stay in a task queue before a worker picks it up.
-     *           This timeout is always non retryable as all a retry would achieve is to put it back into the same queue.
-     *           Defaults to schedule_to_close_timeout_seconds or workflow execution timeout if not specified.
      *     @type \Google\Protobuf\Duration $start_to_close_timeout
+     *           Maximum time an activity is allowed to execute after being picked up by a worker. This
+     *           timeout is always retryable. Either this or `schedule_to_close_timeout` must be specified.
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
-     *           Maximum time an activity is allowed to execute after a pick up by a worker.
-     *           This timeout is always retryable. Either this or schedule_to_close_timeout_seconds must be specified.
      *     @type \Google\Protobuf\Duration $heartbeat_timeout
-     *           Maximum time between successful worker heartbeats.
+     *           Maximum permitted time between successful worker heartbeats.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
-     *           Activities are provided by a default retry policy controlled through the service dynamic configuration.
-     *           Retries are happening up to schedule_to_close_timeout.
-     *           To disable retries set retry_policy.maximum_attempts to 1.
+     *           Activities are provided by a default retry policy which is controlled through the service's
+     *           dynamic configuration. Retries will be attempted until `schedule_to_close_timeout` has
+     *           elapsed. To disable retries set retry_policy.maximum_attempts to 1.
      * }
      */
     public function __construct($data = NULL) {
@@ -256,11 +258,11 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Indicates how long the caller is willing to wait for activity completion. Limits how long
+     * retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
+     * not specified, defaults to the workflow execution timeout.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Indicates how long the caller is willing to wait for an activity completion.
-     * Limits for how long retries are happening. Either this or start_to_close_timeout_seconds must be specified.
-     * When not specified defaults to the workflow execution timeout.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7 [(.gogoproto.stdduration) = true];</code>
      * @return \Google\Protobuf\Duration
@@ -271,11 +273,11 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Indicates how long the caller is willing to wait for activity completion. Limits how long
+     * retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
+     * not specified, defaults to the workflow execution timeout.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Indicates how long the caller is willing to wait for an activity completion.
-     * Limits for how long retries are happening. Either this or start_to_close_timeout_seconds must be specified.
-     * When not specified defaults to the workflow execution timeout.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7 [(.gogoproto.stdduration) = true];</code>
      * @param \Google\Protobuf\Duration $var
@@ -290,11 +292,12 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Limits the time an activity task can stay in a task queue before a worker picks it up. This
+     * timeout is always non retryable, as all a retry would achieve is to put it back into the same
+     * queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     * specified.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Limits time an activity task can stay in a task queue before a worker picks it up.
-     * This timeout is always non retryable as all a retry would achieve is to put it back into the same queue.
-     * Defaults to schedule_to_close_timeout_seconds or workflow execution timeout if not specified.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8 [(.gogoproto.stdduration) = true];</code>
      * @return \Google\Protobuf\Duration
@@ -305,11 +308,12 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Limits the time an activity task can stay in a task queue before a worker picks it up. This
+     * timeout is always non retryable, as all a retry would achieve is to put it back into the same
+     * queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     * specified.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Limits time an activity task can stay in a task queue before a worker picks it up.
-     * This timeout is always non retryable as all a retry would achieve is to put it back into the same queue.
-     * Defaults to schedule_to_close_timeout_seconds or workflow execution timeout if not specified.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8 [(.gogoproto.stdduration) = true];</code>
      * @param \Google\Protobuf\Duration $var
@@ -324,10 +328,10 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Maximum time an activity is allowed to execute after being picked up by a worker. This
+     * timeout is always retryable. Either this or `schedule_to_close_timeout` must be specified.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Maximum time an activity is allowed to execute after a pick up by a worker.
-     * This timeout is always retryable. Either this or schedule_to_close_timeout_seconds must be specified.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9 [(.gogoproto.stdduration) = true];</code>
      * @return \Google\Protobuf\Duration
@@ -338,10 +342,10 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Maximum time an activity is allowed to execute after being picked up by a worker. This
+     * timeout is always retryable. Either this or `schedule_to_close_timeout` must be specified.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
-     * Maximum time an activity is allowed to execute after a pick up by a worker.
-     * This timeout is always retryable. Either this or schedule_to_close_timeout_seconds must be specified.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9 [(.gogoproto.stdduration) = true];</code>
      * @param \Google\Protobuf\Duration $var
@@ -356,7 +360,7 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Maximum time between successful worker heartbeats.
+     * Maximum permitted time between successful worker heartbeats.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10 [(.gogoproto.stdduration) = true];</code>
      * @return \Google\Protobuf\Duration
@@ -367,7 +371,7 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Maximum time between successful worker heartbeats.
+     * Maximum permitted time between successful worker heartbeats.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10 [(.gogoproto.stdduration) = true];</code>
      * @param \Google\Protobuf\Duration $var
@@ -382,9 +386,9 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Activities are provided by a default retry policy controlled through the service dynamic configuration.
-     * Retries are happening up to schedule_to_close_timeout.
-     * To disable retries set retry_policy.maximum_attempts to 1.
+     * Activities are provided by a default retry policy which is controlled through the service's
+     * dynamic configuration. Retries will be attempted until `schedule_to_close_timeout` has
+     * elapsed. To disable retries set retry_policy.maximum_attempts to 1.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 11;</code>
      * @return \Temporal\Api\Common\V1\RetryPolicy
@@ -395,9 +399,9 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Activities are provided by a default retry policy controlled through the service dynamic configuration.
-     * Retries are happening up to schedule_to_close_timeout.
-     * To disable retries set retry_policy.maximum_attempts to 1.
+     * Activities are provided by a default retry policy which is controlled through the service's
+     * dynamic configuration. Retries will be attempted until `schedule_to_close_timeout` has
+     * elapsed. To disable retries set retry_policy.maximum_attempts to 1.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 11;</code>
      * @param \Temporal\Api\Common\V1\RetryPolicy $var

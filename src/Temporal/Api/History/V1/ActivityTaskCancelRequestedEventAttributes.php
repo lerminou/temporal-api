@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel request corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -29,7 +33,9 @@ class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Intern
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $scheduled_event_id
+     *           The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel request corresponds to
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      * }
      */
     public function __construct($data = NULL) {
@@ -38,6 +44,8 @@ class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel request corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @return int|string
      */
@@ -47,6 +55,8 @@ class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel request corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -60,6 +70,8 @@ class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @return int|string
      */
@@ -69,6 +81,8 @@ class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @param int|string $var
      * @return $this

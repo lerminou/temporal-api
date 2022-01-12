@@ -72,6 +72,8 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
      */
     protected $retry_policy = null;
     /**
+     * Establish a cron schedule for the child workflow.
+     *
      * Generated from protobuf field <code>string cron_schedule = 13;</code>
      */
     protected $cron_schedule = '';
@@ -112,6 +114,7 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
      *           Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
      *     @type string $cron_schedule
+     *           Establish a cron schedule for the child workflow.
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
@@ -407,6 +410,8 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
     }
 
     /**
+     * Establish a cron schedule for the child workflow.
+     *
      * Generated from protobuf field <code>string cron_schedule = 13;</code>
      * @return string
      */
@@ -416,6 +421,8 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
     }
 
     /**
+     * Establish a cron schedule for the child workflow.
+     *
      * Generated from protobuf field <code>string cron_schedule = 13;</code>
      * @param string $var
      * @return $this

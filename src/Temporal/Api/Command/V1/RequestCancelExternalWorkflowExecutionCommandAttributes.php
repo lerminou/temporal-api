@@ -26,10 +26,16 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      */
     protected $run_id = '';
     /**
+     * Deprecated.
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      */
     protected $control = '';
     /**
+     * Set this to true if the workflow being cancelled is a child of the workflow originating this
+     * command. The request will be rejected if it is set to true and the target workflow is *not*
+     * a child of the requesting workflow.
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 5;</code>
      */
     protected $child_workflow_only = false;
@@ -44,7 +50,11 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      *     @type string $workflow_id
      *     @type string $run_id
      *     @type string $control
+     *           Deprecated.
      *     @type bool $child_workflow_only
+     *           Set this to true if the workflow being cancelled is a child of the workflow originating this
+     *           command. The request will be rejected if it is set to true and the target workflow is *not*
+     *           a child of the requesting workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -119,6 +129,8 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
     }
 
     /**
+     * Deprecated.
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      * @return string
      */
@@ -128,6 +140,8 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
     }
 
     /**
+     * Deprecated.
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      * @param string $var
      * @return $this
@@ -141,6 +155,10 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
     }
 
     /**
+     * Set this to true if the workflow being cancelled is a child of the workflow originating this
+     * command. The request will be rejected if it is set to true and the target workflow is *not*
+     * a child of the requesting workflow.
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 5;</code>
      * @return bool
      */
@@ -150,6 +168,10 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
     }
 
     /**
+     * Set this to true if the workflow being cancelled is a child of the workflow originating this
+     * command. The request will be rejected if it is set to true and the target workflow is *not*
+     * a child of the requesting workflow.
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 5;</code>
      * @param bool $var
      * @return $this

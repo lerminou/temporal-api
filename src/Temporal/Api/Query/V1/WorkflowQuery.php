@@ -9,15 +9,21 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * See https://docs.temporal.io/docs/concepts/queries/
+ *
  * Generated from protobuf message <code>temporal.api.query.v1.WorkflowQuery</code>
  */
 class WorkflowQuery extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The workflow-author-defined identifier of the query. Typically a function name.
+     *
      * Generated from protobuf field <code>string query_type = 1;</code>
      */
     protected $query_type = '';
     /**
+     * Serialized arguments that will be provided to the query handler.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads query_args = 2;</code>
      */
     protected $query_args = null;
@@ -36,7 +42,9 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $query_type
+     *           The workflow-author-defined identifier of the query. Typically a function name.
      *     @type \Temporal\Api\Common\V1\Payloads $query_args
+     *           Serialized arguments that will be provided to the query handler.
      *     @type \Temporal\Api\Common\V1\Header $header
      *           Headers that were passed by the caller of the query and copied by temporal 
      *           server into the workflow task.
@@ -48,6 +56,8 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The workflow-author-defined identifier of the query. Typically a function name.
+     *
      * Generated from protobuf field <code>string query_type = 1;</code>
      * @return string
      */
@@ -57,6 +67,8 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The workflow-author-defined identifier of the query. Typically a function name.
+     *
      * Generated from protobuf field <code>string query_type = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +82,8 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized arguments that will be provided to the query handler.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads query_args = 2;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -79,6 +93,8 @@ class WorkflowQuery extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized arguments that will be provided to the query handler.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads query_args = 2;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this

@@ -7,6 +7,8 @@ namespace Temporal\Api\Enums\V1;
 use UnexpectedValueException;
 
 /**
+ * Defines how child workflows will react to their parent completing
+ *
  * Protobuf type <code>temporal.api.enums.v1.ParentClosePolicy</code>
  */
 class ParentClosePolicy
@@ -16,19 +18,19 @@ class ParentClosePolicy
      */
     const PARENT_CLOSE_POLICY_UNSPECIFIED = 0;
     /**
-     * Terminate means terminating the child workflow.
+     * The child workflow will also terminate
      *
      * Generated from protobuf enum <code>PARENT_CLOSE_POLICY_TERMINATE = 1;</code>
      */
     const PARENT_CLOSE_POLICY_TERMINATE = 1;
     /**
-     * Abandon means not doing anything on the child workflow.
+     * The child workflow will do nothing
      *
      * Generated from protobuf enum <code>PARENT_CLOSE_POLICY_ABANDON = 2;</code>
      */
     const PARENT_CLOSE_POLICY_ABANDON = 2;
     /**
-     * Cancel means requesting cancellation on the child workflow.
+     * Cancellation will be requested of the child workflow
      *
      * Generated from protobuf enum <code>PARENT_CLOSE_POLICY_REQUEST_CANCEL = 3;</code>
      */

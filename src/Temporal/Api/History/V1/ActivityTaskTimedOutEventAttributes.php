@@ -14,16 +14,21 @@ use Google\Protobuf\Internal\GPBUtil;
 class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
-     * For retry activity, it may have a failure before timeout. It is stored as `cause` in `failure`.
+     * If this activity had failed, was retried, and then timed out, that failure is stored as the
+     * `cause` in here.
      *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      */
     protected $failure = null;
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this timeout corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this timeout corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      */
     protected $started_event_id = 0;
@@ -39,9 +44,12 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Failure\V1\Failure $failure
-     *           For retry activity, it may have a failure before timeout. It is stored as `cause` in `failure`.
+     *           If this activity had failed, was retried, and then timed out, that failure is stored as the
+     *           `cause` in here.
      *     @type int|string $scheduled_event_id
+     *           The id of the `ACTIVITY_TASK_SCHEDULED` event this timeout corresponds to
      *     @type int|string $started_event_id
+     *           The id of the `ACTIVITY_TASK_STARTED` event this timeout corresponds to
      *     @type int $retry_state
      * }
      */
@@ -51,7 +59,8 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * For retry activity, it may have a failure before timeout. It is stored as `cause` in `failure`.
+     * If this activity had failed, was retried, and then timed out, that failure is stored as the
+     * `cause` in here.
      *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      * @return \Temporal\Api\Failure\V1\Failure
@@ -62,7 +71,8 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * For retry activity, it may have a failure before timeout. It is stored as `cause` in `failure`.
+     * If this activity had failed, was retried, and then timed out, that failure is stored as the
+     * `cause` in here.
      *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
@@ -77,6 +87,8 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this timeout corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      * @return int|string
      */
@@ -86,6 +98,8 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this timeout corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -99,6 +113,8 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this timeout corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      * @return int|string
      */
@@ -108,6 +124,8 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this timeout corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      * @param int|string $var
      * @return $this

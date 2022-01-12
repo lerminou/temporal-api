@@ -22,6 +22,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_queue = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
@@ -39,6 +41,7 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueueMetadata $task_queue_metadata
      * }
      */
@@ -92,6 +95,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -101,6 +106,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this

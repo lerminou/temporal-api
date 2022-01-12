@@ -9,6 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Identifies a specific workflow within a namespace. Practically speaking, because run_id is a
+ * uuid, a workflow execution is globally unique. Note that many commands allow specifying an empty
+ * run id as a way of saying "target the latest run of the workflow".
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.WorkflowExecution</code>
  */
 class WorkflowExecution extends \Google\Protobuf\Internal\Message

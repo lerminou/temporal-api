@@ -14,14 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * Identity of the worker who picked up this task
+     *
      * Generated from protobuf field <code>string identity = 2;</code>
      */
     protected $identity = '';
     /**
+     * TODO: ? Appears unused?
+     *
      * Generated from protobuf field <code>string request_id = 3;</code>
      */
     protected $request_id = '';
@@ -33,8 +39,11 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $scheduled_event_id
+     *           The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
      *     @type string $identity
+     *           Identity of the worker who picked up this task
      *     @type string $request_id
+     *           TODO: ? Appears unused?
      * }
      */
     public function __construct($data = NULL) {
@@ -43,6 +52,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @return int|string
      */
@@ -52,6 +63,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -65,6 +78,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Identity of the worker who picked up this task
+     *
      * Generated from protobuf field <code>string identity = 2;</code>
      * @return string
      */
@@ -74,6 +89,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Identity of the worker who picked up this task
+     *
      * Generated from protobuf field <code>string identity = 2;</code>
      * @param string $var
      * @return $this
@@ -87,6 +104,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * TODO: ? Appears unused?
+     *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @return string
      */
@@ -96,6 +115,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * TODO: ? Appears unused?
+     *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @param string $var
      * @return $this

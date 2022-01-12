@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The run ID of the new workflow started by this continue-as-new
+     *
      * Generated from protobuf field <code>string new_execution_run_id = 1;</code>
      */
     protected $new_execution_run_id = '';
@@ -30,7 +32,6 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      */
     protected $input = null;
     /**
-     * workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      * Timeout of a single workflow run.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5 [(.gogoproto.stdduration) = true];</code>
@@ -43,10 +44,14 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      */
     protected $workflow_task_timeout = null;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 7;</code>
      */
     protected $workflow_task_completed_event_id = 0;
     /**
+     * TODO: How and is this used?
+     *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8 [(.gogoproto.stdduration) = true];</code>
      */
     protected $backoff_start_interval = null;
@@ -55,10 +60,17 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      */
     protected $initiator = 0;
     /**
+     * TODO: David are these right?
+     * Deprecated. If a workflow's retry policy would cause a new run to start when the current one
+     * has failed, this field would be populated with that failure. Now (when supported by server
+     * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10;</code>
      */
     protected $failure = null;
     /**
+     * TODO: Is this the result of *this* workflow as it continued-as-new?
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 11;</code>
      */
     protected $last_completion_result = null;
@@ -82,19 +94,26 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      *     Optional. Data for populating the Message object.
      *
      *     @type string $new_execution_run_id
+     *           The run ID of the new workflow started by this continue-as-new
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *     @type \Google\Protobuf\Duration $workflow_run_timeout
-     *           workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      *           Timeout of a single workflow run.
      *     @type \Google\Protobuf\Duration $workflow_task_timeout
      *           Timeout of a single workflow task.
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type \Google\Protobuf\Duration $backoff_start_interval
+     *           TODO: How and is this used?
      *     @type int $initiator
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           TODO: David are these right?
+     *           Deprecated. If a workflow's retry policy would cause a new run to start when the current one
+     *           has failed, this field would be populated with that failure. Now (when supported by server
+     *           and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
      *     @type \Temporal\Api\Common\V1\Payloads $last_completion_result
+     *           TODO: Is this the result of *this* workflow as it continued-as-new?
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
@@ -106,6 +125,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * The run ID of the new workflow started by this continue-as-new
+     *
      * Generated from protobuf field <code>string new_execution_run_id = 1;</code>
      * @return string
      */
@@ -115,6 +136,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * The run ID of the new workflow started by this continue-as-new
+     *
      * Generated from protobuf field <code>string new_execution_run_id = 1;</code>
      * @param string $var
      * @return $this
@@ -194,7 +217,6 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      * Timeout of a single workflow run.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5 [(.gogoproto.stdduration) = true];</code>
@@ -206,7 +228,6 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      * Timeout of a single workflow run.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5 [(.gogoproto.stdduration) = true];</code>
@@ -248,6 +269,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 7;</code>
      * @return int|string
      */
@@ -257,6 +280,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 7;</code>
      * @param int|string $var
      * @return $this
@@ -270,6 +295,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * TODO: How and is this used?
+     *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8 [(.gogoproto.stdduration) = true];</code>
      * @return \Google\Protobuf\Duration
      */
@@ -279,6 +306,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * TODO: How and is this used?
+     *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8 [(.gogoproto.stdduration) = true];</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
@@ -314,6 +343,11 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * TODO: David are these right?
+     * Deprecated. If a workflow's retry policy would cause a new run to start when the current one
+     * has failed, this field would be populated with that failure. Now (when supported by server
+     * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -323,6 +357,11 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * TODO: David are these right?
+     * Deprecated. If a workflow's retry policy would cause a new run to start when the current one
+     * has failed, this field would be populated with that failure. Now (when supported by server
+     * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -336,6 +375,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * TODO: Is this the result of *this* workflow as it continued-as-new?
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 11;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -345,6 +386,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * TODO: Is this the result of *this* workflow as it continued-as-new?
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 11;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this

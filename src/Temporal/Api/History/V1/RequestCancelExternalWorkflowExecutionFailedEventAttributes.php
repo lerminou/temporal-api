@@ -18,10 +18,14 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
      */
     protected $cause = 0;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      */
     protected $workflow_task_completed_event_id = 0;
     /**
+     * namespace of the workflow which failed to cancel
+     *
      * Generated from protobuf field <code>string namespace = 3;</code>
      */
     protected $namespace = '';
@@ -30,10 +34,15 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
      */
     protected $workflow_execution = null;
     /**
+     * id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this failure
+     * corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 5;</code>
      */
     protected $initiated_event_id = 0;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      */
     protected $control = '';
@@ -46,10 +55,15 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
      *
      *     @type int $cause
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type string $namespace
+     *           namespace of the workflow which failed to cancel
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type int|string $initiated_event_id
+     *           id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this failure
+     *           corresponds to
      *     @type string $control
+     *           Deprecated
      * }
      */
     public function __construct($data = NULL) {
@@ -80,6 +94,8 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @return int|string
      */
@@ -89,6 +105,8 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -102,6 +120,8 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * namespace of the workflow which failed to cancel
+     *
      * Generated from protobuf field <code>string namespace = 3;</code>
      * @return string
      */
@@ -111,6 +131,8 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * namespace of the workflow which failed to cancel
+     *
      * Generated from protobuf field <code>string namespace = 3;</code>
      * @param string $var
      * @return $this
@@ -146,6 +168,9 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this failure
+     * corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 5;</code>
      * @return int|string
      */
@@ -155,6 +180,9 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this failure
+     * corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 5;</code>
      * @param int|string $var
      * @return $this
@@ -168,6 +196,8 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      * @return string
      */
@@ -177,6 +207,8 @@ class RequestCancelExternalWorkflowExecutionFailedEventAttributes extends \Googl
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      * @param string $var
      * @return $this

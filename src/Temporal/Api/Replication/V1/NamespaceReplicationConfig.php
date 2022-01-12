@@ -21,6 +21,10 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.replication.v1.ClusterReplicationConfig clusters = 2;</code>
      */
     private $clusters;
+    /**
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ReplicationState state = 3;</code>
+     */
+    protected $state = 0;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type string $active_cluster_name
      *     @type \Temporal\Api\Replication\V1\ClusterReplicationConfig[]|\Google\Protobuf\Internal\RepeatedField $clusters
+     *     @type int $state
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Replication\V1\ClusterReplicationConfig::class);
         $this->clusters = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ReplicationState state = 3;</code>
+     * @return int
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ReplicationState state = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ReplicationState::class);
+        $this->state = $var;
 
         return $this;
     }

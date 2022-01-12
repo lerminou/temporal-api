@@ -14,18 +14,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Serialized results of the activity. IE: The return value of the activity function
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads result = 1;</code>
      */
     protected $result = null;
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this completion corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this completion corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      */
     protected $started_event_id = 0;
     /**
+     * id of the worker that completed this task
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      */
     protected $identity = '';
@@ -37,9 +45,13 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Common\V1\Payloads $result
+     *           Serialized results of the activity. IE: The return value of the activity function
      *     @type int|string $scheduled_event_id
+     *           The id of the `ACTIVITY_TASK_SCHEDULED` event this completion corresponds to
      *     @type int|string $started_event_id
+     *           The id of the `ACTIVITY_TASK_STARTED` event this completion corresponds to
      *     @type string $identity
+     *           id of the worker that completed this task
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +60,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Serialized results of the activity. IE: The return value of the activity function
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads result = 1;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -57,6 +71,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Serialized results of the activity. IE: The return value of the activity function
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads result = 1;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -70,6 +86,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this completion corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      * @return int|string
      */
@@ -79,6 +97,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this completion corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -92,6 +112,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this completion corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      * @return int|string
      */
@@ -101,6 +123,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this completion corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      * @param int|string $var
      * @return $this
@@ -114,6 +138,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * id of the worker that completed this task
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @return string
      */
@@ -123,6 +149,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * id of the worker that completed this task
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @param string $var
      * @return $this

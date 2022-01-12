@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * User provided reason for requesting cancellation
+     *
      * Generated from protobuf field <code>string cause = 1;</code>
      */
     protected $cause = '';
     /**
+     * TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
+     *
      * Generated from protobuf field <code>int64 external_initiated_event_id = 2;</code>
      */
     protected $external_initiated_event_id = 0;
@@ -26,6 +30,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      */
     protected $external_workflow_execution = null;
     /**
+     * id of the worker or client who requested this cancel
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      */
     protected $identity = '';
@@ -37,9 +43,12 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      *     Optional. Data for populating the Message object.
      *
      *     @type string $cause
+     *           User provided reason for requesting cancellation
      *     @type int|string $external_initiated_event_id
+     *           TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $external_workflow_execution
      *     @type string $identity
+     *           id of the worker or client who requested this cancel
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +57,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * User provided reason for requesting cancellation
+     *
      * Generated from protobuf field <code>string cause = 1;</code>
      * @return string
      */
@@ -57,6 +68,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * User provided reason for requesting cancellation
+     *
      * Generated from protobuf field <code>string cause = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +83,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
+     *
      * Generated from protobuf field <code>int64 external_initiated_event_id = 2;</code>
      * @return int|string
      */
@@ -79,6 +94,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
+     *
      * Generated from protobuf field <code>int64 external_initiated_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -114,6 +131,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * id of the worker or client who requested this cancel
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @return string
      */
@@ -123,6 +142,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * id of the worker or client who requested this cancel
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @param string $var
      * @return $this

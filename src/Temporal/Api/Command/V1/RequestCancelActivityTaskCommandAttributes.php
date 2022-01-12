@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class RequestCancelActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The `ACTIVITY_TASK_SCHEDULED` event id for the activity being cancelled.
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      */
     protected $scheduled_event_id = 0;
@@ -25,6 +27,7 @@ class RequestCancelActivityTaskCommandAttributes extends \Google\Protobuf\Intern
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $scheduled_event_id
+     *           The `ACTIVITY_TASK_SCHEDULED` event id for the activity being cancelled.
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class RequestCancelActivityTaskCommandAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * The `ACTIVITY_TASK_SCHEDULED` event id for the activity being cancelled.
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @return int|string
      */
@@ -42,6 +47,8 @@ class RequestCancelActivityTaskCommandAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * The `ACTIVITY_TASK_SCHEDULED` event id for the activity being cancelled.
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @param int|string $var
      * @return $this

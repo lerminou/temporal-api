@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Serialized result of workflow completion (ie: The return value of the workflow function)
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads result = 1;</code>
      */
     protected $result = null;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -35,7 +39,9 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Common\V1\Payloads $result
+     *           Serialized result of workflow completion (ie: The return value of the workflow function)
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type string $new_execution_run_id
      *           If another run is started by cron, this contains the new run id.
      * }
@@ -46,6 +52,8 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
     }
 
     /**
+     * Serialized result of workflow completion (ie: The return value of the workflow function)
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads result = 1;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -55,6 +63,8 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
     }
 
     /**
+     * Serialized result of workflow completion (ie: The return value of the workflow function)
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads result = 1;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -68,6 +78,8 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @return int|string
      */
@@ -77,6 +89,8 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @param int|string $var
      * @return $this

@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * See `Payload`
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.Payloads</code>
  */
 class Payloads extends \Google\Protobuf\Internal\Message

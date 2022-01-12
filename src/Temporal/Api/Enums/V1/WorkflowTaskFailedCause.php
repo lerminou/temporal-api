@@ -7,6 +7,9 @@ namespace Temporal\Api\Enums\V1;
 use UnexpectedValueException;
 
 /**
+ * Workflow tasks can fail for various reasons. Note that some of these reasons can only originate
+ * from the server, and some of them can only originate from the SDK/worker.
+ *
  * Protobuf type <code>temporal.api.enums.v1.WorkflowTaskFailedCause</code>
  */
 class WorkflowTaskFailedCause
@@ -16,6 +19,10 @@ class WorkflowTaskFailedCause
      */
     const WORKFLOW_TASK_FAILED_CAUSE_UNSPECIFIED = 0;
     /**
+     * Between starting and completing the workflow task (with a workflow completion command), some
+     * new command (like a signal) was processed into workflow history. The outstanding task will be
+     * failed with this reason, and a worker must pick up a new task.
+     *
      * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_UNHANDLED_COMMAND = 1;</code>
      */
     const WORKFLOW_TASK_FAILED_CAUSE_UNHANDLED_COMMAND = 1;
@@ -64,6 +71,9 @@ class WorkflowTaskFailedCause
      */
     const WORKFLOW_TASK_FAILED_CAUSE_START_TIMER_DUPLICATE_ID = 12;
     /**
+     * The worker wishes to fail the task and have the next one be generated on a normal, not sticky
+     * queue. Generally workers should prefer to use the explicit `ResetStickyTaskQueue` RPC call.
+     *
      * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_RESET_STICKY_TASK_QUEUE = 13;</code>
      */
     const WORKFLOW_TASK_FAILED_CAUSE_RESET_STICKY_TASK_QUEUE = 13;
@@ -108,6 +118,9 @@ class WorkflowTaskFailedCause
      */
     const WORKFLOW_TASK_FAILED_CAUSE_BAD_SEARCH_ATTRIBUTES = 23;
     /**
+     * The worker encountered a mismatch while replaying history between what was expected, and
+     * what the workflow code actually did.
+     *
      * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_NON_DETERMINISTIC_ERROR = 24;</code>
      */
     const WORKFLOW_TASK_FAILED_CAUSE_NON_DETERMINISTIC_ERROR = 24;

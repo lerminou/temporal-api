@@ -16,14 +16,20 @@ class ContinueAsNewInitiator
      */
     const CONTINUE_AS_NEW_INITIATOR_UNSPECIFIED = 0;
     /**
+     * The workflow itself requested to continue as new
+     *
      * Generated from protobuf enum <code>CONTINUE_AS_NEW_INITIATOR_WORKFLOW = 1;</code>
      */
     const CONTINUE_AS_NEW_INITIATOR_WORKFLOW = 1;
     /**
+     * The workflow continued as new because it is retrying
+     *
      * Generated from protobuf enum <code>CONTINUE_AS_NEW_INITIATOR_RETRY = 2;</code>
      */
     const CONTINUE_AS_NEW_INITIATOR_RETRY = 2;
     /**
+     * The workflow continued as new because cron has triggered a new execution
+     *
      * Generated from protobuf enum <code>CONTINUE_AS_NEW_INITIATOR_CRON_SCHEDULE = 3;</code>
      */
     const CONTINUE_AS_NEW_INITIATOR_CRON_SCHEDULE = 3;

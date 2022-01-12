@@ -9,6 +9,10 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Represents some binary (byte array) data (ex: activity input parameters or workflow result) with
+ * metadata which describes this binary data (format, encoding, encryption, etc). Serialization
+ * of the data may be user-defined.
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.Payload</code>
  */
 class Payload extends \Google\Protobuf\Internal\Message

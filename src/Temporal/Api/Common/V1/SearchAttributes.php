@@ -9,6 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * A user-defined set of *indexed* fields that are used/exposed when listing/searching workflows.
+ * The payload is not serialized in a user-defined way.
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.SearchAttributes</code>
  */
 class SearchAttributes extends \Google\Protobuf\Internal\Message

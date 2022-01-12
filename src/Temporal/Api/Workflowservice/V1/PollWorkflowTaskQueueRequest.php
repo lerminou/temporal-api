@@ -22,10 +22,14 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_queue = null;
     /**
+     * The identity of the worker/client who is polling this task queue
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
     /**
+     * Each worker process should provide an ID unique to the specific set of code it is running
+     *
      * Generated from protobuf field <code>string binary_checksum = 4;</code>
      */
     protected $binary_checksum = '';
@@ -39,7 +43,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type string $identity
+     *           The identity of the worker/client who is polling this task queue
      *     @type string $binary_checksum
+     *           Each worker process should provide an ID unique to the specific set of code it is running
      * }
      */
     public function __construct($data = NULL) {
@@ -92,6 +98,8 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client who is polling this task queue
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -101,6 +109,8 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client who is polling this task queue
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this
@@ -114,6 +124,8 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Each worker process should provide an ID unique to the specific set of code it is running
+     *
      * Generated from protobuf field <code>string binary_checksum = 4;</code>
      * @return string
      */
@@ -123,6 +135,8 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Each worker process should provide an ID unique to the specific set of code it is running
+     *
      * Generated from protobuf field <code>string binary_checksum = 4;</code>
      * @param string $var
      * @return $this

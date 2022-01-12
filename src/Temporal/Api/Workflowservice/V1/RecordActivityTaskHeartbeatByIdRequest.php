@@ -14,26 +14,38 @@ use Google\Protobuf\Internal\GPBUtil;
 class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Namespace of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      */
     protected $namespace = '';
     /**
+     * Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      */
     protected $workflow_id = '';
     /**
+     * Run Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string run_id = 3;</code>
      */
     protected $run_id = '';
     /**
+     * Id of the activity we're heartbeating
+     *
      * Generated from protobuf field <code>string activity_id = 4;</code>
      */
     protected $activity_id = '';
     /**
+     * Arbitrary data, of which the most recent call is kept, to store for this activity
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 5;</code>
      */
     protected $details = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 6;</code>
      */
     protected $identity = '';
@@ -45,11 +57,17 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Namespace of the workflow which scheduled this activity
      *     @type string $workflow_id
+     *           Id of the workflow which scheduled this activity
      *     @type string $run_id
+     *           Run Id of the workflow which scheduled this activity
      *     @type string $activity_id
+     *           Id of the activity we're heartbeating
      *     @type \Temporal\Api\Common\V1\Payloads $details
+     *           Arbitrary data, of which the most recent call is kept, to store for this activity
      *     @type string $identity
+     *           The identity of the worker/client
      * }
      */
     public function __construct($data = NULL) {
@@ -58,6 +76,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Namespace of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @return string
      */
@@ -67,6 +87,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Namespace of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @param string $var
      * @return $this
@@ -80,6 +102,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @return string
      */
@@ -89,6 +113,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @param string $var
      * @return $this
@@ -102,6 +128,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Run Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @return string
      */
@@ -111,6 +139,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Run Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @param string $var
      * @return $this
@@ -124,6 +154,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Id of the activity we're heartbeating
+     *
      * Generated from protobuf field <code>string activity_id = 4;</code>
      * @return string
      */
@@ -133,6 +165,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Id of the activity we're heartbeating
+     *
      * Generated from protobuf field <code>string activity_id = 4;</code>
      * @param string $var
      * @return $this
@@ -146,6 +180,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Arbitrary data, of which the most recent call is kept, to store for this activity
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 5;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -155,6 +191,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Arbitrary data, of which the most recent call is kept, to store for this activity
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 5;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -168,6 +206,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 6;</code>
      * @return string
      */
@@ -177,6 +217,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 6;</code>
      * @param string $var
      * @return $this

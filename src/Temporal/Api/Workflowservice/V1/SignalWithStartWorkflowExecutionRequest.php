@@ -26,10 +26,14 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      */
     protected $workflow_type = null;
     /**
+     * The task queue to start this workflow on, if it will be started
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 4;</code>
      */
     protected $task_queue = null;
     /**
+     * Serialized arguments to the workflow. These are passed as arguments to the workflow function.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      */
     protected $input = null;
@@ -52,10 +56,14 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      */
     protected $workflow_task_timeout = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 9;</code>
      */
     protected $identity = '';
     /**
+     * Used to de-dupe signal w/ start requests
+     *
      * Generated from protobuf field <code>string request_id = 10;</code>
      */
     protected $request_id = '';
@@ -64,24 +72,32 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      */
     protected $workflow_id_reuse_policy = 0;
     /**
+     * The workflow author-defined name of the signal to send to the workflow
+     *
      * Generated from protobuf field <code>string signal_name = 12;</code>
      */
     protected $signal_name = '';
     /**
+     * Serialized value(s) to provide with the signal
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads signal_input = 13;</code>
      */
     protected $signal_input = null;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 14;</code>
      */
     protected $control = '';
     /**
-     * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * Retry policy for the workflow Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 15;</code>
      */
     protected $retry_policy = null;
     /**
+     * See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
+     *
      * Generated from protobuf field <code>string cron_schedule = 16;</code>
      */
     protected $cron_schedule = '';
@@ -108,7 +124,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      *     @type string $workflow_id
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
+     *           The task queue to start this workflow on, if it will be started
      *     @type \Temporal\Api\Common\V1\Payloads $input
+     *           Serialized arguments to the workflow. These are passed as arguments to the workflow function.
      *     @type \Google\Protobuf\Duration $workflow_execution_timeout
      *           Total workflow execution timeout including retries and continue as new
      *     @type \Google\Protobuf\Duration $workflow_run_timeout
@@ -116,14 +134,20 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      *     @type \Google\Protobuf\Duration $workflow_task_timeout
      *           Timeout of a single workflow task
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type string $request_id
+     *           Used to de-dupe signal w/ start requests
      *     @type int $workflow_id_reuse_policy
      *     @type string $signal_name
+     *           The workflow author-defined name of the signal to send to the workflow
      *     @type \Temporal\Api\Common\V1\Payloads $signal_input
+     *           Serialized value(s) to provide with the signal
      *     @type string $control
+     *           Deprecated
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
-     *           Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     *           Retry policy for the workflow Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *     @type string $cron_schedule
+     *           See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
      *     @type \Temporal\Api\Common\V1\Header $header
@@ -201,6 +225,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * The task queue to start this workflow on, if it will be started
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 4;</code>
      * @return \Temporal\Api\Taskqueue\V1\TaskQueue
      */
@@ -210,6 +236,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * The task queue to start this workflow on, if it will be started
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 4;</code>
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
@@ -223,6 +251,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Serialized arguments to the workflow. These are passed as arguments to the workflow function.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -232,6 +262,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Serialized arguments to the workflow. These are passed as arguments to the workflow function.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -323,6 +355,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 9;</code>
      * @return string
      */
@@ -332,6 +366,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 9;</code>
      * @param string $var
      * @return $this
@@ -345,6 +381,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Used to de-dupe signal w/ start requests
+     *
      * Generated from protobuf field <code>string request_id = 10;</code>
      * @return string
      */
@@ -354,6 +392,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Used to de-dupe signal w/ start requests
+     *
      * Generated from protobuf field <code>string request_id = 10;</code>
      * @param string $var
      * @return $this
@@ -389,6 +429,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * The workflow author-defined name of the signal to send to the workflow
+     *
      * Generated from protobuf field <code>string signal_name = 12;</code>
      * @return string
      */
@@ -398,6 +440,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * The workflow author-defined name of the signal to send to the workflow
+     *
      * Generated from protobuf field <code>string signal_name = 12;</code>
      * @param string $var
      * @return $this
@@ -411,6 +455,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Serialized value(s) to provide with the signal
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads signal_input = 13;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -420,6 +466,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Serialized value(s) to provide with the signal
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads signal_input = 13;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -433,6 +481,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 14;</code>
      * @return string
      */
@@ -442,6 +492,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 14;</code>
      * @param string $var
      * @return $this
@@ -455,7 +507,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * Retry policy for the workflow Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 15;</code>
      * @return \Temporal\Api\Common\V1\RetryPolicy
@@ -466,7 +518,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * Retry policy for the workflow Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 15;</code>
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
@@ -481,6 +533,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
+     *
      * Generated from protobuf field <code>string cron_schedule = 16;</code>
      * @return string
      */
@@ -490,6 +544,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
+     *
      * Generated from protobuf field <code>string cron_schedule = 16;</code>
      * @param string $var
      * @return $this

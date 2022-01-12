@@ -30,6 +30,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_queue = null;
     /**
+     * Serialized arguments to the workflow. These are passed as arguments to the workflow function.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      */
     protected $input = null;
@@ -52,10 +54,14 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $workflow_task_timeout = null;
     /**
+     * The identity of the client who initiated this request
+     *
      * Generated from protobuf field <code>string identity = 9;</code>
      */
     protected $identity = '';
     /**
+     * A unique identifier for this start request. Typically UUIDv4.
+     *
      * Generated from protobuf field <code>string request_id = 10;</code>
      */
     protected $request_id = '';
@@ -66,12 +72,14 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $workflow_id_reuse_policy = 0;
     /**
-     * Retries up to workflow_execution_timeout_seconds.
+     * The retry policy for the workflow. Will never exceed `workflow_execution_timeout`.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 12;</code>
      */
     protected $retry_policy = null;
     /**
+     * See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
+     *
      * Generated from protobuf field <code>string cron_schedule = 13;</code>
      */
     protected $cron_schedule = '';
@@ -99,6 +107,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type \Temporal\Api\Common\V1\Payloads $input
+     *           Serialized arguments to the workflow. These are passed as arguments to the workflow function.
      *     @type \Google\Protobuf\Duration $workflow_execution_timeout
      *           Total workflow execution timeout including retries and continue as new.
      *     @type \Google\Protobuf\Duration $workflow_run_timeout
@@ -106,12 +115,15 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Duration $workflow_task_timeout
      *           Timeout of a single workflow task.
      *     @type string $identity
+     *           The identity of the client who initiated this request
      *     @type string $request_id
+     *           A unique identifier for this start request. Typically UUIDv4.
      *     @type int $workflow_id_reuse_policy
      *           Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
-     *           Retries up to workflow_execution_timeout_seconds.
+     *           The retry policy for the workflow. Will never exceed `workflow_execution_timeout`.
      *     @type string $cron_schedule
+     *           See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
      *     @type \Temporal\Api\Common\V1\Header $header
@@ -211,6 +223,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized arguments to the workflow. These are passed as arguments to the workflow function.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -220,6 +234,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized arguments to the workflow. These are passed as arguments to the workflow function.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -311,6 +327,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the client who initiated this request
+     *
      * Generated from protobuf field <code>string identity = 9;</code>
      * @return string
      */
@@ -320,6 +338,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the client who initiated this request
+     *
      * Generated from protobuf field <code>string identity = 9;</code>
      * @param string $var
      * @return $this
@@ -333,6 +353,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A unique identifier for this start request. Typically UUIDv4.
+     *
      * Generated from protobuf field <code>string request_id = 10;</code>
      * @return string
      */
@@ -342,6 +364,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A unique identifier for this start request. Typically UUIDv4.
+     *
      * Generated from protobuf field <code>string request_id = 10;</code>
      * @param string $var
      * @return $this
@@ -381,7 +405,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Retries up to workflow_execution_timeout_seconds.
+     * The retry policy for the workflow. Will never exceed `workflow_execution_timeout`.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 12;</code>
      * @return \Temporal\Api\Common\V1\RetryPolicy
@@ -392,7 +416,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Retries up to workflow_execution_timeout_seconds.
+     * The retry policy for the workflow. Will never exceed `workflow_execution_timeout`.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 12;</code>
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
@@ -407,6 +431,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
+     *
      * Generated from protobuf field <code>string cron_schedule = 13;</code>
      * @return string
      */
@@ -416,6 +442,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * See https://docs.temporal.io/docs/content/what-is-a-temporal-cron-job/
+     *
      * Generated from protobuf field <code>string cron_schedule = 13;</code>
      * @param string $var
      * @return $this

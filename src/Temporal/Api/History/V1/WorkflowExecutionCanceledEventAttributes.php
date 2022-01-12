@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -29,6 +31,7 @@ class WorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Internal
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type \Temporal\Api\Common\V1\Payloads $details
      * }
      */
@@ -38,6 +41,8 @@ class WorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      * @return int|string
      */
@@ -47,6 +52,8 @@ class WorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      * @param int|string $var
      * @return $this

@@ -22,14 +22,20 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
      */
     protected $workflow_execution = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
     /**
+     * Used to de-dupe cancellation requests
+     *
      * Generated from protobuf field <code>string request_id = 4;</code>
      */
     protected $request_id = '';
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>string first_execution_run_id = 5;</code>
      */
     protected $first_execution_run_id = '';
@@ -43,8 +49,11 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
      *     @type string $namespace
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type string $request_id
+     *           Used to de-dupe cancellation requests
      *     @type string $first_execution_run_id
+     *           Should be removed. Appears unused.
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +106,8 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -106,6 +117,8 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this
@@ -119,6 +132,8 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Used to de-dupe cancellation requests
+     *
      * Generated from protobuf field <code>string request_id = 4;</code>
      * @return string
      */
@@ -128,6 +143,8 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Used to de-dupe cancellation requests
+     *
      * Generated from protobuf field <code>string request_id = 4;</code>
      * @param string $var
      * @return $this
@@ -141,6 +158,8 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>string first_execution_run_id = 5;</code>
      * @return string
      */
@@ -150,6 +169,8 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
     }
 
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>string first_execution_run_id = 5;</code>
      * @param string $var
      * @return $this

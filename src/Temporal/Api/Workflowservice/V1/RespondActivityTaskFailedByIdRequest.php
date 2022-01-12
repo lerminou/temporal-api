@@ -14,26 +14,38 @@ use Google\Protobuf\Internal\GPBUtil;
 class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Namespace of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      */
     protected $namespace = '';
     /**
+     * Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      */
     protected $workflow_id = '';
     /**
+     * Run Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string run_id = 3;</code>
      */
     protected $run_id = '';
     /**
+     * Id of the activity to fail
+     *
      * Generated from protobuf field <code>string activity_id = 4;</code>
      */
     protected $activity_id = '';
     /**
+     * Detailed failure information
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
      */
     protected $failure = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 6;</code>
      */
     protected $identity = '';
@@ -45,11 +57,17 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Namespace of the workflow which scheduled this activity
      *     @type string $workflow_id
+     *           Id of the workflow which scheduled this activity
      *     @type string $run_id
+     *           Run Id of the workflow which scheduled this activity
      *     @type string $activity_id
+     *           Id of the activity to fail
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           Detailed failure information
      *     @type string $identity
+     *           The identity of the worker/client
      * }
      */
     public function __construct($data = NULL) {
@@ -58,6 +76,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Namespace of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @return string
      */
@@ -67,6 +87,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Namespace of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @param string $var
      * @return $this
@@ -80,6 +102,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @return string
      */
@@ -89,6 +113,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @param string $var
      * @return $this
@@ -102,6 +128,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Run Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @return string
      */
@@ -111,6 +139,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Run Id of the workflow which scheduled this activity
+     *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @param string $var
      * @return $this
@@ -124,6 +154,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Id of the activity to fail
+     *
      * Generated from protobuf field <code>string activity_id = 4;</code>
      * @return string
      */
@@ -133,6 +165,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Id of the activity to fail
+     *
      * Generated from protobuf field <code>string activity_id = 4;</code>
      * @param string $var
      * @return $this
@@ -146,6 +180,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Detailed failure information
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -155,6 +191,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Detailed failure information
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -168,6 +206,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 6;</code>
      * @return string
      */
@@ -177,6 +217,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 6;</code>
      * @param string $var
      * @return $this

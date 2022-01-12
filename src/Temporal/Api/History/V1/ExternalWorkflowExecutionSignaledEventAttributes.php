@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * id of the `SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 1;</code>
      */
     protected $initiated_event_id = 0;
     /**
+     * namespace of the workflow which was signaled
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      */
     protected $namespace = '';
@@ -26,6 +30,8 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
      */
     protected $workflow_execution = null;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      */
     protected $control = '';
@@ -37,9 +43,12 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $initiated_event_id
+     *           id of the `SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds to
      *     @type string $namespace
+     *           namespace of the workflow which was signaled
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $control
+     *           Deprecated
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +57,8 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * id of the `SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 1;</code>
      * @return int|string
      */
@@ -57,6 +68,8 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * id of the `SIGNAL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -70,6 +83,8 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * namespace of the workflow which was signaled
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @return string
      */
@@ -79,6 +94,8 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * namespace of the workflow which was signaled
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @param string $var
      * @return $this
@@ -114,6 +131,8 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      * @return string
      */
@@ -123,6 +142,8 @@ class ExternalWorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      * @param string $var
      * @return $this

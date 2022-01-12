@@ -14,10 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The task queue this workflow task was enqueued in, which could be a normal or sticky queue
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 1;</code>
      */
     protected $task_queue = null;
     /**
+     * How long the worker has to process this task once receiving it before it times out
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -25,6 +28,8 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      */
     protected $start_to_close_timeout = null;
     /**
+     * Starting at 1, how many attempts there have been to complete this task
+     *
      * Generated from protobuf field <code>int32 attempt = 3;</code>
      */
     protected $attempt = 0;
@@ -36,10 +41,13 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
+     *           The task queue this workflow task was enqueued in, which could be a normal or sticky queue
      *     @type \Google\Protobuf\Duration $start_to_close_timeout
+     *           How long the worker has to process this task once receiving it before it times out
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
      *     @type int $attempt
+     *           Starting at 1, how many attempts there have been to complete this task
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +56,8 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The task queue this workflow task was enqueued in, which could be a normal or sticky queue
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 1;</code>
      * @return \Temporal\Api\Taskqueue\V1\TaskQueue
      */
@@ -57,6 +67,8 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The task queue this workflow task was enqueued in, which could be a normal or sticky queue
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 1;</code>
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
@@ -70,6 +82,7 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * How long the worker has to process this task once receiving it before it times out
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -82,6 +95,7 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * How long the worker has to process this task once receiving it before it times out
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -98,6 +112,8 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Starting at 1, how many attempts there have been to complete this task
+     *
      * Generated from protobuf field <code>int32 attempt = 3;</code>
      * @return int
      */
@@ -107,6 +123,8 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Starting at 1, how many attempts there have been to complete this task
+     *
      * Generated from protobuf field <code>int32 attempt = 3;</code>
      * @param int $var
      * @return $this

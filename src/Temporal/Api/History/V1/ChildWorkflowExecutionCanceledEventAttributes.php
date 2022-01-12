@@ -18,6 +18,8 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
      */
     protected $details = null;
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      */
     protected $namespace = '';
@@ -30,10 +32,14 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
      */
     protected $workflow_type = null;
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 5;</code>
      */
     protected $initiated_event_id = 0;
     /**
+     * Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 6;</code>
      */
     protected $started_event_id = 0;
@@ -46,10 +52,13 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
      *
      *     @type \Temporal\Api\Common\V1\Payloads $details
      *     @type string $namespace
+     *           Namespace of the child workflow
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type int|string $initiated_event_id
+     *           Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
      *     @type int|string $started_event_id
+     *           Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
      * }
      */
     public function __construct($data = NULL) {
@@ -80,6 +89,8 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @return string
      */
@@ -89,6 +100,8 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @param string $var
      * @return $this
@@ -146,6 +159,8 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 5;</code>
      * @return int|string
      */
@@ -155,6 +170,8 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 5;</code>
      * @param int|string $var
      * @return $this
@@ -168,6 +185,8 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
     }
 
     /**
+     * Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 6;</code>
      * @return int|string
      */
@@ -177,6 +196,8 @@ class ChildWorkflowExecutionCanceledEventAttributes extends \Google\Protobuf\Int
     }
 
     /**
+     * Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 6;</code>
      * @param int|string $var
      * @return $this

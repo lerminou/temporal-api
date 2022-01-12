@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class ChildWorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      */
     protected $namespace = '';
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 2;</code>
      */
     protected $initiated_event_id = 0;
@@ -41,7 +45,9 @@ class ChildWorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Inte
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Namespace of the child workflow
      *     @type int|string $initiated_event_id
+     *           Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type \Temporal\Api\Common\V1\Header $header
@@ -53,6 +59,8 @@ class ChildWorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Inte
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @return string
      */
@@ -62,6 +70,8 @@ class ChildWorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Inte
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @param string $var
      * @return $this
@@ -75,6 +85,8 @@ class ChildWorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Inte
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 2;</code>
      * @return int|string
      */
@@ -84,6 +96,8 @@ class ChildWorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Inte
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 2;</code>
      * @param int|string $var
      * @return $this

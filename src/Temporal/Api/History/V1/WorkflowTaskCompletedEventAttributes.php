@@ -14,18 +14,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      */
     protected $started_event_id = 0;
     /**
+     * Identity of the worker who completed this task
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
     /**
+     * Binary ID of the worker who completed this task
+     *
      * Generated from protobuf field <code>string binary_checksum = 4;</code>
      */
     protected $binary_checksum = '';
@@ -37,9 +45,13 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $scheduled_event_id
+     *           The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
      *     @type int|string $started_event_id
+     *           The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
      *     @type string $identity
+     *           Identity of the worker who completed this task
      *     @type string $binary_checksum
+     *           Binary ID of the worker who completed this task
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +60,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @return int|string
      */
@@ -57,6 +71,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -70,6 +86,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      * @return int|string
      */
@@ -79,6 +97,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -92,6 +112,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Identity of the worker who completed this task
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -101,6 +123,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Identity of the worker who completed this task
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this
@@ -114,6 +138,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Binary ID of the worker who completed this task
+     *
      * Generated from protobuf field <code>string binary_checksum = 4;</code>
      * @return string
      */
@@ -123,6 +149,8 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * Binary ID of the worker who completed this task
+     *
      * Generated from protobuf field <code>string binary_checksum = 4;</code>
      * @param string $var
      * @return $this

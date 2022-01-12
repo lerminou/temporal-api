@@ -9,11 +9,16 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * History events are the method by which Temporal SDKs advance (or recreate) workflow state.
+ * See the `EventType` enum for more info about what each event is for.
+ *
  * Generated from protobuf message <code>temporal.api.history.v1.HistoryEvent</code>
  */
 class HistoryEvent extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Monotonically increasing event number, starts at 1.
+     *
      * Generated from protobuf field <code>int64 event_id = 1;</code>
      */
     protected $event_id = 0;
@@ -26,10 +31,14 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      */
     protected $event_type = 0;
     /**
+     * TODO: What is this? Appears unused by SDKs
+     *
      * Generated from protobuf field <code>int64 version = 4;</code>
      */
     protected $version = 0;
     /**
+     * TODO: What is this? Appears unused by SDKs
+     *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      */
     protected $task_id = 0;
@@ -42,10 +51,13 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $event_id
+     *           Monotonically increasing event number, starts at 1.
      *     @type \Google\Protobuf\Timestamp $event_time
      *     @type int $event_type
      *     @type int|string $version
+     *           TODO: What is this? Appears unused by SDKs
      *     @type int|string $task_id
+     *           TODO: What is this? Appears unused by SDKs
      *     @type \Temporal\Api\History\V1\WorkflowExecutionStartedEventAttributes $workflow_execution_started_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionCompletedEventAttributes $workflow_execution_completed_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionFailedEventAttributes $workflow_execution_failed_event_attributes
@@ -94,6 +106,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Monotonically increasing event number, starts at 1.
+     *
      * Generated from protobuf field <code>int64 event_id = 1;</code>
      * @return int|string
      */
@@ -103,6 +117,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Monotonically increasing event number, starts at 1.
+     *
      * Generated from protobuf field <code>int64 event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -160,6 +176,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * TODO: What is this? Appears unused by SDKs
+     *
      * Generated from protobuf field <code>int64 version = 4;</code>
      * @return int|string
      */
@@ -169,6 +187,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * TODO: What is this? Appears unused by SDKs
+     *
      * Generated from protobuf field <code>int64 version = 4;</code>
      * @param int|string $var
      * @return $this
@@ -182,6 +202,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * TODO: What is this? Appears unused by SDKs
+     *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      * @return int|string
      */
@@ -191,6 +213,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * TODO: What is this? Appears unused by SDKs
+     *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      * @param int|string $var
      * @return $this

@@ -26,14 +26,21 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $maximum_page_size = 0;
     /**
+     * If a `GetWorkflowExecutionHistoryResponse` or a `PollWorkflowTaskQueueResponse` had one of
+     * these, it should be passed here to fetch the next page.
+     *
      * Generated from protobuf field <code>bytes next_page_token = 4;</code>
      */
     protected $next_page_token = '';
     /**
+     * If set to true, the RPC call will not resolve until there is a new event which matches
+     * the `history_event_filter_type`, or a timeout is hit.
+     *
      * Generated from protobuf field <code>bool wait_new_event = 5;</code>
      */
     protected $wait_new_event = false;
     /**
+     * Filter returned events such that they match the specified filter type.
      * Default: HISTORY_EVENT_FILTER_TYPE_ALL_EVENT.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.HistoryEventFilterType history_event_filter_type = 6;</code>
@@ -54,8 +61,13 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $execution
      *     @type int $maximum_page_size
      *     @type string $next_page_token
+     *           If a `GetWorkflowExecutionHistoryResponse` or a `PollWorkflowTaskQueueResponse` had one of
+     *           these, it should be passed here to fetch the next page.
      *     @type bool $wait_new_event
+     *           If set to true, the RPC call will not resolve until there is a new event which matches
+     *           the `history_event_filter_type`, or a timeout is hit.
      *     @type int $history_event_filter_type
+     *           Filter returned events such that they match the specified filter type.
      *           Default: HISTORY_EVENT_FILTER_TYPE_ALL_EVENT.
      *     @type bool $skip_archival
      * }
@@ -132,6 +144,9 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * If a `GetWorkflowExecutionHistoryResponse` or a `PollWorkflowTaskQueueResponse` had one of
+     * these, it should be passed here to fetch the next page.
+     *
      * Generated from protobuf field <code>bytes next_page_token = 4;</code>
      * @return string
      */
@@ -141,6 +156,9 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * If a `GetWorkflowExecutionHistoryResponse` or a `PollWorkflowTaskQueueResponse` had one of
+     * these, it should be passed here to fetch the next page.
+     *
      * Generated from protobuf field <code>bytes next_page_token = 4;</code>
      * @param string $var
      * @return $this
@@ -154,6 +172,9 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * If set to true, the RPC call will not resolve until there is a new event which matches
+     * the `history_event_filter_type`, or a timeout is hit.
+     *
      * Generated from protobuf field <code>bool wait_new_event = 5;</code>
      * @return bool
      */
@@ -163,6 +184,9 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * If set to true, the RPC call will not resolve until there is a new event which matches
+     * the `history_event_filter_type`, or a timeout is hit.
+     *
      * Generated from protobuf field <code>bool wait_new_event = 5;</code>
      * @param bool $var
      * @return $this
@@ -176,6 +200,7 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Filter returned events such that they match the specified filter type.
      * Default: HISTORY_EVENT_FILTER_TYPE_ALL_EVENT.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.HistoryEventFilterType history_event_filter_type = 6;</code>
@@ -187,6 +212,7 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Filter returned events such that they match the specified filter type.
      * Default: HISTORY_EVENT_FILTER_TYPE_ALL_EVENT.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.HistoryEventFilterType history_event_filter_type = 6;</code>

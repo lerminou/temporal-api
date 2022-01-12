@@ -14,18 +14,26 @@ use Google\Protobuf\Internal\GPBUtil;
 class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      */
     protected $failure = null;
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this failure corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this failure corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      */
     protected $started_event_id = 0;
     /**
+     * id of the worker that failed this task
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      */
     protected $identity = '';
@@ -41,9 +49,13 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           Failure details
      *     @type int|string $scheduled_event_id
+     *           The id of the `ACTIVITY_TASK_SCHEDULED` event this failure corresponds to
      *     @type int|string $started_event_id
+     *           The id of the `ACTIVITY_TASK_STARTED` event this failure corresponds to
      *     @type string $identity
+     *           id of the worker that failed this task
      *     @type int $retry_state
      * }
      */
@@ -53,6 +65,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * Failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -62,6 +76,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * Failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -75,6 +91,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this failure corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      * @return int|string
      */
@@ -84,6 +102,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this failure corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -97,6 +117,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this failure corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      * @return int|string
      */
@@ -106,6 +128,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this failure corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 3;</code>
      * @param int|string $var
      * @return $this
@@ -119,6 +143,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * id of the worker that failed this task
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @return string
      */
@@ -128,6 +154,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * id of the worker that failed this task
+     *
      * Generated from protobuf field <code>string identity = 4;</code>
      * @param string $var
      * @return $this

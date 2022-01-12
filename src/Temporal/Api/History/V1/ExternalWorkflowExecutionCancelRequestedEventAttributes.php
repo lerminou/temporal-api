@@ -14,10 +14,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds
+     * to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 1;</code>
      */
     protected $initiated_event_id = 0;
     /**
+     * namespace of the to-be-cancelled workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      */
     protected $namespace = '';
@@ -33,7 +38,10 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $initiated_event_id
+     *           id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds
+     *           to
      *     @type string $namespace
+     *           namespace of the to-be-cancelled workflow
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      * }
      */
@@ -43,6 +51,9 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
     }
 
     /**
+     * id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds
+     * to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 1;</code>
      * @return int|string
      */
@@ -52,6 +63,9 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
     }
 
     /**
+     * id of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event this event corresponds
+     * to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -65,6 +79,8 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
     }
 
     /**
+     * namespace of the to-be-cancelled workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @return string
      */
@@ -74,6 +90,8 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
     }
 
     /**
+     * namespace of the to-be-cancelled workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @param string $var
      * @return $this

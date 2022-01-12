@@ -14,6 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Will be set to true if the activity has been asked to cancel itself. The SDK should then
+     * notify the activity of cancellation if it is still running.
+     *
      * Generated from protobuf field <code>bool cancel_requested = 1;</code>
      */
     protected $cancel_requested = false;
@@ -25,6 +28,8 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
      *     Optional. Data for populating the Message object.
      *
      *     @type bool $cancel_requested
+     *           Will be set to true if the activity has been asked to cancel itself. The SDK should then
+     *           notify the activity of cancellation if it is still running.
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +38,9 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Will be set to true if the activity has been asked to cancel itself. The SDK should then
+     * notify the activity of cancellation if it is still running.
+     *
      * Generated from protobuf field <code>bool cancel_requested = 1;</code>
      * @return bool
      */
@@ -42,6 +50,9 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Will be set to true if the activity has been asked to cancel itself. The SDK should then
+     * notify the activity of cancellation if it is still running.
+     *
      * Generated from protobuf field <code>bool cancel_requested = 1;</code>
      * @param bool $var
      * @return $this

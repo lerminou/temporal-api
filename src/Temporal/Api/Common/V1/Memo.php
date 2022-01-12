@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * A user-defined set of *unindexed* fields that are exposed when listing/searching workflows
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.Memo</code>
  */
 class Memo extends \Google\Protobuf\Internal\Message

@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class CancelTimerCommandAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The same timer id from the start timer command
+     *
      * Generated from protobuf field <code>string timer_id = 1;</code>
      */
     protected $timer_id = '';
@@ -25,6 +27,7 @@ class CancelTimerCommandAttributes extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $timer_id
+     *           The same timer id from the start timer command
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class CancelTimerCommandAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The same timer id from the start timer command
+     *
      * Generated from protobuf field <code>string timer_id = 1;</code>
      * @return string
      */
@@ -42,6 +47,8 @@ class CancelTimerCommandAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The same timer id from the start timer command
+     *
      * Generated from protobuf field <code>string timer_id = 1;</code>
      * @param string $var
      * @return $this

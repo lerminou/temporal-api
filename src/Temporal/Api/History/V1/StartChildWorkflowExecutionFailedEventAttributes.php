@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      */
     protected $namespace = '';
@@ -30,14 +32,20 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      */
     protected $cause = 0;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 5;</code>
      */
     protected $control = '';
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 6;</code>
      */
     protected $initiated_event_id = 0;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 7;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -49,12 +57,16 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Namespace of the child workflow
      *     @type string $workflow_id
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type int $cause
      *     @type string $control
+     *           Deprecated
      *     @type int|string $initiated_event_id
+     *           Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      * }
      */
     public function __construct($data = NULL) {
@@ -63,6 +75,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @return string
      */
@@ -72,6 +86,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @param string $var
      * @return $this
@@ -151,6 +167,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 5;</code>
      * @return string
      */
@@ -160,6 +178,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 5;</code>
      * @param string $var
      * @return $this
@@ -173,6 +193,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 6;</code>
      * @return int|string
      */
@@ -182,6 +204,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 6;</code>
      * @param int|string $var
      * @return $this
@@ -195,6 +219,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 7;</code>
      * @return int|string
      */
@@ -204,6 +230,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 7;</code>
      * @param int|string $var
      * @return $this

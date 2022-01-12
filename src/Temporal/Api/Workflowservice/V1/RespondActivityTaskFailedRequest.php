@@ -14,14 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The task token as received in `PollActivityTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      */
     protected $task_token = '';
     /**
+     * Detailed failure information
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 2;</code>
      */
     protected $failure = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
@@ -37,8 +43,11 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $task_token
+     *           The task token as received in `PollActivityTaskQueueResponse`
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           Detailed failure information
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type string $namespace
      * }
      */
@@ -48,6 +57,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The task token as received in `PollActivityTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @return string
      */
@@ -57,6 +68,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The task token as received in `PollActivityTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +83,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Detailed failure information
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 2;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -79,6 +94,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Detailed failure information
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 2;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -92,6 +109,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -101,6 +120,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this

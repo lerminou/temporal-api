@@ -14,22 +14,33 @@ use Google\Protobuf\Internal\GPBUtil;
 class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * id of the worker that picked up this task
+     *
      * Generated from protobuf field <code>string identity = 2;</code>
      */
     protected $identity = '';
     /**
+     * TODO ??
+     *
      * Generated from protobuf field <code>string request_id = 3;</code>
      */
     protected $request_id = '';
     /**
+     * Starting at 1, the number of times this task has been attempted
+     *
      * Generated from protobuf field <code>int32 attempt = 4;</code>
      */
     protected $attempt = 0;
     /**
+     * Will be set to the most recent failure details, if this task has previously failed and then
+     * been retried.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure last_failure = 5;</code>
      */
     protected $last_failure = null;
@@ -41,10 +52,16 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $scheduled_event_id
+     *           The id of the `ACTIVITY_TASK_SCHEDULED` event this task corresponds to
      *     @type string $identity
+     *           id of the worker that picked up this task
      *     @type string $request_id
+     *           TODO ??
      *     @type int $attempt
+     *           Starting at 1, the number of times this task has been attempted
      *     @type \Temporal\Api\Failure\V1\Failure $last_failure
+     *           Will be set to the most recent failure details, if this task has previously failed and then
+     *           been retried.
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +70,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @return int|string
      */
@@ -62,6 +81,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -75,6 +96,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * id of the worker that picked up this task
+     *
      * Generated from protobuf field <code>string identity = 2;</code>
      * @return string
      */
@@ -84,6 +107,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * id of the worker that picked up this task
+     *
      * Generated from protobuf field <code>string identity = 2;</code>
      * @param string $var
      * @return $this
@@ -97,6 +122,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * TODO ??
+     *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @return string
      */
@@ -106,6 +133,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * TODO ??
+     *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @param string $var
      * @return $this
@@ -119,6 +148,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Starting at 1, the number of times this task has been attempted
+     *
      * Generated from protobuf field <code>int32 attempt = 4;</code>
      * @return int
      */
@@ -128,6 +159,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Starting at 1, the number of times this task has been attempted
+     *
      * Generated from protobuf field <code>int32 attempt = 4;</code>
      * @param int $var
      * @return $this
@@ -141,6 +174,9 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Will be set to the most recent failure details, if this task has previously failed and then
+     * been retried.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure last_failure = 5;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -150,6 +186,9 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
+     * Will be set to the most recent failure details, if this task has previously failed and then
+     * been retried.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure last_failure = 5;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this

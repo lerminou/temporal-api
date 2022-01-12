@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      */
     protected $workflow_task_completed_event_id = 0;
     /**
+     * The namespace the workflow to be cancelled lives in
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      */
     protected $namespace = '';
@@ -26,10 +30,15 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      */
     protected $workflow_execution = null;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      */
     protected $control = '';
     /**
+     * Workers are expected to set this to true if the workflow they are requesting to cancel is
+     * a child of the workflow which issued the request
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 5;</code>
      */
     protected $child_workflow_only = false;
@@ -41,10 +50,15 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type string $namespace
+     *           The namespace the workflow to be cancelled lives in
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $control
+     *           Deprecated
      *     @type bool $child_workflow_only
+     *           Workers are expected to set this to true if the workflow they are requesting to cancel is
+     *           a child of the workflow which issued the request
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +67,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      * @return int|string
      */
@@ -62,6 +78,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -75,6 +93,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * The namespace the workflow to be cancelled lives in
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @return string
      */
@@ -84,6 +104,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * The namespace the workflow to be cancelled lives in
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @param string $var
      * @return $this
@@ -119,6 +141,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      * @return string
      */
@@ -128,6 +152,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 4;</code>
      * @param string $var
      * @return $this
@@ -141,6 +167,9 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * Workers are expected to set this to true if the workflow they are requesting to cancel is
+     * a child of the workflow which issued the request
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 5;</code>
      * @return bool
      */
@@ -150,6 +179,9 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
+     * Workers are expected to set this to true if the workflow they are requesting to cancel is
+     * a child of the workflow which issued the request
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 5;</code>
      * @param bool $var
      * @return $this

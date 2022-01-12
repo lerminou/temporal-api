@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      */
     protected $started_event_id = 0;
@@ -26,28 +30,38 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      */
     protected $cause = 0;
     /**
+     * The failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 4;</code>
      */
     protected $failure = null;
     /**
+     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      */
     protected $identity = '';
     /**
-     * For reset workflow.
+     * The original run id of the workflow. For reset workflow.
      *
      * Generated from protobuf field <code>string base_run_id = 6;</code>
      */
     protected $base_run_id = '';
     /**
+     * If the workflow is being reset, the new run id.
+     *
      * Generated from protobuf field <code>string new_run_id = 7;</code>
      */
     protected $new_run_id = '';
     /**
+     * TODO: ?
+     *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      */
     protected $fork_event_version = 0;
     /**
+     * If a worker explicitly failed this task, it's binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 9;</code>
      */
     protected $binary_checksum = '';
@@ -59,15 +73,22 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $scheduled_event_id
+     *           The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
      *     @type int|string $started_event_id
+     *           The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
      *     @type int $cause
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           The failure details
      *     @type string $identity
+     *           If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
      *     @type string $base_run_id
-     *           For reset workflow.
+     *           The original run id of the workflow. For reset workflow.
      *     @type string $new_run_id
+     *           If the workflow is being reset, the new run id.
      *     @type int|string $fork_event_version
+     *           TODO: ?
      *     @type string $binary_checksum
+     *           If a worker explicitly failed this task, it's binary id
      * }
      */
     public function __construct($data = NULL) {
@@ -76,6 +97,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @return int|string
      */
@@ -85,6 +108,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -98,6 +123,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      * @return int|string
      */
@@ -107,6 +134,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -142,6 +171,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 4;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -151,6 +182,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The failure details
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 4;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -164,6 +197,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @return string
      */
@@ -173,6 +208,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @param string $var
      * @return $this
@@ -186,7 +223,7 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * For reset workflow.
+     * The original run id of the workflow. For reset workflow.
      *
      * Generated from protobuf field <code>string base_run_id = 6;</code>
      * @return string
@@ -197,7 +234,7 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * For reset workflow.
+     * The original run id of the workflow. For reset workflow.
      *
      * Generated from protobuf field <code>string base_run_id = 6;</code>
      * @param string $var
@@ -212,6 +249,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * If the workflow is being reset, the new run id.
+     *
      * Generated from protobuf field <code>string new_run_id = 7;</code>
      * @return string
      */
@@ -221,6 +260,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * If the workflow is being reset, the new run id.
+     *
      * Generated from protobuf field <code>string new_run_id = 7;</code>
      * @param string $var
      * @return $this
@@ -234,6 +275,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * TODO: ?
+     *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      * @return int|string
      */
@@ -243,6 +286,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * TODO: ?
+     *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      * @param int|string $var
      * @return $this
@@ -256,6 +301,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * If a worker explicitly failed this task, it's binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 9;</code>
      * @return string
      */
@@ -265,6 +312,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * If a worker explicitly failed this task, it's binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 9;</code>
      * @param string $var
      * @return $this

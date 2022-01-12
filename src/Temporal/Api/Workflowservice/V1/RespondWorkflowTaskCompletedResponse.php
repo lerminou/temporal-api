@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * See `RespondWorkflowTaskCompletedResponse::return_new_workflow_task`
+     *
      * Generated from protobuf field <code>.temporal.api.workflowservice.v1.PollWorkflowTaskQueueResponse workflow_task = 1;</code>
      */
     protected $workflow_task = null;
@@ -25,6 +27,7 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse $workflow_task
+     *           See `RespondWorkflowTaskCompletedResponse::return_new_workflow_task`
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +36,8 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * See `RespondWorkflowTaskCompletedResponse::return_new_workflow_task`
+     *
      * Generated from protobuf field <code>.temporal.api.workflowservice.v1.PollWorkflowTaskQueueResponse workflow_task = 1;</code>
      * @return \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse
      */
@@ -42,6 +47,8 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
     }
 
     /**
+     * See `RespondWorkflowTaskCompletedResponse::return_new_workflow_task`
+     *
      * Generated from protobuf field <code>.temporal.api.workflowservice.v1.PollWorkflowTaskQueueResponse workflow_task = 1;</code>
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse $var
      * @return $this

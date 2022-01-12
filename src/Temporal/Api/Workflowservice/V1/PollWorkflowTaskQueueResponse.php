@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * A unique identifier for this task
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      */
     protected $task_token = '';
@@ -26,46 +28,79 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      */
     protected $workflow_type = null;
     /**
+     * The last workflow task started event which was processed by some worker for this execution.
+     * Will be zero if no task has ever started.
+     *
      * Generated from protobuf field <code>int64 previous_started_event_id = 4;</code>
      */
     protected $previous_started_event_id = 0;
     /**
+     * The id of the most recent workflow task started event, which will have been generated as a
+     * result of this poll request being served.
+     *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      */
     protected $started_event_id = 0;
     /**
+     * Starting at 1, the number of attempts to complete this task by any worker.
+     *
      * Generated from protobuf field <code>int32 attempt = 6;</code>
      */
     protected $attempt = 0;
     /**
+     * A hint that there are more tasks already present in this task queue. Can be used to
+     * prioritize draining a sticky queue before polling from a normal queue.
+     *
      * Generated from protobuf field <code>int64 backlog_count_hint = 7;</code>
      */
     protected $backlog_count_hint = 0;
     /**
+     * The history for this workflow, which will either be complete or partial. Partial histories
+     * are sent to workers who have signaled that they are using a sticky queue when completing
+     * a workflow task.
+     *
      * Generated from protobuf field <code>.temporal.api.history.v1.History history = 8;</code>
      */
     protected $history = null;
     /**
+     * Will be set if there are more history events than were included in this response. Such events
+     * should be fetched via `GetWorkflowExecutionHistory`.
+     *
      * Generated from protobuf field <code>bytes next_page_token = 9;</code>
      */
     protected $next_page_token = '';
     /**
+     * Legacy queries appear in this field. The query must be responded to via
+     * `RespondQueryTaskCompleted`. If the workflow is already closed (queries are permitted on
+     * closed workflows) then the `history` field will be populated with the entire history. It
+     * may also be populated if this task originates on a non-sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.query.v1.WorkflowQuery query = 10;</code>
      */
     protected $query = null;
     /**
+     * The task queue this task originated from, which will always be the original non-sticky name
+     * for the queue, even if this response came from polling a sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue workflow_execution_task_queue = 11;</code>
      */
     protected $workflow_execution_task_queue = null;
     /**
+     * When this task was scheduled by the server
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12 [(.gogoproto.stdtime) = true];</code>
      */
     protected $scheduled_time = null;
     /**
+     * When the current workflow task started event was generated, meaning the current attempt.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13 [(.gogoproto.stdtime) = true];</code>
      */
     protected $started_time = null;
     /**
+     * Queries that should be executed after applying the history in this task. Responses should be
+     * attached to `RespondWorkflowTaskCompletedRequest::query_results`
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.query.v1.WorkflowQuery> queries = 14;</code>
      */
     private $queries;
@@ -77,19 +112,42 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $task_token
+     *           A unique identifier for this task
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type int|string $previous_started_event_id
+     *           The last workflow task started event which was processed by some worker for this execution.
+     *           Will be zero if no task has ever started.
      *     @type int|string $started_event_id
+     *           The id of the most recent workflow task started event, which will have been generated as a
+     *           result of this poll request being served.
      *     @type int $attempt
+     *           Starting at 1, the number of attempts to complete this task by any worker.
      *     @type int|string $backlog_count_hint
+     *           A hint that there are more tasks already present in this task queue. Can be used to
+     *           prioritize draining a sticky queue before polling from a normal queue.
      *     @type \Temporal\Api\History\V1\History $history
+     *           The history for this workflow, which will either be complete or partial. Partial histories
+     *           are sent to workers who have signaled that they are using a sticky queue when completing
+     *           a workflow task.
      *     @type string $next_page_token
+     *           Will be set if there are more history events than were included in this response. Such events
+     *           should be fetched via `GetWorkflowExecutionHistory`.
      *     @type \Temporal\Api\Query\V1\WorkflowQuery $query
+     *           Legacy queries appear in this field. The query must be responded to via
+     *           `RespondQueryTaskCompleted`. If the workflow is already closed (queries are permitted on
+     *           closed workflows) then the `history` field will be populated with the entire history. It
+     *           may also be populated if this task originates on a non-sticky queue.
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $workflow_execution_task_queue
+     *           The task queue this task originated from, which will always be the original non-sticky name
+     *           for the queue, even if this response came from polling a sticky queue.
      *     @type \Google\Protobuf\Timestamp $scheduled_time
+     *           When this task was scheduled by the server
      *     @type \Google\Protobuf\Timestamp $started_time
+     *           When the current workflow task started event was generated, meaning the current attempt.
      *     @type array|\Google\Protobuf\Internal\MapField $queries
+     *           Queries that should be executed after applying the history in this task. Responses should be
+     *           attached to `RespondWorkflowTaskCompletedRequest::query_results`
      * }
      */
     public function __construct($data = NULL) {
@@ -98,6 +156,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A unique identifier for this task
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @return string
      */
@@ -107,6 +167,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A unique identifier for this task
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @param string $var
      * @return $this
@@ -164,6 +226,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The last workflow task started event which was processed by some worker for this execution.
+     * Will be zero if no task has ever started.
+     *
      * Generated from protobuf field <code>int64 previous_started_event_id = 4;</code>
      * @return int|string
      */
@@ -173,6 +238,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The last workflow task started event which was processed by some worker for this execution.
+     * Will be zero if no task has ever started.
+     *
      * Generated from protobuf field <code>int64 previous_started_event_id = 4;</code>
      * @param int|string $var
      * @return $this
@@ -186,6 +254,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The id of the most recent workflow task started event, which will have been generated as a
+     * result of this poll request being served.
+     *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      * @return int|string
      */
@@ -195,6 +266,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The id of the most recent workflow task started event, which will have been generated as a
+     * result of this poll request being served.
+     *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      * @param int|string $var
      * @return $this
@@ -208,6 +282,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Starting at 1, the number of attempts to complete this task by any worker.
+     *
      * Generated from protobuf field <code>int32 attempt = 6;</code>
      * @return int
      */
@@ -217,6 +293,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Starting at 1, the number of attempts to complete this task by any worker.
+     *
      * Generated from protobuf field <code>int32 attempt = 6;</code>
      * @param int $var
      * @return $this
@@ -230,6 +308,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A hint that there are more tasks already present in this task queue. Can be used to
+     * prioritize draining a sticky queue before polling from a normal queue.
+     *
      * Generated from protobuf field <code>int64 backlog_count_hint = 7;</code>
      * @return int|string
      */
@@ -239,6 +320,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * A hint that there are more tasks already present in this task queue. Can be used to
+     * prioritize draining a sticky queue before polling from a normal queue.
+     *
      * Generated from protobuf field <code>int64 backlog_count_hint = 7;</code>
      * @param int|string $var
      * @return $this
@@ -252,6 +336,10 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The history for this workflow, which will either be complete or partial. Partial histories
+     * are sent to workers who have signaled that they are using a sticky queue when completing
+     * a workflow task.
+     *
      * Generated from protobuf field <code>.temporal.api.history.v1.History history = 8;</code>
      * @return \Temporal\Api\History\V1\History
      */
@@ -261,6 +349,10 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The history for this workflow, which will either be complete or partial. Partial histories
+     * are sent to workers who have signaled that they are using a sticky queue when completing
+     * a workflow task.
+     *
      * Generated from protobuf field <code>.temporal.api.history.v1.History history = 8;</code>
      * @param \Temporal\Api\History\V1\History $var
      * @return $this
@@ -274,6 +366,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Will be set if there are more history events than were included in this response. Such events
+     * should be fetched via `GetWorkflowExecutionHistory`.
+     *
      * Generated from protobuf field <code>bytes next_page_token = 9;</code>
      * @return string
      */
@@ -283,6 +378,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Will be set if there are more history events than were included in this response. Such events
+     * should be fetched via `GetWorkflowExecutionHistory`.
+     *
      * Generated from protobuf field <code>bytes next_page_token = 9;</code>
      * @param string $var
      * @return $this
@@ -296,6 +394,11 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Legacy queries appear in this field. The query must be responded to via
+     * `RespondQueryTaskCompleted`. If the workflow is already closed (queries are permitted on
+     * closed workflows) then the `history` field will be populated with the entire history. It
+     * may also be populated if this task originates on a non-sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.query.v1.WorkflowQuery query = 10;</code>
      * @return \Temporal\Api\Query\V1\WorkflowQuery
      */
@@ -305,6 +408,11 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Legacy queries appear in this field. The query must be responded to via
+     * `RespondQueryTaskCompleted`. If the workflow is already closed (queries are permitted on
+     * closed workflows) then the `history` field will be populated with the entire history. It
+     * may also be populated if this task originates on a non-sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.query.v1.WorkflowQuery query = 10;</code>
      * @param \Temporal\Api\Query\V1\WorkflowQuery $var
      * @return $this
@@ -318,6 +426,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The task queue this task originated from, which will always be the original non-sticky name
+     * for the queue, even if this response came from polling a sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue workflow_execution_task_queue = 11;</code>
      * @return \Temporal\Api\Taskqueue\V1\TaskQueue
      */
@@ -327,6 +438,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The task queue this task originated from, which will always be the original non-sticky name
+     * for the queue, even if this response came from polling a sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue workflow_execution_task_queue = 11;</code>
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
@@ -340,6 +454,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When this task was scheduled by the server
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12 [(.gogoproto.stdtime) = true];</code>
      * @return \Google\Protobuf\Timestamp
      */
@@ -349,6 +465,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When this task was scheduled by the server
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12 [(.gogoproto.stdtime) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
@@ -362,6 +480,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When the current workflow task started event was generated, meaning the current attempt.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13 [(.gogoproto.stdtime) = true];</code>
      * @return \Google\Protobuf\Timestamp
      */
@@ -371,6 +491,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * When the current workflow task started event was generated, meaning the current attempt.
+     *
      * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13 [(.gogoproto.stdtime) = true];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
@@ -384,6 +506,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Queries that should be executed after applying the history in this task. Responses should be
+     * attached to `RespondWorkflowTaskCompletedRequest::query_results`
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.query.v1.WorkflowQuery> queries = 14;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -393,6 +518,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Queries that should be executed after applying the history in this task. Responses should be
+     * attached to `RespondWorkflowTaskCompletedRequest::query_results`
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.query.v1.WorkflowQuery> queries = 14;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this

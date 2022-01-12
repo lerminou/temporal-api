@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      */
     protected $namespace = '';
@@ -58,10 +60,14 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      */
     protected $parent_close_policy = 0;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 10;</code>
      */
     protected $control = '';
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 11;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -76,6 +82,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      */
     protected $retry_policy = null;
     /**
+     * If this child runs on a cron schedule, it will appear here
+     *
      * Generated from protobuf field <code>string cron_schedule = 14;</code>
      */
     protected $cron_schedule = '';
@@ -99,6 +107,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Namespace of the child workflow
      *     @type string $workflow_id
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
@@ -112,11 +121,14 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      *     @type int $parent_close_policy
      *           Default: PARENT_CLOSE_POLICY_TERMINATE.
      *     @type string $control
+     *           Deprecated
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type int $workflow_id_reuse_policy
      *           Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
      *     @type string $cron_schedule
+     *           If this child runs on a cron schedule, it will appear here
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
@@ -128,6 +140,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @return string
      */
@@ -137,6 +151,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @param string $var
      * @return $this
@@ -342,6 +358,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 10;</code>
      * @return string
      */
@@ -351,6 +369,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 10;</code>
      * @param string $var
      * @return $this
@@ -364,6 +384,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 11;</code>
      * @return int|string
      */
@@ -373,6 +395,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 11;</code>
      * @param int|string $var
      * @return $this
@@ -434,6 +458,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * If this child runs on a cron schedule, it will appear here
+     *
      * Generated from protobuf field <code>string cron_schedule = 14;</code>
      * @return string
      */
@@ -443,6 +469,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * If this child runs on a cron schedule, it will appear here
+     *
      * Generated from protobuf field <code>string cron_schedule = 14;</code>
      * @param string $var
      * @return $this

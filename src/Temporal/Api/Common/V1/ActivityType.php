@@ -9,6 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Represents the identifier used by a activity author to define the activity. Typically, the
+ * name of a function. This is sometimes referred to as the activity's "name"
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.ActivityType</code>
  */
 class ActivityType extends \Google\Protobuf\Internal\Message

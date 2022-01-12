@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      */
     protected $workflow_task_completed_event_id = 0;
     /**
+     * namespace of the to-be-signalled workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      */
     protected $namespace = '';
@@ -26,21 +30,34 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
      */
     protected $workflow_execution = null;
     /**
+     * name/type of the signal to fire in the external workflow
+     *
      * Generated from protobuf field <code>string signal_name = 4;</code>
      */
     protected $signal_name = '';
     /**
+     * Serialized arguments to provide to the signal handler
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      */
     protected $input = null;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      */
     protected $control = '';
     /**
+     * Workers are expected to set this to true if the workflow they are requesting to cancel is
+     * a child of the workflow which issued the request
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 7;</code>
      */
     protected $child_workflow_only = false;
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 8;</code>
+     */
+    protected $header = null;
 
     /**
      * Constructor.
@@ -49,12 +66,20 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type string $namespace
+     *           namespace of the to-be-signalled workflow
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $signal_name
+     *           name/type of the signal to fire in the external workflow
      *     @type \Temporal\Api\Common\V1\Payloads $input
+     *           Serialized arguments to provide to the signal handler
      *     @type string $control
+     *           Deprecated
      *     @type bool $child_workflow_only
+     *           Workers are expected to set this to true if the workflow they are requesting to cancel is
+     *           a child of the workflow which issued the request
+     *     @type \Temporal\Api\Common\V1\Header $header
      * }
      */
     public function __construct($data = NULL) {
@@ -63,6 +88,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      * @return int|string
      */
@@ -72,6 +99,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -85,6 +114,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * namespace of the to-be-signalled workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @return string
      */
@@ -94,6 +125,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * namespace of the to-be-signalled workflow
+     *
      * Generated from protobuf field <code>string namespace = 2;</code>
      * @param string $var
      * @return $this
@@ -129,6 +162,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * name/type of the signal to fire in the external workflow
+     *
      * Generated from protobuf field <code>string signal_name = 4;</code>
      * @return string
      */
@@ -138,6 +173,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * name/type of the signal to fire in the external workflow
+     *
      * Generated from protobuf field <code>string signal_name = 4;</code>
      * @param string $var
      * @return $this
@@ -151,6 +188,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * Serialized arguments to provide to the signal handler
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -160,6 +199,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * Serialized arguments to provide to the signal handler
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 5;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -173,6 +214,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      * @return string
      */
@@ -182,6 +225,8 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      * @param string $var
      * @return $this
@@ -195,6 +240,9 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * Workers are expected to set this to true if the workflow they are requesting to cancel is
+     * a child of the workflow which issued the request
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 7;</code>
      * @return bool
      */
@@ -204,6 +252,9 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     }
 
     /**
+     * Workers are expected to set this to true if the workflow they are requesting to cancel is
+     * a child of the workflow which issued the request
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 7;</code>
      * @param bool $var
      * @return $this
@@ -212,6 +263,28 @@ class SignalExternalWorkflowExecutionInitiatedEventAttributes extends \Google\Pr
     {
         GPBUtil::checkBool($var);
         $this->child_workflow_only = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 8;</code>
+     * @return \Temporal\Api\Common\V1\Header
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 8;</code>
+     * @param \Temporal\Api\Common\V1\Header $var
+     * @return $this
+     */
+    public function setHeader($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
+        $this->header = $var;
 
         return $this;
     }

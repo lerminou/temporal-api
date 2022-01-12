@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Serialized result of workflow failure (ex: An exception thrown, or error returned)
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      */
     protected $failure = null;
@@ -22,6 +24,8 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
      */
     protected $retry_state = 0;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -39,8 +43,10 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           Serialized result of workflow failure (ex: An exception thrown, or error returned)
      *     @type int $retry_state
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type string $new_execution_run_id
      *           If another run is started by cron or retry, this contains the new run id.
      * }
@@ -51,6 +57,8 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Serialized result of workflow failure (ex: An exception thrown, or error returned)
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -60,6 +68,8 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Serialized result of workflow failure (ex: An exception thrown, or error returned)
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -95,6 +105,8 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      * @return int|string
      */
@@ -104,6 +116,8 @@ class WorkflowExecutionFailedEventAttributes extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      * @param int|string $var
      * @return $this

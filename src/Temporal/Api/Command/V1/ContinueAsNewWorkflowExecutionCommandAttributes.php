@@ -26,7 +26,6 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      */
     protected $input = null;
     /**
-     * workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      * Timeout of a single workflow run.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 4 [(.gogoproto.stdduration) = true];</code>
@@ -39,6 +38,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      */
     protected $workflow_task_timeout = null;
     /**
+     * How long the workflow start will be delayed - not really a "backoff" in the traditional sense.
+     *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 6 [(.gogoproto.stdduration) = true];</code>
      */
     protected $backoff_start_interval = null;
@@ -47,18 +48,26 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      */
     protected $retry_policy = null;
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewInitiator initiator = 8;</code>
      */
     protected $initiator = 0;
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 9;</code>
      */
     protected $failure = null;
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 10;</code>
      */
     protected $last_completion_result = null;
     /**
+     * Should be removed. Not necessarily unused but unclear and not exposed by SDKs.
+     *
      * Generated from protobuf field <code>string cron_schedule = 11;</code>
      */
     protected $cron_schedule = '';
@@ -85,16 +94,20 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *     @type \Google\Protobuf\Duration $workflow_run_timeout
-     *           workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      *           Timeout of a single workflow run.
      *     @type \Google\Protobuf\Duration $workflow_task_timeout
      *           Timeout of a single workflow task.
      *     @type \Google\Protobuf\Duration $backoff_start_interval
+     *           How long the workflow start will be delayed - not really a "backoff" in the traditional sense.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
      *     @type int $initiator
+     *           Should be removed
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           Should be removed
      *     @type \Temporal\Api\Common\V1\Payloads $last_completion_result
+     *           Should be removed
      *     @type string $cron_schedule
+     *           Should be removed. Not necessarily unused but unclear and not exposed by SDKs.
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
@@ -172,7 +185,6 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
-     * workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      * Timeout of a single workflow run.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 4 [(.gogoproto.stdduration) = true];</code>
@@ -184,7 +196,6 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
-     * workflow_execution_timeout is omitted as it shouldn'be overridden from within a workflow.
      * Timeout of a single workflow run.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 4 [(.gogoproto.stdduration) = true];</code>
@@ -226,6 +237,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * How long the workflow start will be delayed - not really a "backoff" in the traditional sense.
+     *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 6 [(.gogoproto.stdduration) = true];</code>
      * @return \Google\Protobuf\Duration
      */
@@ -235,6 +248,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * How long the workflow start will be delayed - not really a "backoff" in the traditional sense.
+     *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 6 [(.gogoproto.stdduration) = true];</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
@@ -270,6 +285,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewInitiator initiator = 8;</code>
      * @return int
      */
@@ -279,6 +296,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewInitiator initiator = 8;</code>
      * @param int $var
      * @return $this
@@ -292,6 +311,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 9;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -301,6 +322,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 9;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
@@ -314,6 +337,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 10;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -323,6 +348,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 10;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -336,6 +363,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed. Not necessarily unused but unclear and not exposed by SDKs.
+     *
      * Generated from protobuf field <code>string cron_schedule = 11;</code>
      * @return string
      */
@@ -345,6 +374,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Should be removed. Not necessarily unused but unclear and not exposed by SDKs.
+     *
      * Generated from protobuf field <code>string cron_schedule = 11;</code>
      * @param string $var
      * @return $this

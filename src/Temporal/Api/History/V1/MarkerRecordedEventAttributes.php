@@ -14,14 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Workers use this to identify the "types" of various markers. Ex: Local activity, side effect.
+     *
      * Generated from protobuf field <code>string marker_name = 1;</code>
      */
     protected $marker_name = '';
     /**
+     * Serialized information recorded in the marker
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.common.v1.Payloads> details = 2;</code>
      */
     private $details;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -30,6 +36,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
      */
     protected $header = null;
     /**
+     * Some uses of markers, like a local activity, could "fail". If they did that is recorded here.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
      */
     protected $failure = null;
@@ -41,10 +49,14 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $marker_name
+     *           Workers use this to identify the "types" of various markers. Ex: Local activity, side effect.
      *     @type array|\Google\Protobuf\Internal\MapField $details
+     *           Serialized information recorded in the marker
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           Some uses of markers, like a local activity, could "fail". If they did that is recorded here.
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +65,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Workers use this to identify the "types" of various markers. Ex: Local activity, side effect.
+     *
      * Generated from protobuf field <code>string marker_name = 1;</code>
      * @return string
      */
@@ -62,6 +76,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Workers use this to identify the "types" of various markers. Ex: Local activity, side effect.
+     *
      * Generated from protobuf field <code>string marker_name = 1;</code>
      * @param string $var
      * @return $this
@@ -75,6 +91,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized information recorded in the marker
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.common.v1.Payloads> details = 2;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -84,6 +102,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized information recorded in the marker
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.common.v1.Payloads> details = 2;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
@@ -97,6 +117,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      * @return int|string
      */
@@ -106,6 +128,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      * @param int|string $var
      * @return $this
@@ -141,6 +165,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Some uses of markers, like a local activity, could "fail". If they did that is recorded here.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
      * @return \Temporal\Api\Failure\V1\Failure
      */
@@ -150,6 +176,8 @@ class MarkerRecordedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Some uses of markers, like a local activity, could "fail". If they did that is recorded here.
+     *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this

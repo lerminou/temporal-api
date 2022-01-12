@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * How retries ought to be handled, usable by both workflows and activities
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.RetryPolicy</code>
  */
 class RetryPolicy extends \Google\Protobuf\Internal\Message
@@ -42,7 +44,8 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      */
     protected $maximum_attempts = 0;
     /**
-     * Non-Retryable errors types. Will stop retrying if error type matches this list.
+     * Non-Retryable errors types. Will stop retrying if the error type matches this list. Note that
+     * this is not a substring match, the error *type* (not message) must match exactly.
      *
      * Generated from protobuf field <code>repeated string non_retryable_error_types = 5;</code>
      */
@@ -67,7 +70,8 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      *           Maximum number of attempts. When exceeded the retries stop even if not expired yet.
      *           1 disables retries. 0 means unlimited (up to the timeouts)
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $non_retryable_error_types
-     *           Non-Retryable errors types. Will stop retrying if error type matches this list.
+     *           Non-Retryable errors types. Will stop retrying if the error type matches this list. Note that
+     *           this is not a substring match, the error *type* (not message) must match exactly.
      * }
      */
     public function __construct($data = NULL) {
@@ -188,7 +192,8 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Non-Retryable errors types. Will stop retrying if error type matches this list.
+     * Non-Retryable errors types. Will stop retrying if the error type matches this list. Note that
+     * this is not a substring match, the error *type* (not message) must match exactly.
      *
      * Generated from protobuf field <code>repeated string non_retryable_error_types = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -199,7 +204,8 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Non-Retryable errors types. Will stop retrying if error type matches this list.
+     * Non-Retryable errors types. Will stop retrying if the error type matches this list. Note that
+     * this is not a substring match, the error *type* (not message) must match exactly.
      *
      * Generated from protobuf field <code>repeated string non_retryable_error_types = 5;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var

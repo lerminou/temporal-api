@@ -14,14 +14,20 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The name/type of the signal to fire
+     *
      * Generated from protobuf field <code>string signal_name = 1;</code>
      */
     protected $signal_name = '';
     /**
+     * Will be deserialized and provided as argument(s) to the signal handler
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 2;</code>
      */
     protected $input = null;
     /**
+     * id of the worker/client who sent this signal
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
@@ -40,8 +46,11 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      *     Optional. Data for populating the Message object.
      *
      *     @type string $signal_name
+     *           The name/type of the signal to fire
      *     @type \Temporal\Api\Common\V1\Payloads $input
+     *           Will be deserialized and provided as argument(s) to the signal handler
      *     @type string $identity
+     *           id of the worker/client who sent this signal
      *     @type \Temporal\Api\Common\V1\Header $header
      *           Headers that were passed by the sender of the signal and copied by temporal 
      *           server into the workflow task.
@@ -53,6 +62,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * The name/type of the signal to fire
+     *
      * Generated from protobuf field <code>string signal_name = 1;</code>
      * @return string
      */
@@ -62,6 +73,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * The name/type of the signal to fire
+     *
      * Generated from protobuf field <code>string signal_name = 1;</code>
      * @param string $var
      * @return $this
@@ -75,6 +88,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * Will be deserialized and provided as argument(s) to the signal handler
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 2;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -84,6 +99,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * Will be deserialized and provided as argument(s) to the signal handler
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 2;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -97,6 +114,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * id of the worker/client who sent this signal
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -106,6 +125,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
+     * id of the worker/client who sent this signal
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this

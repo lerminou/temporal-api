@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Deprecated.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.DeprecateNamespaceRequest</code>
  */
 class DeprecateNamespaceRequest extends \Google\Protobuf\Internal\Message

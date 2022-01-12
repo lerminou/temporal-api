@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * See https://docs.temporal.io/docs/concepts/task-queues/
+ *
  * Generated from protobuf message <code>temporal.api.taskqueue.v1.TaskQueue</code>
  */
 class TaskQueue extends \Google\Protobuf\Internal\Message

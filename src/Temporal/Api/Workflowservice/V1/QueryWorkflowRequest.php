@@ -32,13 +32,6 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.enums.v1.QueryRejectCondition query_reject_condition = 4;</code>
      */
     protected $query_reject_condition = 0;
-    /**
-     * Headers that are passed with the query to the processing workflow.
-     * These can include things like auth or tracing tokens.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 5;</code>
-     */
-    protected $header = null;
 
     /**
      * Constructor.
@@ -52,9 +45,6 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
      *     @type int $query_reject_condition
      *           QueryRejectCondition can used to reject the query if workflow state does not satisfy condition.
      *           Default: QUERY_REJECT_CONDITION_NONE.
-     *     @type \Temporal\Api\Common\V1\Header $header
-     *           Headers that are passed with the query to the processing workflow.
-     *           These can include things like auth or tracing tokens.
      * }
      */
     public function __construct($data = NULL) {
@@ -152,34 +142,6 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\QueryRejectCondition::class);
         $this->query_reject_condition = $var;
-
-        return $this;
-    }
-
-    /**
-     * Headers that are passed with the query to the processing workflow.
-     * These can include things like auth or tracing tokens.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 5;</code>
-     * @return \Temporal\Api\Common\V1\Header
-     */
-    public function getHeader()
-    {
-        return $this->header;
-    }
-
-    /**
-     * Headers that are passed with the query to the processing workflow.
-     * These can include things like auth or tracing tokens.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 5;</code>
-     * @param \Temporal\Api\Common\V1\Header $var
-     * @return $this
-     */
-    public function setHeader($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
-        $this->header = $var;
 
         return $this;
     }

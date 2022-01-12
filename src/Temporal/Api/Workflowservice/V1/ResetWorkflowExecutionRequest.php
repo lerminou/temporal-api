@@ -26,14 +26,21 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $reason = '';
     /**
+     * The id of a `WORKFLOW_TASK_COMPLETED`,`WORKFLOW_TASK_TIMED_OUT`, `WORKFLOW_TASK_FAILED`, or
+     * `WORKFLOW_TASK_STARTED` event to reset to.
+     *
      * Generated from protobuf field <code>int64 workflow_task_finish_event_id = 4;</code>
      */
     protected $workflow_task_finish_event_id = 0;
     /**
+     * Used to de-dupe reset requests
+     *
      * Generated from protobuf field <code>string request_id = 5;</code>
      */
     protected $request_id = '';
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
      */
     protected $reset_reapply_type = 0;
@@ -48,8 +55,12 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $reason
      *     @type int|string $workflow_task_finish_event_id
+     *           The id of a `WORKFLOW_TASK_COMPLETED`,`WORKFLOW_TASK_TIMED_OUT`, `WORKFLOW_TASK_FAILED`, or
+     *           `WORKFLOW_TASK_STARTED` event to reset to.
      *     @type string $request_id
+     *           Used to de-dupe reset requests
      *     @type int $reset_reapply_type
+     *           Should be removed. Appears unused.
      * }
      */
     public function __construct($data = NULL) {
@@ -124,6 +135,9 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The id of a `WORKFLOW_TASK_COMPLETED`,`WORKFLOW_TASK_TIMED_OUT`, `WORKFLOW_TASK_FAILED`, or
+     * `WORKFLOW_TASK_STARTED` event to reset to.
+     *
      * Generated from protobuf field <code>int64 workflow_task_finish_event_id = 4;</code>
      * @return int|string
      */
@@ -133,6 +147,9 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The id of a `WORKFLOW_TASK_COMPLETED`,`WORKFLOW_TASK_TIMED_OUT`, `WORKFLOW_TASK_FAILED`, or
+     * `WORKFLOW_TASK_STARTED` event to reset to.
+     *
      * Generated from protobuf field <code>int64 workflow_task_finish_event_id = 4;</code>
      * @param int|string $var
      * @return $this
@@ -146,6 +163,8 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Used to de-dupe reset requests
+     *
      * Generated from protobuf field <code>string request_id = 5;</code>
      * @return string
      */
@@ -155,6 +174,8 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Used to de-dupe reset requests
+     *
      * Generated from protobuf field <code>string request_id = 5;</code>
      * @param string $var
      * @return $this
@@ -168,6 +189,8 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
      * @return int
      */
@@ -177,6 +200,8 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
      * @param int $var
      * @return $this

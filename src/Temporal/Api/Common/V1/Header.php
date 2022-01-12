@@ -9,6 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Contains metadata that can be attached to a variety of requests, like starting a workflow, and
+ * can be propagated between, for example, workflows and activities.
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.Header</code>
  */
 class Header extends \Google\Protobuf\Internal\Message

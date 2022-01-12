@@ -22,22 +22,32 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $workflow_execution = null;
     /**
+     * The workflow author-defined name of the signal to send to the workflow
+     *
      * Generated from protobuf field <code>string signal_name = 3;</code>
      */
     protected $signal_name = '';
     /**
+     * Serialized value(s) to provide with the signal
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 4;</code>
      */
     protected $input = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      */
     protected $identity = '';
     /**
+     * Used to de-dupe sent signals
+     *
      * Generated from protobuf field <code>string request_id = 6;</code>
      */
     protected $request_id = '';
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 7;</code>
      */
     protected $control = '';
@@ -58,10 +68,15 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $signal_name
+     *           The workflow author-defined name of the signal to send to the workflow
      *     @type \Temporal\Api\Common\V1\Payloads $input
+     *           Serialized value(s) to provide with the signal
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type string $request_id
+     *           Used to de-dupe sent signals
      *     @type string $control
+     *           Deprecated
      *     @type \Temporal\Api\Common\V1\Header $header
      *           Headers that are passed with the signal to the processing workflow.
      *           These can include things like auth or tracing tokens.
@@ -117,6 +132,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The workflow author-defined name of the signal to send to the workflow
+     *
      * Generated from protobuf field <code>string signal_name = 3;</code>
      * @return string
      */
@@ -126,6 +143,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The workflow author-defined name of the signal to send to the workflow
+     *
      * Generated from protobuf field <code>string signal_name = 3;</code>
      * @param string $var
      * @return $this
@@ -139,6 +158,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized value(s) to provide with the signal
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 4;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -148,6 +169,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Serialized value(s) to provide with the signal
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 4;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -161,6 +184,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @return string
      */
@@ -170,6 +195,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @param string $var
      * @return $this
@@ -183,6 +210,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Used to de-dupe sent signals
+     *
      * Generated from protobuf field <code>string request_id = 6;</code>
      * @return string
      */
@@ -192,6 +221,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Used to de-dupe sent signals
+     *
      * Generated from protobuf field <code>string request_id = 6;</code>
      * @param string $var
      * @return $this
@@ -205,6 +236,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 7;</code>
      * @return string
      */
@@ -214,6 +247,8 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 7;</code>
      * @param string $var
      * @return $this

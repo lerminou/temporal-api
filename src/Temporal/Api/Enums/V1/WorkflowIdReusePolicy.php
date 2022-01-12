@@ -7,6 +7,9 @@ namespace Temporal\Api\Enums\V1;
 use UnexpectedValueException;
 
 /**
+ * Defines how new runs of a workflow with a particular ID may or may not be allowed. Note that
+ * it is *never* valid to have two actively running instances of the same workflow id.
+ *
  * Protobuf type <code>temporal.api.enums.v1.WorkflowIdReusePolicy</code>
  */
 class WorkflowIdReusePolicy
@@ -16,20 +19,21 @@ class WorkflowIdReusePolicy
      */
     const WORKFLOW_ID_REUSE_POLICY_UNSPECIFIED = 0;
     /**
-     * Allow start a workflow execution using the same workflow Id, when workflow not running.
+     * Allow starting a workflow execution using the same workflow id.
      *
      * Generated from protobuf enum <code>WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE = 1;</code>
      */
     const WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE = 1;
     /**
-     * Allow start a workflow execution using the same workflow Id, when workflow not running, and the last execution close state is in
-     * [terminated, cancelled, timed out, failed].
+     * Allow starting a workflow execution using the same workflow id, only when the last
+     * execution's final state is one of [terminated, cancelled, timed out, failed].
      *
      * Generated from protobuf enum <code>WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE_FAILED_ONLY = 2;</code>
      */
     const WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE_FAILED_ONLY = 2;
     /**
-     * Do not allow start a workflow execution using the same workflow Id at all.
+     * Do not permit re-use of the workflow id for this workflow. Future start workflow requests
+     * could potentially change the policy, allowing re-use of the workflow id.
      *
      * Generated from protobuf enum <code>WORKFLOW_ID_REUSE_POLICY_REJECT_DUPLICATE = 3;</code>
      */

@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "name": "lerminou/temporal-api",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "keywords": ["grpc", "temporal"],
   "description": "GRPC client to temporal server, based on generated proto",
   "require": {

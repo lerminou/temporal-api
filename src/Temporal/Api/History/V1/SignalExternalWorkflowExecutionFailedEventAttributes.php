@@ -18,6 +18,8 @@ class SignalExternalWorkflowExecutionFailedEventAttributes extends \Google\Proto
      */
     protected $cause = 0;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -34,6 +36,8 @@ class SignalExternalWorkflowExecutionFailedEventAttributes extends \Google\Proto
      */
     protected $initiated_event_id = 0;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      */
     protected $control = '';
@@ -46,10 +50,12 @@ class SignalExternalWorkflowExecutionFailedEventAttributes extends \Google\Proto
      *
      *     @type int $cause
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type string $namespace
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type int|string $initiated_event_id
      *     @type string $control
+     *           Deprecated
      * }
      */
     public function __construct($data = NULL) {
@@ -80,6 +86,8 @@ class SignalExternalWorkflowExecutionFailedEventAttributes extends \Google\Proto
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @return int|string
      */
@@ -89,6 +97,8 @@ class SignalExternalWorkflowExecutionFailedEventAttributes extends \Google\Proto
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -168,6 +178,8 @@ class SignalExternalWorkflowExecutionFailedEventAttributes extends \Google\Proto
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      * @return string
      */
@@ -177,6 +189,8 @@ class SignalExternalWorkflowExecutionFailedEventAttributes extends \Google\Proto
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 6;</code>
      * @param string $var
      * @return $this

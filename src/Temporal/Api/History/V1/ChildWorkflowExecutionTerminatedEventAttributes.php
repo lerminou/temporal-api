@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      */
     protected $namespace = '';
@@ -26,10 +28,14 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      */
     protected $workflow_type = null;
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 4;</code>
      */
     protected $initiated_event_id = 0;
     /**
+     * Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      */
     protected $started_event_id = 0;
@@ -41,10 +47,13 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Namespace of the child workflow
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type int|string $initiated_event_id
+     *           Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
      *     @type int|string $started_event_id
+     *           Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +62,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @return string
      */
@@ -62,6 +73,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Namespace of the child workflow
+     *
      * Generated from protobuf field <code>string namespace = 1;</code>
      * @param string $var
      * @return $this
@@ -119,6 +132,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 4;</code>
      * @return int|string
      */
@@ -128,6 +143,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Id of the `START_CHILD_WORKFLOW_EXECUTION_INITIATED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 initiated_event_id = 4;</code>
      * @param int|string $var
      * @return $this
@@ -141,6 +158,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      * @return int|string
      */
@@ -150,6 +169,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
+     * Id of the `CHILD_WORKFLOW_EXECUTION_STARTED` event which this event corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      * @param int|string $var
      * @return $this

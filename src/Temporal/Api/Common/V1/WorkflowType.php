@@ -9,6 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Represents the identifier used by a workflow author to define the workflow. Typically, the
+ * name of a function. This is sometimes referred to as the workflow's "name"
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.WorkflowType</code>
  */
 class WorkflowType extends \Google\Protobuf\Internal\Message

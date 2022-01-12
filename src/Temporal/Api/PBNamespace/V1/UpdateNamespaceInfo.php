@@ -27,6 +27,16 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> data = 3;</code>
      */
     private $data;
+    /**
+     * New namespace state, server will reject if transition is not allowed.
+     * Allowed transitions are:
+     *  Registered -> [ Deleted | Deprecated | Handover ]
+     *  Handover -> [ Registered ]
+     * Default is NAMESPACE_STATE_UNSPECIFIED which is do not change state.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 4;</code>
+     */
+    protected $state = 0;
 
     /**
      * Constructor.
@@ -38,6 +48,12 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
      *     @type string $owner_email
      *     @type array|\Google\Protobuf\Internal\MapField $data
      *           A key-value map for any customized purpose.
+     *     @type int $state
+     *           New namespace state, server will reject if transition is not allowed.
+     *           Allowed transitions are:
+     *            Registered -> [ Deleted | Deprecated | Handover ]
+     *            Handover -> [ Registered ]
+     *           Default is NAMESPACE_STATE_UNSPECIFIED which is do not change state.
      * }
      */
     public function __construct($data = NULL) {
@@ -111,6 +127,40 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->data = $arr;
+
+        return $this;
+    }
+
+    /**
+     * New namespace state, server will reject if transition is not allowed.
+     * Allowed transitions are:
+     *  Registered -> [ Deleted | Deprecated | Handover ]
+     *  Handover -> [ Registered ]
+     * Default is NAMESPACE_STATE_UNSPECIFIED which is do not change state.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 4;</code>
+     * @return int
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * New namespace state, server will reject if transition is not allowed.
+     * Allowed transitions are:
+     *  Registered -> [ Deleted | Deprecated | Handover ]
+     *  Handover -> [ Registered ]
+     * Default is NAMESPACE_STATE_UNSPECIFIED which is do not change state.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NamespaceState::class);
+        $this->state = $var;
 
         return $this;
     }

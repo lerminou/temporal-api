@@ -14,10 +14,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      */
     protected $started_event_id = 0;
@@ -33,7 +37,9 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $scheduled_event_id
+     *           The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
      *     @type int|string $started_event_id
+     *           The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
      *     @type int $timeout_type
      * }
      */
@@ -43,6 +49,8 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @return int|string
      */
@@ -52,6 +60,8 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_SCHEDULED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 1;</code>
      * @param int|string $var
      * @return $this
@@ -65,6 +75,8 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      * @return int|string
      */
@@ -74,6 +86,8 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `WORKFLOW_TASK_STARTED` event this task corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 2;</code>
      * @param int|string $var
      * @return $this

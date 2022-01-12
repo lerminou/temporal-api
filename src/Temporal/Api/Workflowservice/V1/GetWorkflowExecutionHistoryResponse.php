@@ -18,10 +18,15 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      */
     protected $history = null;
     /**
+     * Raw history is an alternate representation of history that may be returned if configured on
+     * the frontend. This is not supported by all SDKs. Either this or `history` will be set.
+     *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.DataBlob raw_history = 2;</code>
      */
     private $raw_history;
     /**
+     * Will be set if there are more history events than were included in this response
+     *
      * Generated from protobuf field <code>bytes next_page_token = 3;</code>
      */
     protected $next_page_token = '';
@@ -38,7 +43,10 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      *
      *     @type \Temporal\Api\History\V1\History $history
      *     @type \Temporal\Api\Common\V1\DataBlob[]|\Google\Protobuf\Internal\RepeatedField $raw_history
+     *           Raw history is an alternate representation of history that may be returned if configured on
+     *           the frontend. This is not supported by all SDKs. Either this or `history` will be set.
      *     @type string $next_page_token
+     *           Will be set if there are more history events than were included in this response
      *     @type bool $archived
      * }
      */
@@ -70,6 +78,9 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Raw history is an alternate representation of history that may be returned if configured on
+     * the frontend. This is not supported by all SDKs. Either this or `history` will be set.
+     *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.DataBlob raw_history = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -79,6 +90,9 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Raw history is an alternate representation of history that may be returned if configured on
+     * the frontend. This is not supported by all SDKs. Either this or `history` will be set.
+     *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.DataBlob raw_history = 2;</code>
      * @param \Temporal\Api\Common\V1\DataBlob[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -92,6 +106,8 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Will be set if there are more history events than were included in this response
+     *
      * Generated from protobuf field <code>bytes next_page_token = 3;</code>
      * @return string
      */
@@ -101,6 +117,8 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Will be set if there are more history events than were included in this response
+     *
      * Generated from protobuf field <code>bytes next_page_token = 3;</code>
      * @param string $var
      * @return $this

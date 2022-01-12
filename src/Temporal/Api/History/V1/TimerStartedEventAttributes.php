@@ -14,10 +14,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The worker/user assigned id for this timer
+     *
      * Generated from protobuf field <code>string timer_id = 1;</code>
      */
     protected $timer_id = '';
     /**
+     * How long until this timer fires
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -25,6 +28,8 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      */
     protected $start_to_fire_timeout = null;
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      */
     protected $workflow_task_completed_event_id = 0;
@@ -36,10 +41,13 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $timer_id
+     *           The worker/user assigned id for this timer
      *     @type \Google\Protobuf\Duration $start_to_fire_timeout
+     *           How long until this timer fires
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
      *     @type int|string $workflow_task_completed_event_id
+     *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      * }
      */
     public function __construct($data = NULL) {
@@ -48,6 +56,8 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The worker/user assigned id for this timer
+     *
      * Generated from protobuf field <code>string timer_id = 1;</code>
      * @return string
      */
@@ -57,6 +67,8 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The worker/user assigned id for this timer
+     *
      * Generated from protobuf field <code>string timer_id = 1;</code>
      * @param string $var
      * @return $this
@@ -70,6 +82,7 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * How long until this timer fires
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -82,6 +95,7 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * How long until this timer fires
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -98,6 +112,8 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      * @return int|string
      */
@@ -107,6 +123,8 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
+     *
      * Generated from protobuf field <code>int64 workflow_task_completed_event_id = 3;</code>
      * @param int|string $var
      * @return $this

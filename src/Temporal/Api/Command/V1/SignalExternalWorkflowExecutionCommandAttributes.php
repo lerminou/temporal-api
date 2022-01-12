@@ -22,18 +22,28 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      */
     protected $execution = null;
     /**
+     * The workflow author-defined name of the signal to send to the workflow.
+     *
      * Generated from protobuf field <code>string signal_name = 3;</code>
      */
     protected $signal_name = '';
     /**
+     * Serialized value(s) to provide with the signal.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 4;</code>
      */
     protected $input = null;
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 5;</code>
      */
     protected $control = '';
     /**
+     * Set this to true if the workflow being cancelled is a child of the workflow originating this
+     * command. The request will be rejected if it is set to true and the target workflow is *not*
+     * a child of the requesting workflow.
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 6;</code>
      */
     protected $child_workflow_only = false;
@@ -54,9 +64,15 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      *     @type string $namespace
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $execution
      *     @type string $signal_name
+     *           The workflow author-defined name of the signal to send to the workflow.
      *     @type \Temporal\Api\Common\V1\Payloads $input
+     *           Serialized value(s) to provide with the signal.
      *     @type string $control
+     *           Deprecated
      *     @type bool $child_workflow_only
+     *           Set this to true if the workflow being cancelled is a child of the workflow originating this
+     *           command. The request will be rejected if it is set to true and the target workflow is *not*
+     *           a child of the requesting workflow.
      *     @type \Temporal\Api\Common\V1\Header $header
      *           Headers that are passed by the workflow that is sending a signal to the external 
      *           workflow that is receiving this signal.
@@ -112,6 +128,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * The workflow author-defined name of the signal to send to the workflow.
+     *
      * Generated from protobuf field <code>string signal_name = 3;</code>
      * @return string
      */
@@ -121,6 +139,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * The workflow author-defined name of the signal to send to the workflow.
+     *
      * Generated from protobuf field <code>string signal_name = 3;</code>
      * @param string $var
      * @return $this
@@ -134,6 +154,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Serialized value(s) to provide with the signal.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 4;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -143,6 +165,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Serialized value(s) to provide with the signal.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads input = 4;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -156,6 +180,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 5;</code>
      * @return string
      */
@@ -165,6 +191,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Deprecated
+     *
      * Generated from protobuf field <code>string control = 5;</code>
      * @param string $var
      * @return $this
@@ -178,6 +206,10 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Set this to true if the workflow being cancelled is a child of the workflow originating this
+     * command. The request will be rejected if it is set to true and the target workflow is *not*
+     * a child of the requesting workflow.
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 6;</code>
      * @return bool
      */
@@ -187,6 +219,10 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
+     * Set this to true if the workflow being cancelled is a child of the workflow originating this
+     * command. The request will be rejected if it is set to true and the target workflow is *not*
+     * a child of the requesting workflow.
+     *
      * Generated from protobuf field <code>bool child_workflow_only = 6;</code>
      * @param bool $var
      * @return $this

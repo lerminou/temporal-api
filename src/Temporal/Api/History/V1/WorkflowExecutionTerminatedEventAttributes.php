@@ -14,6 +14,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * User/client provided reason for termination
+     *
      * Generated from protobuf field <code>string reason = 1;</code>
      */
     protected $reason = '';
@@ -22,6 +24,8 @@ class WorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Intern
      */
     protected $details = null;
     /**
+     * id of the client who requested termination
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
@@ -33,8 +37,10 @@ class WorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Intern
      *     Optional. Data for populating the Message object.
      *
      *     @type string $reason
+     *           User/client provided reason for termination
      *     @type \Temporal\Api\Common\V1\Payloads $details
      *     @type string $identity
+     *           id of the client who requested termination
      * }
      */
     public function __construct($data = NULL) {
@@ -43,6 +49,8 @@ class WorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * User/client provided reason for termination
+     *
      * Generated from protobuf field <code>string reason = 1;</code>
      * @return string
      */
@@ -52,6 +60,8 @@ class WorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * User/client provided reason for termination
+     *
      * Generated from protobuf field <code>string reason = 1;</code>
      * @param string $var
      * @return $this
@@ -87,6 +97,8 @@ class WorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * id of the client who requested termination
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -96,6 +108,8 @@ class WorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\Intern
     }
 
     /**
+     * id of the client who requested termination
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this

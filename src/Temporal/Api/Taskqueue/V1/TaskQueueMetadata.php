@@ -9,11 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * Only applies to activity task queues
+ *
  * Generated from protobuf message <code>temporal.api.taskqueue.v1.TaskQueueMetadata</code>
  */
 class TaskQueueMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Allows throttling dispatch of tasks from this queue
+     *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue max_tasks_per_second = 1;</code>
      */
     protected $max_tasks_per_second = null;
@@ -25,6 +29,7 @@ class TaskQueueMetadata extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\DoubleValue $max_tasks_per_second
+     *           Allows throttling dispatch of tasks from this queue
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +38,8 @@ class TaskQueueMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Allows throttling dispatch of tasks from this queue
+     *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue max_tasks_per_second = 1;</code>
      * @return \Google\Protobuf\DoubleValue
      */
@@ -44,6 +51,8 @@ class TaskQueueMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getMaxTasksPerSecond()</code>
 
+     * Allows throttling dispatch of tasks from this queue
+     *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue max_tasks_per_second = 1;</code>
      * @return float|null
      */
@@ -53,6 +62,8 @@ class TaskQueueMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Allows throttling dispatch of tasks from this queue
+     *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue max_tasks_per_second = 1;</code>
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
@@ -68,6 +79,8 @@ class TaskQueueMetadata extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
+     * Allows throttling dispatch of tasks from this queue
+     *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue max_tasks_per_second = 1;</code>
      * @param float|null $var
      * @return $this

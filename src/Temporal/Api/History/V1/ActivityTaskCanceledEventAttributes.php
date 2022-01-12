@@ -14,22 +14,33 @@ use Google\Protobuf\Internal\GPBUtil;
 class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Additional information that the activity reported upon confirming cancellation
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 1;</code>
      */
     protected $details = null;
     /**
+     * id of the most recent `ACTIVITY_TASK_CANCEL_REQUESTED` event which refers to the same
+     * activity
+     *
      * Generated from protobuf field <code>int64 latest_cancel_requested_event_id = 2;</code>
      */
     protected $latest_cancel_requested_event_id = 0;
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel confirmation corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 3;</code>
      */
     protected $scheduled_event_id = 0;
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this cancel confirmation corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 4;</code>
      */
     protected $started_event_id = 0;
     /**
+     * id of the worker who canceled this activity
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      */
     protected $identity = '';
@@ -41,10 +52,16 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Common\V1\Payloads $details
+     *           Additional information that the activity reported upon confirming cancellation
      *     @type int|string $latest_cancel_requested_event_id
+     *           id of the most recent `ACTIVITY_TASK_CANCEL_REQUESTED` event which refers to the same
+     *           activity
      *     @type int|string $scheduled_event_id
+     *           The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel confirmation corresponds to
      *     @type int|string $started_event_id
+     *           The id of the `ACTIVITY_TASK_STARTED` event this cancel confirmation corresponds to
      *     @type string $identity
+     *           id of the worker who canceled this activity
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +70,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Additional information that the activity reported upon confirming cancellation
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 1;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -62,6 +81,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Additional information that the activity reported upon confirming cancellation
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 1;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -75,6 +96,9 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * id of the most recent `ACTIVITY_TASK_CANCEL_REQUESTED` event which refers to the same
+     * activity
+     *
      * Generated from protobuf field <code>int64 latest_cancel_requested_event_id = 2;</code>
      * @return int|string
      */
@@ -84,6 +108,9 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * id of the most recent `ACTIVITY_TASK_CANCEL_REQUESTED` event which refers to the same
+     * activity
+     *
      * Generated from protobuf field <code>int64 latest_cancel_requested_event_id = 2;</code>
      * @param int|string $var
      * @return $this
@@ -97,6 +124,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel confirmation corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 3;</code>
      * @return int|string
      */
@@ -106,6 +135,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_SCHEDULED` event this cancel confirmation corresponds to
+     *
      * Generated from protobuf field <code>int64 scheduled_event_id = 3;</code>
      * @param int|string $var
      * @return $this
@@ -119,6 +150,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this cancel confirmation corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 4;</code>
      * @return int|string
      */
@@ -128,6 +161,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The id of the `ACTIVITY_TASK_STARTED` event this cancel confirmation corresponds to
+     *
      * Generated from protobuf field <code>int64 started_event_id = 4;</code>
      * @param int|string $var
      * @return $this
@@ -141,6 +176,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * id of the worker who canceled this activity
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @return string
      */
@@ -150,6 +187,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * id of the worker who canceled this activity
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @param string $var
      * @return $this

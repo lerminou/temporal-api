@@ -26,14 +26,20 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $reason = '';
     /**
+     * Serialized additional information to attach to the termination event
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 4;</code>
      */
     protected $details = null;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      */
     protected $identity = '';
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
      */
     protected $first_execution_run_id = '';
@@ -48,8 +54,11 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $reason
      *     @type \Temporal\Api\Common\V1\Payloads $details
+     *           Serialized additional information to attach to the termination event
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type string $first_execution_run_id
+     *           Should be removed. Appears unused.
      * }
      */
     public function __construct($data = NULL) {
@@ -124,6 +133,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * Serialized additional information to attach to the termination event
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 4;</code>
      * @return \Temporal\Api\Common\V1\Payloads
      */
@@ -133,6 +144,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * Serialized additional information to attach to the termination event
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 4;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
@@ -146,6 +159,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @return string
      */
@@ -155,6 +170,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @param string $var
      * @return $this
@@ -168,6 +185,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
      * @return string
      */
@@ -177,6 +196,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
+     * Should be removed. Appears unused.
+     *
      * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
      * @param string $var
      * @return $this

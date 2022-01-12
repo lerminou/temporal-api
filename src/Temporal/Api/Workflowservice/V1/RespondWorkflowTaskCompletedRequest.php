@@ -14,34 +14,55 @@ use Google\Protobuf\Internal\GPBUtil;
 class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The task token as received in `PollWorkflowTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      */
     protected $task_token = '';
     /**
+     * A list of commands generated when driving the workflow code in response to the new task
+     *
      * Generated from protobuf field <code>repeated .temporal.api.command.v1.Command commands = 2;</code>
      */
     private $commands;
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
     /**
+     * May be set by workers to indicate that the worker desires future tasks to be provided with
+     * incremental history on a sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.StickyExecutionAttributes sticky_attributes = 4;</code>
      */
     protected $sticky_attributes = null;
     /**
+     * If set, the worker wishes to immediately receive the next workflow task as a response to
+     * this completion. This can save on polling round-trips.
+     *
      * Generated from protobuf field <code>bool return_new_workflow_task = 5;</code>
      */
     protected $return_new_workflow_task = false;
     /**
+     * Can be used to *force* creation of a new workflow task, even if no commands have resolved or
+     * one would not otherwise have been generated. This is used when the worker knows it is doing
+     * something useful, but cannot complete it within the workflow task timeout. Local activities
+     * which run for longer than the task timeout being the prime example.
+     *
      * Generated from protobuf field <code>bool force_create_new_workflow_task = 6;</code>
      */
     protected $force_create_new_workflow_task = false;
     /**
+     * Worker process' unique binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 7;</code>
      */
     protected $binary_checksum = '';
     /**
+     * Responses to the `queries` field in the task being responded to
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.query.v1.WorkflowQueryResult> query_results = 8;</code>
      */
     private $query_results;
@@ -57,13 +78,26 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type string $task_token
+     *           The task token as received in `PollWorkflowTaskQueueResponse`
      *     @type \Temporal\Api\Command\V1\Command[]|\Google\Protobuf\Internal\RepeatedField $commands
+     *           A list of commands generated when driving the workflow code in response to the new task
      *     @type string $identity
+     *           The identity of the worker/client
      *     @type \Temporal\Api\Taskqueue\V1\StickyExecutionAttributes $sticky_attributes
+     *           May be set by workers to indicate that the worker desires future tasks to be provided with
+     *           incremental history on a sticky queue.
      *     @type bool $return_new_workflow_task
+     *           If set, the worker wishes to immediately receive the next workflow task as a response to
+     *           this completion. This can save on polling round-trips.
      *     @type bool $force_create_new_workflow_task
+     *           Can be used to *force* creation of a new workflow task, even if no commands have resolved or
+     *           one would not otherwise have been generated. This is used when the worker knows it is doing
+     *           something useful, but cannot complete it within the workflow task timeout. Local activities
+     *           which run for longer than the task timeout being the prime example.
      *     @type string $binary_checksum
+     *           Worker process' unique binary id
      *     @type array|\Google\Protobuf\Internal\MapField $query_results
+     *           Responses to the `queries` field in the task being responded to
      *     @type string $namespace
      * }
      */
@@ -73,6 +107,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The task token as received in `PollWorkflowTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @return string
      */
@@ -82,6 +118,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The task token as received in `PollWorkflowTaskQueueResponse`
+     *
      * Generated from protobuf field <code>bytes task_token = 1;</code>
      * @param string $var
      * @return $this
@@ -95,6 +133,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * A list of commands generated when driving the workflow code in response to the new task
+     *
      * Generated from protobuf field <code>repeated .temporal.api.command.v1.Command commands = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -104,6 +144,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * A list of commands generated when driving the workflow code in response to the new task
+     *
      * Generated from protobuf field <code>repeated .temporal.api.command.v1.Command commands = 2;</code>
      * @param \Temporal\Api\Command\V1\Command[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
@@ -117,6 +159,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @return string
      */
@@ -126,6 +170,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * The identity of the worker/client
+     *
      * Generated from protobuf field <code>string identity = 3;</code>
      * @param string $var
      * @return $this
@@ -139,6 +185,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * May be set by workers to indicate that the worker desires future tasks to be provided with
+     * incremental history on a sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.StickyExecutionAttributes sticky_attributes = 4;</code>
      * @return \Temporal\Api\Taskqueue\V1\StickyExecutionAttributes
      */
@@ -148,6 +197,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * May be set by workers to indicate that the worker desires future tasks to be provided with
+     * incremental history on a sticky queue.
+     *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.StickyExecutionAttributes sticky_attributes = 4;</code>
      * @param \Temporal\Api\Taskqueue\V1\StickyExecutionAttributes $var
      * @return $this
@@ -161,6 +213,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * If set, the worker wishes to immediately receive the next workflow task as a response to
+     * this completion. This can save on polling round-trips.
+     *
      * Generated from protobuf field <code>bool return_new_workflow_task = 5;</code>
      * @return bool
      */
@@ -170,6 +225,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * If set, the worker wishes to immediately receive the next workflow task as a response to
+     * this completion. This can save on polling round-trips.
+     *
      * Generated from protobuf field <code>bool return_new_workflow_task = 5;</code>
      * @param bool $var
      * @return $this
@@ -183,6 +241,11 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Can be used to *force* creation of a new workflow task, even if no commands have resolved or
+     * one would not otherwise have been generated. This is used when the worker knows it is doing
+     * something useful, but cannot complete it within the workflow task timeout. Local activities
+     * which run for longer than the task timeout being the prime example.
+     *
      * Generated from protobuf field <code>bool force_create_new_workflow_task = 6;</code>
      * @return bool
      */
@@ -192,6 +255,11 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Can be used to *force* creation of a new workflow task, even if no commands have resolved or
+     * one would not otherwise have been generated. This is used when the worker knows it is doing
+     * something useful, but cannot complete it within the workflow task timeout. Local activities
+     * which run for longer than the task timeout being the prime example.
+     *
      * Generated from protobuf field <code>bool force_create_new_workflow_task = 6;</code>
      * @param bool $var
      * @return $this
@@ -205,6 +273,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Worker process' unique binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 7;</code>
      * @return string
      */
@@ -214,6 +284,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Worker process' unique binary id
+     *
      * Generated from protobuf field <code>string binary_checksum = 7;</code>
      * @param string $var
      * @return $this
@@ -227,6 +299,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Responses to the `queries` field in the task being responded to
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.query.v1.WorkflowQueryResult> query_results = 8;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
@@ -236,6 +310,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Responses to the `queries` field in the task being responded to
+     *
      * Generated from protobuf field <code>map<string, .temporal.api.query.v1.WorkflowQueryResult> query_results = 8;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this

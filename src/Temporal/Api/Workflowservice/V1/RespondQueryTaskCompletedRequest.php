@@ -9,8 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * TODO:  deprecated APIs
- *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondQueryTaskCompletedRequest</code>
  */
 class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
