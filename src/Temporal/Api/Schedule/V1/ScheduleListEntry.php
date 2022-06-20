@@ -27,6 +27,10 @@ class ScheduleListEntry extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.SearchAttributes search_attributes = 3;</code>
      */
     protected $search_attributes = null;
+    /**
+     * Generated from protobuf field <code>.temporal.api.schedule.v1.ScheduleListInfo info = 4;</code>
+     */
+    protected $info = null;
 
     /**
      * Constructor.
@@ -37,6 +41,7 @@ class ScheduleListEntry extends \Google\Protobuf\Internal\Message
      *     @type string $schedule_id
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
+     *     @type \Temporal\Api\Schedule\V1\ScheduleListInfo $info
      * }
      */
     public function __construct($data = NULL) {
@@ -106,6 +111,28 @@ class ScheduleListEntry extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.schedule.v1.ScheduleListInfo info = 4;</code>
+     * @return \Temporal\Api\Schedule\V1\ScheduleListInfo
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.schedule.v1.ScheduleListInfo info = 4;</code>
+     * @param \Temporal\Api\Schedule\V1\ScheduleListInfo $var
+     * @return $this
+     */
+    public function setInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\ScheduleListInfo::class);
+        $this->info = $var;
 
         return $this;
     }

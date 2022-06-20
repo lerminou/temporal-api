@@ -1,5 +1,29 @@
 <?php
+// GENERATED CODE -- DO NOT EDIT!
 
+// Original file comments:
+// The MIT License
+//
+// Copyright (c) 2020 Temporal Technologies Inc.  All rights reserved.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
 namespace Temporal\Api;
 
 /**
@@ -39,11 +63,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RegisterNamespaceResponse
      */
     public function RegisterNamespace(\Temporal\Api\Workflowservice\V1\RegisterNamespaceRequest $argument,
-                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RegisterNamespace',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RegisterNamespaceResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RegisterNamespaceResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -54,11 +78,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse
      */
     public function DescribeNamespace(\Temporal\Api\Workflowservice\V1\DescribeNamespaceRequest $argument,
-                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeNamespace',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -69,11 +93,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListNamespacesResponse
      */
     public function ListNamespaces(\Temporal\Api\Workflowservice\V1\ListNamespacesRequest $argument,
-                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListNamespaces',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListNamespacesResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListNamespacesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -90,11 +114,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\UpdateNamespaceResponse
      */
     public function UpdateNamespace(\Temporal\Api\Workflowservice\V1\UpdateNamespaceRequest $argument,
-                                                                                            $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateNamespace',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\UpdateNamespaceResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\UpdateNamespaceResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -109,11 +133,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\DeprecateNamespaceResponse
      */
     public function DeprecateNamespace(\Temporal\Api\Workflowservice\V1\DeprecateNamespaceRequest $argument,
-                                                                                                  $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeprecateNamespace',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\DeprecateNamespaceResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DeprecateNamespaceResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -128,11 +152,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse
      */
     public function StartWorkflowExecution(\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest $argument,
-                                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/StartWorkflowExecution',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -144,16 +168,16 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryResponse
      */
     public function GetWorkflowExecutionHistory(\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryRequest $argument,
-                                                                                                                    $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetWorkflowExecutionHistory',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
-     * GetWorkflowExecutionHistoryReverse returns the history of specified workflow execution in reverse
-     * order (starting from last event). Fails with`NotFound` if the specified workflow execution is
+     * GetWorkflowExecutionHistoryReverse returns the history of specified workflow execution in reverse 
+     * order (starting from last event). Fails with`NotFound` if the specified workflow execution is 
      * unknown to the service.
      * @param \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseRequest $argument input argument
      * @param array $metadata metadata
@@ -161,11 +185,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseResponse
      */
     public function GetWorkflowExecutionHistoryReverse(\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseRequest $argument,
-                                                                                                                                  $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetWorkflowExecutionHistoryReverse',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -181,11 +205,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse
      */
     public function PollWorkflowTaskQueue(\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueRequest $argument,
-                                                                                                        $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PollWorkflowTaskQueue',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -201,11 +225,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedResponse
      */
     public function RespondWorkflowTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest $argument,
-                                                                                                                      $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondWorkflowTaskCompleted',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -224,11 +248,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedResponse
      */
     public function RespondWorkflowTaskFailed(\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedRequest $argument,
-                                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondWorkflowTaskFailed',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -250,11 +274,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse
      */
     public function PollActivityTaskQueue(\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueRequest $argument,
-                                                                                                        $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PollActivityTaskQueue',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -270,11 +294,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatResponse
      */
     public function RecordActivityTaskHeartbeat(\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatRequest $argument,
-                                                                                                                    $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeat',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -289,11 +313,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdResponse
      */
     public function RecordActivityTaskHeartbeatById(\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdRequest $argument,
-                                                                                                                            $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeatById',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -309,11 +333,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedResponse
      */
     public function RespondActivityTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedRequest $argument,
-                                                                                                                      $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCompleted',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -328,11 +352,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdResponse
      */
     public function RespondActivityTaskCompletedById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdRequest $argument,
-                                                                                                                              $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCompletedById',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -347,11 +371,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedResponse
      */
     public function RespondActivityTaskFailed(\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedRequest $argument,
-                                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskFailed',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -366,11 +390,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdResponse
      */
     public function RespondActivityTaskFailedById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdRequest $argument,
-                                                                                                                        $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskFailedById',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -385,11 +409,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledResponse
      */
     public function RespondActivityTaskCanceled(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledRequest $argument,
-                                                                                                                    $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCanceled',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -404,11 +428,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdResponse
      */
     public function RespondActivityTaskCanceledById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdRequest $argument,
-                                                                                                                            $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCanceledById',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -424,11 +448,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionResponse
      */
     public function RequestCancelWorkflowExecution(\Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionRequest $argument,
-                                                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RequestCancelWorkflowExecution',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -442,11 +466,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionResponse
      */
     public function SignalWorkflowExecution(\Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionRequest $argument,
-                                                                                                            $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SignalWorkflowExecution',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -468,11 +492,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionResponse
      */
     public function SignalWithStartWorkflowExecution(\Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionRequest $argument,
-                                                                                                                              $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SignalWithStartWorkflowExecution',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -486,11 +510,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionResponse
      */
     public function ResetWorkflowExecution(\Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionRequest $argument,
-                                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ResetWorkflowExecution',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -503,11 +527,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionResponse
      */
     public function TerminateWorkflowExecution(\Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionRequest $argument,
-                                                                                                                  $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/TerminateWorkflowExecution',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -518,11 +542,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsResponse
      */
     public function ListOpenWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsRequest $argument,
-                                                                                                                  $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListOpenWorkflowExecutions',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -533,11 +557,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsResponse
      */
     public function ListClosedWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsRequest $argument,
-                                                                                                                      $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListClosedWorkflowExecutions',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -548,11 +572,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsResponse
      */
     public function ListWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsRequest $argument,
-                                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListWorkflowExecutions',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -563,11 +587,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsResponse
      */
     public function ListArchivedWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsRequest $argument,
-                                                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListArchivedWorkflowExecutions',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -578,11 +602,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsResponse
      */
     public function ScanWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsRequest $argument,
-                                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ScanWorkflowExecutions',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -593,11 +617,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse
      */
     public function CountWorkflowExecutions(\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsRequest $argument,
-                                                                                                            $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CountWorkflowExecutions',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -608,11 +632,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\GetSearchAttributesResponse
      */
     public function GetSearchAttributes(\Temporal\Api\Workflowservice\V1\GetSearchAttributesRequest $argument,
-                                                                                                    $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetSearchAttributes',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\GetSearchAttributesResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\GetSearchAttributesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -627,11 +651,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedResponse
      */
     public function RespondQueryTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedRequest $argument,
-                                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondQueryTaskCompleted',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -648,11 +672,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueResponse
      */
     public function ResetStickyTaskQueue(\Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueRequest $argument,
-                                                                                                      $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ResetStickyTaskQueue',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -663,11 +687,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\QueryWorkflowResponse
      */
     public function QueryWorkflow(\Temporal\Api\Workflowservice\V1\QueryWorkflowRequest $argument,
-                                                                                        $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/QueryWorkflow',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\QueryWorkflowResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\QueryWorkflowResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -678,11 +702,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionResponse
      */
     public function DescribeWorkflowExecution(\Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionRequest $argument,
-                                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeWorkflowExecution',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -693,11 +717,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse
      */
     public function DescribeTaskQueue(\Temporal\Api\Workflowservice\V1\DescribeTaskQueueRequest $argument,
-                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeTaskQueue',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -708,11 +732,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\GetClusterInfoResponse
      */
     public function GetClusterInfo(\Temporal\Api\Workflowservice\V1\GetClusterInfoRequest $argument,
-                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetClusterInfo',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\GetClusterInfoResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\GetClusterInfoResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -723,11 +747,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\GetSystemInfoResponse
      */
     public function GetSystemInfo(\Temporal\Api\Workflowservice\V1\GetSystemInfoRequest $argument,
-                                                                                        $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetSystemInfo',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\GetSystemInfoResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\GetSystemInfoResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -737,11 +761,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsResponse
      */
     public function ListTaskQueuePartitions(\Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsRequest $argument,
-                                                                                                            $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListTaskQueuePartitions',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -758,11 +782,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\CreateScheduleResponse
      */
     public function CreateSchedule(\Temporal\Api\Workflowservice\V1\CreateScheduleRequest $argument,
-                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CreateSchedule',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\CreateScheduleResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\CreateScheduleResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -773,11 +797,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\DescribeScheduleResponse
      */
     public function DescribeSchedule(\Temporal\Api\Workflowservice\V1\DescribeScheduleRequest $argument,
-                                                                                              $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeSchedule',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\DescribeScheduleResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeScheduleResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -792,11 +816,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\UpdateScheduleResponse
      */
     public function UpdateSchedule(\Temporal\Api\Workflowservice\V1\UpdateScheduleRequest $argument,
-                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateSchedule',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\UpdateScheduleResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\UpdateScheduleResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -809,11 +833,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\PatchScheduleResponse
      */
     public function PatchSchedule(\Temporal\Api\Workflowservice\V1\PatchScheduleRequest $argument,
-                                                                                        $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PatchSchedule',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\PatchScheduleResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\PatchScheduleResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -824,11 +848,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesResponse
      */
     public function ListScheduleMatchingTimes(\Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesRequest $argument,
-                                                                                                                $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListScheduleMatchingTimes',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -843,11 +867,11 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\DeleteScheduleResponse
      */
     public function DeleteSchedule(\Temporal\Api\Workflowservice\V1\DeleteScheduleRequest $argument,
-                                                                                          $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeleteSchedule',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\DeleteScheduleResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DeleteScheduleResponse', 'decode'],
+        $metadata, $options);
     }
 
     /**
@@ -858,11 +882,44 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @return \Temporal\Api\Workflowservice\V1\ListSchedulesResponse
      */
     public function ListSchedules(\Temporal\Api\Workflowservice\V1\ListSchedulesRequest $argument,
-                                                                                        $metadata = [], $options = []) {
+      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListSchedules',
-            $argument,
-            ['\Temporal\Api\Workflowservice\V1\ListSchedulesResponse', 'decode'],
-            $metadata, $options);
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListSchedulesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * (-- api-linter: core::0134::response-message-name=disabled
+     *     aip.dev/not-precedent: UpdateWorkerBuildIdOrdering RPC doesn't follow Google API format. --)
+     * (-- api-linter: core::0134::method-signature=disabled
+     *     aip.dev/not-precedent: UpdateWorkerBuildIdOrdering RPC doesn't follow Google API format. --)
+     * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdOrderingRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdOrderingResponse
+     */
+    public function UpdateWorkerBuildIdOrdering(\Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdOrderingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateWorkerBuildIdOrdering',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdOrderingResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * This could / maybe should just be part of `DescribeTaskQueue`, but is broken out here to show easily.
+     * @param \Temporal\Api\Workflowservice\V1\GetWorkerBuildIdOrderingRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\GetWorkerBuildIdOrderingResponse
+     */
+    public function GetWorkerBuildIdOrdering(\Temporal\Api\Workflowservice\V1\GetWorkerBuildIdOrderingRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetWorkerBuildIdOrdering',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\GetWorkerBuildIdOrderingResponse', 'decode'],
+        $metadata, $options);
     }
 
 }

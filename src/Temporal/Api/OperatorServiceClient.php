@@ -132,4 +132,79 @@ class OperatorServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * AddOrUpdateRemoteCluster adds or updates remote cluster.
+     * @param \Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterResponse
+     */
+    public function AddOrUpdateRemoteCluster(\Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/AddOrUpdateRemoteCluster',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * RemoveRemoteCluster removes remote cluster.
+     * @param \Temporal\Api\Operatorservice\V1\RemoveRemoteClusterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Operatorservice\V1\RemoveRemoteClusterResponse
+     */
+    public function RemoveRemoteCluster(\Temporal\Api\Operatorservice\V1\RemoveRemoteClusterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/RemoveRemoteCluster',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\RemoveRemoteClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * DescribeCluster returns information about Temporal cluster.
+     * @param \Temporal\Api\Operatorservice\V1\DescribeClusterRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Operatorservice\V1\DescribeClusterResponse
+     */
+    public function DescribeCluster(\Temporal\Api\Operatorservice\V1\DescribeClusterRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/DescribeCluster',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\DescribeClusterResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListClusters returns information about Temporal clusters.
+     * @param \Temporal\Api\Operatorservice\V1\ListClustersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Operatorservice\V1\ListClustersResponse
+     */
+    public function ListClusters(\Temporal\Api\Operatorservice\V1\ListClustersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/ListClusters',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\ListClustersResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListClusterMembers returns information about Temporal cluster members.
+     * @param \Temporal\Api\Operatorservice\V1\ListClusterMembersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Operatorservice\V1\ListClusterMembersResponse
+     */
+    public function ListClusterMembers(\Temporal\Api\Operatorservice\V1\ListClusterMembersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/ListClusterMembers',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\ListClusterMembersResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }
