@@ -29,6 +29,10 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PendingChildExecutionInfo pending_children = 4;</code>
      */
     private $pending_children;
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingWorkflowTaskInfo pending_workflow_task = 5;</code>
+     */
+    protected $pending_workflow_task = null;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionInfo $workflow_execution_info
      *     @type \Temporal\Api\Workflow\V1\PendingActivityInfo[]|\Google\Protobuf\Internal\RepeatedField $pending_activities
      *     @type \Temporal\Api\Workflow\V1\PendingChildExecutionInfo[]|\Google\Protobuf\Internal\RepeatedField $pending_children
+     *     @type \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo $pending_workflow_task
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PendingChildExecutionInfo::class);
         $this->pending_children = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingWorkflowTaskInfo pending_workflow_task = 5;</code>
+     * @return \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo
+     */
+    public function getPendingWorkflowTask()
+    {
+        return $this->pending_workflow_task;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingWorkflowTaskInfo pending_workflow_task = 5;</code>
+     * @param \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo $var
+     * @return $this
+     */
+    public function setPendingWorkflowTask($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo::class);
+        $this->pending_workflow_task = $var;
 
         return $this;
     }

@@ -13,6 +13,13 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class RespondActivityTaskFailedResponse extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Server validation failures could include
+     * last_heartbeat_details payload is too large, request failure is too large
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.failure.v1.Failure failures = 1;</code>
+     */
+    private $failures;
 
     /**
      * Constructor.
@@ -20,11 +27,42 @@ class RespondActivityTaskFailedResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Temporal\Api\Failure\V1\Failure[]|\Google\Protobuf\Internal\RepeatedField $failures
+     *           Server validation failures could include
+     *           last_heartbeat_details payload is too large, request failure is too large
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Temporal\Api\Workflowservice\V1\RequestResponse::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Server validation failures could include
+     * last_heartbeat_details payload is too large, request failure is too large
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.failure.v1.Failure failures = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFailures()
+    {
+        return $this->failures;
+    }
+
+    /**
+     * Server validation failures could include
+     * last_heartbeat_details payload is too large, request failure is too large
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.failure.v1.Failure failures = 1;</code>
+     * @param \Temporal\Api\Failure\V1\Failure[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFailures($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Failure\V1\Failure::class);
+        $this->failures = $arr;
+
+        return $this;
     }
 
 }

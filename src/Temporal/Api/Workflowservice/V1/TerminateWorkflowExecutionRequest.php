@@ -38,7 +38,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      */
     protected $identity = '';
     /**
-     * Should be removed. Appears unused.
+     * If set, this call will error if the most recent (if no run id is set on
+     * `workflow_execution`), or specified (if it is) workflow execution is not part of the same
+     * execution chain as this id.
      *
      * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
      */
@@ -58,7 +60,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $first_execution_run_id
-     *           Should be removed. Appears unused.
+     *           If set, this call will error if the most recent (if no run id is set on
+     *           `workflow_execution`), or specified (if it is) workflow execution is not part of the same
+     *           execution chain as this id.
      * }
      */
     public function __construct($data = NULL) {
@@ -185,7 +189,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Should be removed. Appears unused.
+     * If set, this call will error if the most recent (if no run id is set on
+     * `workflow_execution`), or specified (if it is) workflow execution is not part of the same
+     * execution chain as this id.
      *
      * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
      * @return string
@@ -196,7 +202,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Should be removed. Appears unused.
+     * If set, this call will error if the most recent (if no run id is set on
+     * `workflow_execution`), or specified (if it is) workflow execution is not part of the same
+     * execution chain as this id.
      *
      * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
      * @param string $var

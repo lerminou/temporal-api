@@ -22,10 +22,6 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      */
     protected $activity_type = null;
     /**
-     * Generated from protobuf field <code>string namespace = 3;</code>
-     */
-    protected $namespace = '';
-    /**
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 4;</code>
      */
     protected $task_queue = null;
@@ -38,9 +34,10 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      */
     protected $input = null;
     /**
-     * Indicates how long the caller is willing to wait for activity completion. Limits how long
-     * retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
-     * not specified, defaults to the workflow execution timeout.
+     * Indicates how long the caller is willing to wait for activity completion. The "schedule" time
+     * is when the activity is initially scheduled, not when the most recent retry is scheduled.
+     * Limits how long retries will be attempted. Either this or `start_to_close_timeout` must be
+     * specified. When not specified, defaults to the workflow execution timeout.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -48,10 +45,13 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      */
     protected $schedule_to_close_timeout = null;
     /**
-     * Limits the time an activity task can stay in a task queue before a worker picks it up. This
-     * timeout is always non retryable, as all a retry would achieve is to put it back into the same
-     * queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
-     * specified.
+     * Limits the time an activity task can stay in a task queue before a worker picks it up. The
+     * "schedule" time is when the most recent retry is scheduled. This timeout should usually not
+     * be set: it's useful in specific scenarios like worker-specific task queues. This timeout is
+     * always non retryable, as all a retry would achieve is to put it back into the same queue.
+     * Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     * specified. More info:
+     * https://docs.temporal.io/docs/content/what-is-a-schedule-to-start-timeout/
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -81,6 +81,13 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 11;</code>
      */
     protected $retry_policy = null;
+    /**
+     * Request to start the activity directly bypassing matching service and worker polling
+     * The slot for executing the activity should be reserved when setting this field to true.
+     *
+     * Generated from protobuf field <code>bool request_eager_execution = 12;</code>
+     */
+    protected $request_eager_execution = false;
 
     /**
      * Constructor.
@@ -90,21 +97,24 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      *
      *     @type string $activity_id
      *     @type \Temporal\Api\Common\V1\ActivityType $activity_type
-     *     @type string $namespace
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *     @type \Google\Protobuf\Duration $schedule_to_close_timeout
-     *           Indicates how long the caller is willing to wait for activity completion. Limits how long
-     *           retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
-     *           not specified, defaults to the workflow execution timeout.
+     *           Indicates how long the caller is willing to wait for activity completion. The "schedule" time
+     *           is when the activity is initially scheduled, not when the most recent retry is scheduled.
+     *           Limits how long retries will be attempted. Either this or `start_to_close_timeout` must be
+     *           specified. When not specified, defaults to the workflow execution timeout.
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
      *     @type \Google\Protobuf\Duration $schedule_to_start_timeout
-     *           Limits the time an activity task can stay in a task queue before a worker picks it up. This
-     *           timeout is always non retryable, as all a retry would achieve is to put it back into the same
-     *           queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
-     *           specified.
+     *           Limits the time an activity task can stay in a task queue before a worker picks it up. The
+     *           "schedule" time is when the most recent retry is scheduled. This timeout should usually not
+     *           be set: it's useful in specific scenarios like worker-specific task queues. This timeout is
+     *           always non retryable, as all a retry would achieve is to put it back into the same queue.
+     *           Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     *           specified. More info:
+     *           https://docs.temporal.io/docs/content/what-is-a-schedule-to-start-timeout/
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
      *     @type \Google\Protobuf\Duration $start_to_close_timeout
@@ -118,6 +128,9 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
      *           Activities are provided by a default retry policy which is controlled through the service's
      *           dynamic configuration. Retries will be attempted until `schedule_to_close_timeout` has
      *           elapsed. To disable retries set retry_policy.maximum_attempts to 1.
+     *     @type bool $request_eager_execution
+     *           Request to start the activity directly bypassing matching service and worker polling
+     *           The slot for executing the activity should be reserved when setting this field to true.
      * }
      */
     public function __construct($data = NULL) {
@@ -165,28 +178,6 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ActivityType::class);
         $this->activity_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string namespace = 3;</code>
-     * @return string
-     */
-    public function getNamespace()
-    {
-        return $this->namespace;
-    }
-
-    /**
-     * Generated from protobuf field <code>string namespace = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setNamespace($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->namespace = $var;
 
         return $this;
     }
@@ -258,9 +249,10 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Indicates how long the caller is willing to wait for activity completion. Limits how long
-     * retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
-     * not specified, defaults to the workflow execution timeout.
+     * Indicates how long the caller is willing to wait for activity completion. The "schedule" time
+     * is when the activity is initially scheduled, not when the most recent retry is scheduled.
+     * Limits how long retries will be attempted. Either this or `start_to_close_timeout` must be
+     * specified. When not specified, defaults to the workflow execution timeout.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -273,9 +265,10 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Indicates how long the caller is willing to wait for activity completion. Limits how long
-     * retries will be attempted. Either this or `start_to_close_timeout` must be specified. When
-     * not specified, defaults to the workflow execution timeout.
+     * Indicates how long the caller is willing to wait for activity completion. The "schedule" time
+     * is when the activity is initially scheduled, not when the most recent retry is scheduled.
+     * Limits how long retries will be attempted. Either this or `start_to_close_timeout` must be
+     * specified. When not specified, defaults to the workflow execution timeout.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -292,10 +285,13 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Limits the time an activity task can stay in a task queue before a worker picks it up. This
-     * timeout is always non retryable, as all a retry would achieve is to put it back into the same
-     * queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
-     * specified.
+     * Limits the time an activity task can stay in a task queue before a worker picks it up. The
+     * "schedule" time is when the most recent retry is scheduled. This timeout should usually not
+     * be set: it's useful in specific scenarios like worker-specific task queues. This timeout is
+     * always non retryable, as all a retry would achieve is to put it back into the same queue.
+     * Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     * specified. More info:
+     * https://docs.temporal.io/docs/content/what-is-a-schedule-to-start-timeout/
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -308,10 +304,13 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * Limits the time an activity task can stay in a task queue before a worker picks it up. This
-     * timeout is always non retryable, as all a retry would achieve is to put it back into the same
-     * queue. Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
-     * specified.
+     * Limits the time an activity task can stay in a task queue before a worker picks it up. The
+     * "schedule" time is when the most recent retry is scheduled. This timeout should usually not
+     * be set: it's useful in specific scenarios like worker-specific task queues. This timeout is
+     * always non retryable, as all a retry would achieve is to put it back into the same queue.
+     * Defaults to `schedule_to_close_timeout` or workflow execution timeout if that is not
+     * specified. More info:
+     * https://docs.temporal.io/docs/content/what-is-a-schedule-to-start-timeout/
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
@@ -411,6 +410,34 @@ class ScheduleActivityTaskCommandAttributes extends \Google\Protobuf\Internal\Me
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Request to start the activity directly bypassing matching service and worker polling
+     * The slot for executing the activity should be reserved when setting this field to true.
+     *
+     * Generated from protobuf field <code>bool request_eager_execution = 12;</code>
+     * @return bool
+     */
+    public function getRequestEagerExecution()
+    {
+        return $this->request_eager_execution;
+    }
+
+    /**
+     * Request to start the activity directly bypassing matching service and worker polling
+     * The slot for executing the activity should be reserved when setting this field to true.
+     *
+     * Generated from protobuf field <code>bool request_eager_execution = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRequestEagerExecution($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->request_eager_execution = $var;
 
         return $this;
     }

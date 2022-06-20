@@ -3,12 +3,17 @@
 namespace Temporal\Api;
 
 /**
- * WorkflowService API is exposed to provide support for long running applications.  Application is expected to call
- * StartWorkflowExecution to create an instance for each instance of long running workflow.  Such applications are expected
- * to have a worker which regularly polls for WorkflowTask and ActivityTask from the WorkflowService.  For each
- * WorkflowTask, application is expected to process the history of events for that session and respond back with next
- * commands.  For each ActivityTask, application is expected to execute the actual logic for that task and respond back
- * with completion or failure.  Worker is expected to regularly heartbeat while activity task is running.
+ * WorkflowService API defines how Temporal SDKs and other clients interact with the Temporal server
+ * to create and interact with workflows and activities.
+ *
+ * Users are expected to call `StartWorkflowExecution` to create a new workflow execution.
+ *
+ * To drive workflows, a worker using a Temporal SDK must exist which regularly polls for workflow
+ * and activity tasks from the service. For each workflow task, the sdk must process the
+ * (incremental or complete) event history and respond back with any newly generated commands.
+ *
+ * For each activity task, the worker is expected to execute the user's code which implements that
+ * activity, responding with completion or failure.
  */
 class WorkflowServiceClient extends \Grpc\BaseStub {
 
@@ -22,17 +27,19 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RegisterNamespace creates a new namespace which can be used as a container for all resources.  Namespace is a top level
-     * entity within Temporal, used as a container for all resources like workflow executions, task queues, etc.  Namespace
-     * acts as a sandbox and provides isolation for all resources within the namespace.  All resources belongs to exactly one
+     * RegisterNamespace creates a new namespace which can be used as a container for all resources.
+     *
+     * A Namespace is a top level entity within Temporal, and is used as a container for resources
+     * like workflow executions, task queues, etc. A Namespace acts as a sandbox and provides
+     * isolation for all resources within the namespace. All resources belongs to exactly one
      * namespace.
      * @param \Temporal\Api\Workflowservice\V1\RegisterNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RegisterNamespaceResponse
      */
     public function RegisterNamespace(\Temporal\Api\Workflowservice\V1\RegisterNamespaceRequest $argument,
-                                      $metadata = [], $options = []) {
+                                                                                                $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RegisterNamespace',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RegisterNamespaceResponse', 'decode'],
@@ -44,10 +51,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse
      */
     public function DescribeNamespace(\Temporal\Api\Workflowservice\V1\DescribeNamespaceRequest $argument,
-                                      $metadata = [], $options = []) {
+                                                                                                $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeNamespace',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse', 'decode'],
@@ -59,10 +66,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListNamespacesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ListNamespacesResponse
      */
     public function ListNamespaces(\Temporal\Api\Workflowservice\V1\ListNamespacesRequest $argument,
-                                   $metadata = [], $options = []) {
+                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListNamespaces',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ListNamespacesResponse', 'decode'],
@@ -70,18 +77,20 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * UpdateNamespace is used to update the information and configuration of a registered
+     * namespace.
+     *
      * (-- api-linter: core::0134::method-signature=disabled
      *     aip.dev/not-precedent: UpdateNamespace RPC doesn't follow Google API format. --)
      * (-- api-linter: core::0134::response-message-name=disabled
      *     aip.dev/not-precedent: UpdateNamespace RPC doesn't follow Google API format. --)
-     * UpdateNamespace is used to update the information and configuration for a registered namespace.
      * @param \Temporal\Api\Workflowservice\V1\UpdateNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\UpdateNamespaceResponse
      */
     public function UpdateNamespace(\Temporal\Api\Workflowservice\V1\UpdateNamespaceRequest $argument,
-                                    $metadata = [], $options = []) {
+                                                                                            $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateNamespace',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\UpdateNamespaceResponse', 'decode'],
@@ -89,16 +98,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * DeprecateNamespace is used to update state of a registered namespace to DEPRECATED.  Once the namespace is deprecated
-     * it cannot be used to start new workflow executions.  Existing workflow executions will continue to run on
-     * deprecated namespaces.
+     * DeprecateNamespace is used to update the state of a registered namespace to DEPRECATED.
+     *
+     * Once the namespace is deprecated it cannot be used to start new workflow executions. Existing
+     * workflow executions will continue to run on deprecated namespaces.
+     * Deprecated.
      * @param \Temporal\Api\Workflowservice\V1\DeprecateNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\DeprecateNamespaceResponse
      */
     public function DeprecateNamespace(\Temporal\Api\Workflowservice\V1\DeprecateNamespaceRequest $argument,
-                                       $metadata = [], $options = []) {
+                                                                                                  $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeprecateNamespace',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\DeprecateNamespaceResponse', 'decode'],
@@ -106,17 +117,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * StartWorkflowExecution starts a new long running workflow instance.  It will create the instance with
-     * 'WorkflowExecutionStarted' event in history and also schedule the first WorkflowTask for the worker to make the
-     * first command for this instance.  It will return 'WorkflowExecutionAlreadyStartedFailure', if an instance already
-     * exists with same workflowId.
+     * StartWorkflowExecution starts a new workflow execution.
+     *
+     * It will create the execution with a `WORKFLOW_EXECUTION_STARTED` event in its history and
+     * also schedule the first workflow task. Returns `WorkflowExecutionAlreadyStarted`, if an
+     * instance already exists with same workflow id.
      * @param \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse
      */
     public function StartWorkflowExecution(\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest $argument,
-                                           $metadata = [], $options = []) {
+                                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/StartWorkflowExecution',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse', 'decode'],
@@ -124,15 +136,15 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * GetWorkflowExecutionHistory returns the history of specified workflow execution.  It fails with 'NotFoundFailure' if specified workflow
-     * execution in unknown to the service.
+     * GetWorkflowExecutionHistory returns the history of specified workflow execution. Fails with
+     * `NotFound` if the specified workflow execution is unknown to the service.
      * @param \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryResponse
      */
     public function GetWorkflowExecutionHistory(\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryRequest $argument,
-                                                $metadata = [], $options = []) {
+                                                                                                                    $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetWorkflowExecutionHistory',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryResponse', 'decode'],
@@ -140,18 +152,36 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * PollWorkflowTaskQueue is called by application worker to process WorkflowTask from a specific task queue.  A
-     * WorkflowTask is dispatched to callers for active workflow executions, with pending workflow tasks.
-     * Application is then expected to call 'RespondWorkflowTaskCompleted' API when it is done processing the WorkflowTask.
-     * It will also create a 'WorkflowTaskStarted' event in the history for that session before handing off WorkflowTask to
-     * application worker.
+     * GetWorkflowExecutionHistoryReverse returns the history of specified workflow execution in reverse
+     * order (starting from last event). Fails with`NotFound` if the specified workflow execution is
+     * unknown to the service.
+     * @param \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseResponse
+     */
+    public function GetWorkflowExecutionHistoryReverse(\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseRequest $argument,
+                                                                                                                                  $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetWorkflowExecutionHistoryReverse',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * PollWorkflowTaskQueue is called by workers to make progress on workflows.
+     *
+     * A WorkflowTask is dispatched to callers for active workflow executions with pending workflow
+     * tasks. The worker is expected to call `RespondWorkflowTaskCompleted` when it is done
+     * processing the task. The service will create a `WorkflowTaskStarted` event in the history for
+     * this task before handing it to the worker.
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse
      */
     public function PollWorkflowTaskQueue(\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueRequest $argument,
-                                          $metadata = [], $options = []) {
+                                                                                                        $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PollWorkflowTaskQueue',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse', 'decode'],
@@ -159,19 +189,19 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RespondWorkflowTaskCompleted is called by application worker to complete a WorkflowTask handed as a result of
-     * 'PollWorkflowTaskQueue' API call.  Completing a WorkflowTask will result in new events for the workflow execution and
-     * potentially new ActivityTask being created for corresponding commands.  It will also create a WorkflowTaskCompleted
-     * event in the history for that session.  Use the 'taskToken' provided as response of PollWorkflowTaskQueue API call
-     * for completing the WorkflowTask.
-     * The response could contain a new workflow task if there is one or if the request asking for one.
+     * RespondWorkflowTaskCompleted is called by workers to successfully complete workflow tasks
+     * they received from `PollWorkflowTaskQueue`.
+     *
+     * Completing a WorkflowTask will write a `WORKFLOW_TASK_COMPLETED` event to the workflow's
+     * history, along with events corresponding to whatever commands the SDK generated while
+     * executing the task (ex timer started, activity task scheduled, etc).
      * @param \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedResponse
      */
     public function RespondWorkflowTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest $argument,
-                                                 $metadata = [], $options = []) {
+                                                                                                                      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondWorkflowTaskCompleted',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedResponse', 'decode'],
@@ -179,17 +209,22 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RespondWorkflowTaskFailed is called by application worker to indicate failure.  This results in
-     * WorkflowTaskFailedEvent written to the history and a new WorkflowTask created.  This API can be used by client to
-     * either clear sticky task queue or report any panics during WorkflowTask processing.  Temporal will only append first
-     * WorkflowTaskFailed event to the history of workflow execution for consecutive failures.
+     * RespondWorkflowTaskFailed is called by workers to indicate the processing of a workflow task
+     * failed.
+     *
+     * This results in a `WORKFLOW_TASK_FAILED` event written to the history, and a new workflow
+     * task will be scheduled. This API can be used to report unhandled failures resulting from
+     * applying the workflow task.
+     *
+     * Temporal will only append first WorkflowTaskFailed event to the history of workflow execution
+     * for consecutive failures.
      * @param \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedResponse
      */
     public function RespondWorkflowTaskFailed(\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedRequest $argument,
-                                              $metadata = [], $options = []) {
+                                                                                                                $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondWorkflowTaskFailed',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedResponse', 'decode'],
@@ -197,20 +232,25 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * PollActivityTaskQueue is called by application worker to process ActivityTask from a specific task queue.  ActivityTask
-     * is dispatched to callers whenever a ScheduleTask command is made for a workflow execution.
-     * Application is expected to call 'RespondActivityTaskCompleted' or 'RespondActivityTaskFailed' once it is done
+     * PollActivityTaskQueue is called by workers to process activity tasks from a specific task
+     * queue.
+     *
+     * The worker is expected to call one of the `RespondActivityTaskXXX` methods when it is done
      * processing the task.
-     * Application also needs to call 'RecordActivityTaskHeartbeat' API within 'heartbeatTimeoutSeconds' interval to
-     * prevent the task from getting timed out.  An event 'ActivityTaskStarted' event is also written to workflow execution
-     * history before the ActivityTask is dispatched to application worker.
+     *
+     * An activity task is dispatched whenever a `SCHEDULE_ACTIVITY_TASK` command is produced during
+     * workflow execution. An in memory `ACTIVITY_TASK_STARTED` event is written to mutable state
+     * before the task is dispatched to the worker. The started event, and the final event
+     * (`ACTIVITY_TASK_COMPLETED` / `ACTIVITY_TASK_FAILED` / `ACTIVITY_TASK_TIMED_OUT`) will both be
+     * written permanently to Workflow execution history when Activity is finished. This is done to
+     * avoid writing many events in the case of a failure/retry loop.
      * @param \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse
      */
     public function PollActivityTaskQueue(\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueRequest $argument,
-                                          $metadata = [], $options = []) {
+                                                                                                        $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PollActivityTaskQueue',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse', 'decode'],
@@ -218,18 +258,19 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RecordActivityTaskHeartbeat is called by application worker while it is processing an ActivityTask.  If worker fails
-     * to heartbeat within 'heartbeatTimeoutSeconds' interval for the ActivityTask, then it will be marked as timedout and
-     * 'ActivityTaskTimedOut' event will be written to the workflow history.  Calling 'RecordActivityTaskHeartbeat' will
-     * fail with 'NotFoundFailure' in such situations.  Use the 'taskToken' provided as response of
-     * PollActivityTaskQueue API call for heart beating.
+     * RecordActivityTaskHeartbeat is optionally called by workers while they execute activities.
+     *
+     * If worker fails to heartbeat within the `heartbeat_timeout` interval for the activity task,
+     * then it will be marked as timed out and an `ACTIVITY_TASK_TIMED_OUT` event will be written to
+     * the workflow history. Calling `RecordActivityTaskHeartbeat` will fail with `NotFound` in
+     * such situations, in that event, the SDK should request cancellation of the activity.
      * @param \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatResponse
      */
     public function RecordActivityTaskHeartbeat(\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatRequest $argument,
-                                                $metadata = [], $options = []) {
+                                                                                                                    $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeat',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatResponse', 'decode'],
@@ -237,20 +278,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * See `RecordActivityTaskHeartbeat`. This version allows clients to record heartbeats by
+     * namespace/workflow id/activity id instead of task token.
+     *
      * (-- api-linter: core::0136::prepositions=disabled
      *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * RecordActivityTaskHeartbeatById is called by application worker while it is processing an ActivityTask.  If worker fails
-     * to heartbeat within 'heartbeatTimeoutSeconds' interval for the ActivityTask, then it will be marked as timed out and
-     * 'ActivityTaskTimedOut' event will be written to the workflow history.  Calling 'RecordActivityTaskHeartbeatById' will
-     * fail with 'NotFoundFailure' in such situations.  Instead of using 'taskToken' like in RecordActivityTaskHeartbeat,
-     * use Namespace, WorkflowId and ActivityId
      * @param \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdResponse
      */
     public function RecordActivityTaskHeartbeatById(\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdRequest $argument,
-                                                    $metadata = [], $options = []) {
+                                                                                                                            $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeatById',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdResponse', 'decode'],
@@ -258,18 +297,19 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RespondActivityTaskCompleted is called by application worker when it is done processing an ActivityTask.  It will
-     * result in a new 'ActivityTaskCompleted' event being written to the workflow history and a new WorkflowTask
-     * created for the workflow so new commands could be made.  Use the 'taskToken' provided as response of
-     * PollActivityTaskQueue API call for completion. It fails with 'NotFoundFailure' if the taskToken is not valid
-     * anymore due to activity timeout.
+     * RespondActivityTaskCompleted is called by workers when they successfully complete an activity
+     * task.
+     *
+     * This results in a new `ACTIVITY_TASK_COMPLETED` event being written to the workflow history
+     * and a new workflow task created for the workflow. Fails with `NotFound` if the task token is
+     * no longer valid due to activity timeout, already being completed, or never having existed.
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedResponse
      */
     public function RespondActivityTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedRequest $argument,
-                                                 $metadata = [], $options = []) {
+                                                                                                                      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCompleted',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedResponse', 'decode'],
@@ -277,20 +317,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * See `RecordActivityTaskCompleted`. This version allows clients to record completions by
+     * namespace/workflow id/activity id instead of task token.
+     *
      * (-- api-linter: core::0136::prepositions=disabled
      *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * RespondActivityTaskCompletedById is called by application worker when it is done processing an ActivityTask.
-     * It will result in a new 'ActivityTaskCompleted' event being written to the workflow history and a new WorkflowTask
-     * created for the workflow so new commands could be made.  Similar to RespondActivityTaskCompleted but use Namespace,
-     * WorkflowId and ActivityId instead of 'taskToken' for completion. It fails with 'NotFoundFailure'
-     * if the these Ids are not valid anymore due to activity timeout.
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdResponse
      */
     public function RespondActivityTaskCompletedById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdRequest $argument,
-                                                     $metadata = [], $options = []) {
+                                                                                                                              $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCompletedById',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdResponse', 'decode'],
@@ -298,18 +336,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RespondActivityTaskFailed is called by application worker when it is done processing an ActivityTask.  It will
-     * result in a new 'ActivityTaskFailed' event being written to the workflow history and a new WorkflowTask
-     * created for the workflow instance so new commands could be made.  Use the 'taskToken' provided as response of
-     * PollActivityTaskQueue API call for completion. It fails with 'NotFoundFailure' if the taskToken is not valid
-     * anymore due to activity timeout.
+     * RespondActivityTaskFailed is called by workers when processing an activity task fails.
+     *
+     * This results in a new `ACTIVITY_TASK_FAILED` event being written to the workflow history and
+     * a new workflow task created for the workflow. Fails with `NotFound` if the task token is no
+     * longer valid due to activity timeout, already being completed, or never having existed.
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedResponse
      */
     public function RespondActivityTaskFailed(\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedRequest $argument,
-                                              $metadata = [], $options = []) {
+                                                                                                                $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskFailed',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedResponse', 'decode'],
@@ -317,20 +355,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * See `RecordActivityTaskFailed`. This version allows clients to record failures by
+     * namespace/workflow id/activity id instead of task token.
+     *
      * (-- api-linter: core::0136::prepositions=disabled
      *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * RespondActivityTaskFailedById is called by application worker when it is done processing an ActivityTask.
-     * It will result in a new 'ActivityTaskFailed' event being written to the workflow history and a new WorkflowTask
-     * created for the workflow instance so new commands could be made.  Similar to RespondActivityTaskFailed but use
-     * Namespace, WorkflowId and ActivityId instead of 'taskToken' for completion. It fails with 'NotFoundFailure'
-     * if the these Ids are not valid anymore due to activity timeout.
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdResponse
      */
     public function RespondActivityTaskFailedById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdRequest $argument,
-                                                  $metadata = [], $options = []) {
+                                                                                                                        $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskFailedById',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdResponse', 'decode'],
@@ -338,18 +374,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RespondActivityTaskCanceled is called by application worker when it is successfully canceled an ActivityTask.  It will
-     * result in a new 'ActivityTaskCanceled' event being written to the workflow history and a new WorkflowTask
-     * created for the workflow instance so new commands could be made.  Use the 'taskToken' provided as response of
-     * PollActivityTaskQueue API call for completion. It fails with 'NotFoundFailure' if the taskToken is not valid
-     * anymore due to activity timeout.
+     * RespondActivityTaskFailed is called by workers when processing an activity task fails.
+     *
+     * This results in a new `ACTIVITY_TASK_CANCELED` event being written to the workflow history
+     * and a new workflow task created for the workflow. Fails with `NotFound` if the task token is
+     * no longer valid due to activity timeout, already being completed, or never having existed.
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledResponse
      */
     public function RespondActivityTaskCanceled(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledRequest $argument,
-                                                $metadata = [], $options = []) {
+                                                                                                                    $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCanceled',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledResponse', 'decode'],
@@ -357,20 +393,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * See `RecordActivityTaskCanceled`. This version allows clients to record failures by
+     * namespace/workflow id/activity id instead of task token.
+     *
      * (-- api-linter: core::0136::prepositions=disabled
      *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * RespondActivityTaskCanceledById is called by application worker when it is successfully canceled an ActivityTask.
-     * It will result in a new 'ActivityTaskCanceled' event being written to the workflow history and a new WorkflowTask
-     * created for the workflow instance so new commands could be made.  Similar to RespondActivityTaskCanceled but use
-     * Namespace, WorkflowId and ActivityId instead of 'taskToken' for completion. It fails with 'NotFoundFailure'
-     * if the these Ids are not valid anymore due to activity timeout.
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdResponse
      */
     public function RespondActivityTaskCanceledById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdRequest $argument,
-                                                    $metadata = [], $options = []) {
+                                                                                                                            $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondActivityTaskCanceledById',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdResponse', 'decode'],
@@ -378,17 +412,19 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RequestCancelWorkflowExecution is called by application worker when it wants to request cancellation of a workflow instance.
-     * It will result in a new 'WorkflowExecutionCancelRequested' event being written to the workflow history and a new WorkflowTask
-     * created for the workflow instance so new commands could be made. It fails with 'NotFoundFailure' if the workflow is not valid
-     * anymore due to completion or doesn't exist.
+     * RequestCancelWorkflowExecution is called by workers when they want to request cancellation of
+     * a workflow execution.
+     *
+     * This results in a new `WORKFLOW_EXECUTION_CANCEL_REQUESTED` event being written to the
+     * workflow history and a new workflow task created for the workflow. It returns success if the requested
+     * workflow is already closed. It fails with 'NotFound' if the requested workflow doesn't exist.
      * @param \Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionResponse
      */
     public function RequestCancelWorkflowExecution(\Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionRequest $argument,
-                                                   $metadata = [], $options = []) {
+                                                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RequestCancelWorkflowExecution',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionResponse', 'decode'],
@@ -396,15 +432,17 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * SignalWorkflowExecution is used to send a signal event to running workflow execution.  This results in
-     * WorkflowExecutionSignaled event recorded in the history and a workflow task being created for the execution.
+     * SignalWorkflowExecution is used to send a signal to a running workflow execution.
+     *
+     * This results in a `WORKFLOW_EXECUTION_SIGNALED` event recorded in the history and a workflow
+     * task being created for the execution.
      * @param \Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionResponse
      */
     public function SignalWorkflowExecution(\Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionRequest $argument,
-                                            $metadata = [], $options = []) {
+                                                                                                            $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SignalWorkflowExecution',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionResponse', 'decode'],
@@ -412,20 +450,25 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * SignalWithStartWorkflowExecution is used to ensure a signal is sent to a workflow, even if
+     * it isn't yet started.
+     *
+     * If the workflow is running, a `WORKFLOW_EXECUTION_SIGNALED` event is recorded in the history
+     * and a workflow task is generated.
+     *
+     * If the workflow is not running or not found, then the workflow is created with
+     * `WORKFLOW_EXECUTION_STARTED` and `WORKFLOW_EXECUTION_SIGNALED` events in its history, and a
+     * workflow task is generated.
+     *
      * (-- api-linter: core::0136::prepositions=disabled
      *     aip.dev/not-precedent: "With" is used to indicate combined operation. --)
-     * SignalWithStartWorkflowExecution is used to ensure sending signal to a workflow.
-     * If the workflow is running, this results in WorkflowExecutionSignaled event being recorded in the history
-     * and a workflow task being created for the execution.
-     * If the workflow is not running or not found, this results in WorkflowExecutionStarted and WorkflowExecutionSignaled
-     * events being recorded in history, and a workflow task being created for the execution
      * @param \Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionResponse
      */
     public function SignalWithStartWorkflowExecution(\Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionRequest $argument,
-                                                     $metadata = [], $options = []) {
+                                                                                                                              $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SignalWithStartWorkflowExecution',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionResponse', 'decode'],
@@ -433,15 +476,17 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * ResetWorkflowExecution reset an existing workflow execution to WorkflowTaskCompleted event(exclusive).
-     * And it will immediately terminating the current execution instance.
+     * ResetWorkflowExecution will reset an existing workflow execution to a specified
+     * `WORKFLOW_TASK_COMPLETED` event (exclusive). It will immediately terminate the current
+     * execution instance.
+     * TODO: Does exclusive here mean *just* the completed event, or also WFT started? Otherwise the task is doomed to time out?
      * @param \Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionResponse
      */
     public function ResetWorkflowExecution(\Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionRequest $argument,
-                                           $metadata = [], $options = []) {
+                                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ResetWorkflowExecution',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionResponse', 'decode'],
@@ -449,15 +494,16 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * TerminateWorkflowExecution terminates an existing workflow execution by recording WorkflowExecutionTerminated event
-     * in the history and immediately terminating the execution instance.
+     * TerminateWorkflowExecution terminates an existing workflow execution by recording a
+     * `WORKFLOW_EXECUTION_TERMINATED` event in the history and immediately terminating the
+     * execution instance.
      * @param \Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionResponse
      */
     public function TerminateWorkflowExecution(\Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionRequest $argument,
-                                               $metadata = [], $options = []) {
+                                                                                                                  $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/TerminateWorkflowExecution',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionResponse', 'decode'],
@@ -469,10 +515,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsResponse
      */
     public function ListOpenWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsRequest $argument,
-                                               $metadata = [], $options = []) {
+                                                                                                                  $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListOpenWorkflowExecutions',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsResponse', 'decode'],
@@ -484,10 +530,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsResponse
      */
     public function ListClosedWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsRequest $argument,
-                                                 $metadata = [], $options = []) {
+                                                                                                                      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListClosedWorkflowExecutions',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsResponse', 'decode'],
@@ -499,10 +545,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsResponse
      */
     public function ListWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsRequest $argument,
-                                           $metadata = [], $options = []) {
+                                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListWorkflowExecutions',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsResponse', 'decode'],
@@ -514,10 +560,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsResponse
      */
     public function ListArchivedWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsRequest $argument,
-                                                   $metadata = [], $options = []) {
+                                                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListArchivedWorkflowExecutions',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsResponse', 'decode'],
@@ -529,10 +575,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsResponse
      */
     public function ScanWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsRequest $argument,
-                                           $metadata = [], $options = []) {
+                                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ScanWorkflowExecutions',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsResponse', 'decode'],
@@ -544,10 +590,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse
      */
     public function CountWorkflowExecutions(\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsRequest $argument,
-                                            $metadata = [], $options = []) {
+                                                                                                            $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CountWorkflowExecutions',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse', 'decode'],
@@ -559,10 +605,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetSearchAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\GetSearchAttributesResponse
      */
     public function GetSearchAttributes(\Temporal\Api\Workflowservice\V1\GetSearchAttributesRequest $argument,
-                                        $metadata = [], $options = []) {
+                                                                                                    $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetSearchAttributes',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\GetSearchAttributesResponse', 'decode'],
@@ -570,16 +616,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * RespondQueryTaskCompleted is called by application worker to complete a QueryTask (which is a WorkflowTask for query)
-     * as a result of 'PollWorkflowTaskQueue' API call. Completing a QueryTask will unblock the client call to 'QueryWorkflow'
-     * API and return the query result to client as a response to 'QueryWorkflow' API call.
+     * RespondQueryTaskCompleted is called by workers to complete queries which were delivered on
+     * the `query` (not `queries`) field of a `PollWorkflowTaskQueueResponse`.
+     *
+     * Completing the query will unblock the corresponding client call to `QueryWorkflow` and return
+     * the query result a response.
      * @param \Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedResponse
      */
     public function RespondQueryTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedRequest $argument,
-                                              $metadata = [], $options = []) {
+                                                                                                                $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondQueryTaskCompleted',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedResponse', 'decode'],
@@ -587,20 +635,20 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * ResetStickyTaskQueue resets the sticky task queue related information in mutable state of a given workflow.
+     * ResetStickyTaskQueue resets the sticky task queue related information in the mutable state of
+     * a given workflow. This is prudent for workers to perform if a workflow has been paged out of
+     * their cache.
+     *
      * Things cleared are:
      * 1. StickyTaskQueue
      * 2. StickyScheduleToStartTimeout
-     * 3. ClientLibraryVersion
-     * 4. ClientFeatureVersion
-     * 5. ClientImpl
      * @param \Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueResponse
      */
     public function ResetStickyTaskQueue(\Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueRequest $argument,
-                                         $metadata = [], $options = []) {
+                                                                                                      $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ResetStickyTaskQueue',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueResponse', 'decode'],
@@ -608,14 +656,14 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * QueryWorkflow returns query result for a specified workflow execution
+     * QueryWorkflow requests a query be executed for a specified workflow execution.
      * @param \Temporal\Api\Workflowservice\V1\QueryWorkflowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\QueryWorkflowResponse
      */
     public function QueryWorkflow(\Temporal\Api\Workflowservice\V1\QueryWorkflowRequest $argument,
-                                  $metadata = [], $options = []) {
+                                                                                        $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/QueryWorkflow',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\QueryWorkflowResponse', 'decode'],
@@ -627,10 +675,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionResponse
      */
     public function DescribeWorkflowExecution(\Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionRequest $argument,
-                                              $metadata = [], $options = []) {
+                                                                                                                $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeWorkflowExecution',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionResponse', 'decode'],
@@ -638,15 +686,14 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * DescribeTaskQueue returns information about the target task queue, right now this API returns the
-     * pollers which polled this task queue in last few minutes.
+     * DescribeTaskQueue returns information about the target task queue.
      * @param \Temporal\Api\Workflowservice\V1\DescribeTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse
      */
     public function DescribeTaskQueue(\Temporal\Api\Workflowservice\V1\DescribeTaskQueueRequest $argument,
-                                      $metadata = [], $options = []) {
+                                                                                                $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeTaskQueue',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse', 'decode'],
@@ -658,10 +705,10 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetClusterInfoRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\GetClusterInfoResponse
      */
     public function GetClusterInfo(\Temporal\Api\Workflowservice\V1\GetClusterInfoRequest $argument,
-                                   $metadata = [], $options = []) {
+                                                                                          $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetClusterInfo',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\GetClusterInfoResponse', 'decode'],
@@ -669,16 +716,152 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * GetSystemInfo returns information about the system.
+     * @param \Temporal\Api\Workflowservice\V1\GetSystemInfoRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\GetSystemInfoResponse
+     */
+    public function GetSystemInfo(\Temporal\Api\Workflowservice\V1\GetSystemInfoRequest $argument,
+                                                                                        $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/GetSystemInfo',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\GetSystemInfoResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
      * @param \Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsResponse
      */
     public function ListTaskQueuePartitions(\Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsRequest $argument,
-                                            $metadata = [], $options = []) {
+                                                                                                            $metadata = [], $options = []) {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListTaskQueuePartitions',
             $argument,
             ['\Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * Creates a new schedule.
+     * (-- api-linter: core::0133::method-signature=disabled
+     *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
+     * (-- api-linter: core::0133::response-message-name=disabled
+     *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
+     * (-- api-linter: core::0133::http-uri-parent=disabled
+     *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
+     * @param \Temporal\Api\Workflowservice\V1\CreateScheduleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\CreateScheduleResponse
+     */
+    public function CreateSchedule(\Temporal\Api\Workflowservice\V1\CreateScheduleRequest $argument,
+                                                                                          $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CreateSchedule',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\CreateScheduleResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * Returns the schedule description and current state of an existing schedule.
+     * @param \Temporal\Api\Workflowservice\V1\DescribeScheduleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\DescribeScheduleResponse
+     */
+    public function DescribeSchedule(\Temporal\Api\Workflowservice\V1\DescribeScheduleRequest $argument,
+                                                                                              $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeSchedule',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\DescribeScheduleResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * Changes the configuration or state of an existing schedule.
+     * (-- api-linter: core::0134::response-message-name=disabled
+     *     aip.dev/not-precedent: UpdateSchedule RPC doesn't follow Google API format. --)
+     * (-- api-linter: core::0134::method-signature=disabled
+     *     aip.dev/not-precedent: UpdateSchedule RPC doesn't follow Google API format. --)
+     * @param \Temporal\Api\Workflowservice\V1\UpdateScheduleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\UpdateScheduleResponse
+     */
+    public function UpdateSchedule(\Temporal\Api\Workflowservice\V1\UpdateScheduleRequest $argument,
+                                                                                          $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateSchedule',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\UpdateScheduleResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * Makes a specific change to a schedule or triggers an immediate action.
+     * (-- api-linter: core::0134::synonyms=disabled
+     *     aip.dev/not-precedent: we have both patch and update. --)
+     * @param \Temporal\Api\Workflowservice\V1\PatchScheduleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\PatchScheduleResponse
+     */
+    public function PatchSchedule(\Temporal\Api\Workflowservice\V1\PatchScheduleRequest $argument,
+                                                                                        $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PatchSchedule',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\PatchScheduleResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * Lists matching times within a range.
+     * @param \Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesResponse
+     */
+    public function ListScheduleMatchingTimes(\Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesRequest $argument,
+                                                                                                                $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListScheduleMatchingTimes',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * Deletes a schedule, removing it from the system.
+     * (-- api-linter: core::0135::method-signature=disabled
+     *     aip.dev/not-precedent: DeleteSchedule doesn't follow Google API format --)
+     * (-- api-linter: core::0135::response-message-name=disabled
+     *     aip.dev/not-precedent: DeleteSchedule doesn't follow Google API format --)
+     * @param \Temporal\Api\Workflowservice\V1\DeleteScheduleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\DeleteScheduleResponse
+     */
+    public function DeleteSchedule(\Temporal\Api\Workflowservice\V1\DeleteScheduleRequest $argument,
+                                                                                          $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeleteSchedule',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\DeleteScheduleResponse', 'decode'],
+            $metadata, $options);
+    }
+
+    /**
+     * List all schedules in a namespace.
+     * @param \Temporal\Api\Workflowservice\V1\ListSchedulesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Temporal\Api\Workflowservice\V1\ListSchedulesResponse
+     */
+    public function ListSchedules(\Temporal\Api\Workflowservice\V1\ListSchedulesRequest $argument,
+                                                                                        $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListSchedules',
+            $argument,
+            ['\Temporal\Api\Workflowservice\V1\ListSchedulesResponse', 'decode'],
             $metadata, $options);
     }
 

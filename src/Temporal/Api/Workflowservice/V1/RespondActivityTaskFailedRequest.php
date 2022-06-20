@@ -35,6 +35,12 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string namespace = 4;</code>
      */
     protected $namespace = '';
+    /**
+     * Additional details to be stored as last activity heartbeat
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_heartbeat_details = 5;</code>
+     */
+    protected $last_heartbeat_details = null;
 
     /**
      * Constructor.
@@ -49,6 +55,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $namespace
+     *     @type \Temporal\Api\Common\V1\Payloads $last_heartbeat_details
+     *           Additional details to be stored as last activity heartbeat
      * }
      */
     public function __construct($data = NULL) {
@@ -152,6 +160,32 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Additional details to be stored as last activity heartbeat
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_heartbeat_details = 5;</code>
+     * @return \Temporal\Api\Common\V1\Payloads
+     */
+    public function getLastHeartbeatDetails()
+    {
+        return $this->last_heartbeat_details;
+    }
+
+    /**
+     * Additional details to be stored as last activity heartbeat
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_heartbeat_details = 5;</code>
+     * @param \Temporal\Api\Common\V1\Payloads $var
+     * @return $this
+     */
+    public function setLastHeartbeatDetails($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
+        $this->last_heartbeat_details = $var;
 
         return $this;
     }
